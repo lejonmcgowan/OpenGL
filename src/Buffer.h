@@ -35,6 +35,8 @@ private:
     std::vector<GLfloat > bufferData;
     std::vector<AttribPointerData> attribPointerData;
 public:
+    Buffer() {glGenBuffers(1,&handle);}
+    ~Buffer(){glDeleteBuffers(1,&handle);}
     GLuint getHandle(){return handle;}
     GLuint addVertexAttribPointer(int attribPointerIndex,int elementSize,int blockSize,int offset);
     void setAttribPointerState( int attribPointerIndex,bool enabled);

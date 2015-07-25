@@ -16,7 +16,7 @@ private:
     int width,height;
     std::string path;
     GLuint handle;
-    int texNum;
+    int texNum = -1;
 
     GLenum type = GL_TEXTURE_2D;
     GLint internalFormat = GL_RGB;
@@ -25,7 +25,8 @@ private:
 
     unsigned char* image;
 public:
-    Texture(std::string path):path(path){};
+    Texture(){}
+    Texture(std::string path, int texNum):path(path),texNum(texNum){};
     GLuint getHandle(){return handle;}
     int getTexIndex(){return texNum;}
 

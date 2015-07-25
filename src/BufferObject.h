@@ -21,19 +21,23 @@ private:
     std::map<std::string, Texture> textures;
     GLuint vao;
     IndexBuffer indexBuffer;
-    int textIter = 0, attribIter = 0;
+    int texIter = 0, attribIter = 0;
 public:
     BufferObject();
     void addBuffer(std::string name,GLuint type);
+    void addTexture(std::string name, std::string path);
     void addBufferVertexAttrib(std::string name,int size, int numFloatsPerElement, int offset);
-    void addTexture(std::string name);
-    int getTextureIndex(std::string name);
-    GLuint getTextureHandle(std::string name);
+    Texture& getTexture(std::string name){return textures[name];}
+    Buffer& getBuffer(std::string name){return buffers[name];}
+    IndexBuffer& getIndexBuffer(){return indexBuffer;}
     GLuint getVAO(){return vao;}
 
     void init();
     void bind(){glBindVertexArray(vao);};
     void unbind(){glBindVertexArray(0);};
+
+
+    void init(GLenum drawType);
 };
 
 

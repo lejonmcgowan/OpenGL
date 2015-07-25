@@ -18,6 +18,7 @@ private:
     GLuint handle;
     std::vector<GLuint > bufferData;
 public:
+    IndexBuffer(){}
     GLuint getHandle(){return handle;}
 
     void init(GLenum drawType);
