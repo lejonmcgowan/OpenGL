@@ -15,12 +15,15 @@ void BasicTriangleScene::render()
     assert(checkGLError);
 
     //glActiveTexture(GL_TEXTURE_2D);
-    glBindTexture(GL_TEXTURE_2D, object.getTexture("container").getHandle());
+    object.getTexture("container").bind();
+    shaders.setUniform("textureColor1", 0);
+    object.getTexture("awesome").bind();
+    shaders.setUniform("textureColor2", 1);
     assert(checkGLError);
     glBindVertexArray(object.getVAO());
     assert(checkGLError);
 
-    glDrawElements(GL_TRIANGLES,3,GL_UNSIGNED_INT,0);
+    glDrawElements(GL_TRIANGLES,6,GL_UNSIGNED_INT,0);
     assert(checkGLError);
 
     glBindVertexArray(0);
@@ -53,6 +56,8 @@ void BasicTriangleScene::init() {
     object.addBufferVertexAttrib("tbo",2,0);
 
     object.addTexture("container",srcPath + "assets/container.jpg");
+    object.addTexture("awesome",srcPath + "assets/awesomeface.png");
+
     object.getIndexBuffer().addData(indices, sizeof(indices) / sizeof(GLuint));
 
     object.init(GL_STATIC_DRAW);

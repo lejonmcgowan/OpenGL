@@ -2,10 +2,10 @@
 
 in vec2 finalTextCoords;
 out vec4 color;
-uniform sampler2D textureColor;
+uniform sampler2D textureColor1, textureColor2;
 
 void main()
 {
-    color = texture(textureColor, finalTextCoords);
+    color = mix(texture(textureColor1, finalTextCoords),texture(textureColor2, finalTextCoords),0.4);
     //color = finalTextCoords.xyxy;
 }

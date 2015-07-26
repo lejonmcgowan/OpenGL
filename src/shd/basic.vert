@@ -8,5 +8,5 @@ out vec2 finalTextCoords;
 void main()
 {
     gl_Position = vec4(position, 1.0f);
-    finalTextCoords = textureInput;
+    finalTextCoords = vec2(textureInput.x, 1.0f - textureInput.y);
 }

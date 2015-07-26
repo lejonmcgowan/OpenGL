@@ -36,6 +36,8 @@ public:
     void setTextureType(GLenum textureType){type = textureType;}
 
     void init();
+
+    void bind();
 };
 
 
