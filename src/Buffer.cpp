@@ -3,10 +3,11 @@
 //
 
 #include "Buffer.h"
+#include "debugGL.h"
 
-GLuint Buffer::addVertexAttribPointer(int attribPointerIndex, int elementSize, int blockSize, int offset)
+GLuint Buffer::addVertexAttribPointer(int attribPointerIndex, int elementSize, int offset)
 {
-    attribPointerData.push_back(AttribPointerData(attribPointerIndex,elementSize,blockSize,offset));
+    attribPointerData.push_back(AttribPointerData(attribPointerIndex,elementSize * sizeof(GLfloat),offset));
 }
 
 void Buffer::setAttribPointerState(int attribPointerIndex, bool enabled)
@@ -19,14 +20,20 @@ void Buffer::setAttribPointerState(int attribPointerIndex, bool enabled)
 
 void Buffer::init(GLenum  drawType)
 {
+    glGenBuffers(1,&handle);
     glBindBuffer(GL_ARRAY_BUFFER,handle);
+    assert(checkGLError);
     glBufferData(GL_ARRAY_BUFFER,bufferData.size() * sizeof(GL_FLOAT), &bufferData[0],drawType);
+    assert(checkGLError);
     for(int i = 0; i < attribPointerData.size(); i++)
     {
         auto pointerData = attribPointerData[i];
 
-        glVertexAttribPointer(pointerData.index,pointerData.elementSize,GL_FLOAT,GL_FALSE,
-                              pointerData.blockSize,(GLvoid *)(pointerData.offset));
+        glVertexAttribPointer(pointerData.index,blockSize,GL_FLOAT,GL_FALSE,
+                              pointerData.elementSize,(GLvoid *)(pointerData.offset));
+        assert(checkGLError);
         glEnableVertexAttribArray(pointerData.index);
+        assert(checkGLError);
     }
+    assert(checkGLError);
 }

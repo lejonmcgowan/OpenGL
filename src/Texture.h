@@ -21,13 +21,13 @@ private:
     GLenum type = GL_TEXTURE_2D;
     GLint internalFormat = GL_RGB;
     bool enableMipMap = true;
-    int SOILLoadType = SOIL_LOAD_RGBA;
+    int SOILLoadType = SOIL_LOAD_RGB;
 
     unsigned char* image;
 public:
     Texture(){}
     Texture(std::string path, int texNum):path(path),texNum(texNum){};
-    GLuint getHandle(){return handle;}
+    GLuint& getHandle(){return handle;}
     int getTexIndex(){return texNum;}
 
     void setTexParam(GLenum  pname, GLfloat param){glTexParameterf(type,pname,param);}

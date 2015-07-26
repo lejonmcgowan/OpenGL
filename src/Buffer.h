@@ -21,12 +21,10 @@ private:
     public:
         int index;
         int elementSize;
-        int blockSize;
         int offset;
-        AttribPointerData(int index, int elementSize, int blockSize, int offset):
+        AttribPointerData(int index, int elementSize, int offset):
                 index(index),
                 elementSize(elementSize),
-                blockSize(blockSize),
                 offset(offset)
         {}
     };
@@ -34,11 +32,13 @@ private:
     GLuint handle;
     std::vector<GLfloat > bufferData;
     std::vector<AttribPointerData> attribPointerData;
+    int blockSize;
 public:
-    Buffer() {glGenBuffers(1,&handle);}
+    Buffer() {}
+    Buffer(int blockSize):blockSize(blockSize){}
     ~Buffer(){glDeleteBuffers(1,&handle);}
     GLuint getHandle(){return handle;}
-    GLuint addVertexAttribPointer(int attribPointerIndex,int elementSize,int blockSize,int offset);
+    GLuint addVertexAttribPointer(int attribPointerIndex,int elementSize,int offset);
     void setAttribPointerState( int attribPointerIndex,bool enabled);
     void init(GLenum drawType);
 
@@ -79,9 +79,9 @@ public:
         bufferData.push_back(elements.z);
         bufferData.push_back(elements.w);
     }
-    void addData(GLfloat elements[])
+    void addData(GLfloat elements[], int numElements)
     {
-        for(int i = 0; i < sizeof(elements) / sizeof(GLfloat); i++)
+        for(int i = 0; i < numElements; i++)
             bufferData.push_back(elements[i]);
     }
     void addData(std::vector<GLfloat>& elements){ bufferData.insert(bufferData.end(),elements.begin(),elements.end());}

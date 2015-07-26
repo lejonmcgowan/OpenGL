@@ -6,12 +6,15 @@
 #define BASICTRIANGLESCENE_H
 
 #include "scene.h"
+#include "BufferObject.h"
+#include "debugGL.h"
 
 class BasicTriangleScene: public Scene
 {
 private:
-    GLuint vao, vbo, ibo, tbo;
-    GLfloat verticies[12] = {
+    BufferObject object;
+
+    GLfloat vertices[12] = {
         0.0f, 0.5f, 0.0f,
         0.5f, -0.5f, 0.0f,
         -0.5f, -0.5f, 0.0f,

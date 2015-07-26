@@ -17,18 +17,18 @@
 class BufferObject
 {
 private:
-    std::map<std::string, Buffer> buffers;
-    std::map<std::string, Texture> textures;
+    std::map<std::string, Buffer*> buffers;
+    std::map<std::string, Texture*> textures;
     GLuint vao;
     IndexBuffer indexBuffer;
     int texIter = 0, attribIter = 0;
 public:
-    BufferObject();
-    void addBuffer(std::string name,GLuint type);
+    BufferObject(){};
+    void addBuffer(std::string name, int blockSize);
     void addTexture(std::string name, std::string path);
-    void addBufferVertexAttrib(std::string name,int size, int numFloatsPerElement, int offset);
-    Texture& getTexture(std::string name){return textures[name];}
-    Buffer& getBuffer(std::string name){return buffers[name];}
+    void addBufferVertexAttrib(std::string name,int size, int offset);
+    Texture& getTexture(std::string name){return *textures[name];}
+    Buffer& getBuffer(std::string name){return *buffers[name];}
     IndexBuffer& getIndexBuffer(){return indexBuffer;}
     GLuint getVAO(){return vao;}
 

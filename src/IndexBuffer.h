@@ -60,9 +60,9 @@ public:
         bufferData.push_back(elements.z);
         bufferData.push_back(elements.w);
     }
-    void addData(GLuint elements[])
+    void addData(GLuint elements[], int numElements)
     {
-        for(int i = 0; i < sizeof(elements) / sizeof(GLuint); i++)
+        for(int i = 0; i < numElements; i++)
             bufferData.push_back(elements[i]);
     }
     void addData(std::vector<GLuint>& elements){ bufferData.insert(bufferData.end(),elements.begin(),elements.end());}
