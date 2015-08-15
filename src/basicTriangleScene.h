@@ -13,24 +13,6 @@ class BasicTriangleScene: public Scene
 {
 private:
     BufferObject object;
-
-    GLfloat vertices[12] = {
-        -0.5f, 0.5f, 0.0f,
-        0.5f, 0.5f, 0.0f,
-        0.5f, -0.5f, 0.0f,
-        -0.5f, -0.5f, 0.0f
-    };
-    GLuint indices[6] {
-            0,1,2,
-            2,3,0
-    };
-    GLuint texture;
-    GLfloat texCoords[8] = {
-            0.0f, 1.0f,  // Lower-left corner
-            1.0f, 1.0f,  // Lower-right corner
-            1.0f, 0.0f,   // Top-center corner
-            0.0f,0.0f
-    };
 public:
     virtual void render() override;
     virtual void init() override;

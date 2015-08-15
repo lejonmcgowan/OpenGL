@@ -7,6 +7,24 @@
 #include <iostream>
 #include <assert.h>
 
+GLfloat vertices[12] = {
+        -0.5f, 0.5f, 0.0f,
+        0.5f, 0.5f, 0.0f,
+        0.5f, -0.5f, 0.0f,
+        -0.5f, -0.5f, 0.0f
+};
+GLuint indices[6] {
+        0,1,2,
+        2,3,0
+};
+GLuint texture;
+GLfloat texCoords[8] = {
+        0.0f, 1.0f,
+        1.0f, 1.0f,
+        2.0f, 0.0f,
+        0.0f,0.0f
+};
+
 void BasicTriangleScene::render()
 {
     Scene::render();
@@ -14,7 +32,7 @@ void BasicTriangleScene::render()
     shaders.bind();
     assert(checkGLError);
 
-    //glActiveTexture(GL_TEXTURE_2D);
+    glActiveTexture(GL_TEXTURE0);
     object.getTexture("container").bind();
     shaders.setUniform("textureColor1", 0);
     object.getTexture("awesome").bind();
@@ -65,6 +83,6 @@ void BasicTriangleScene::init() {
 
     shaders.bind(); //for nonchanging uniforms
         shaders.setUniform("myColor",glm::vec4(1.0f,1.0f,0.0f,1.0f));
-       // shaders.setUniform("textureColor",0);
+        shaders.setUniform("textureColor",0);
     shaders.unbind();
 }
