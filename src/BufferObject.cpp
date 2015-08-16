@@ -6,6 +6,8 @@
 #include "BufferObject.h"
 #include "debugGL.h"
 
+int BufferObject::texIter = 0;
+
 void BufferObject::addBuffer(std::string name, int blockSize)
 {
     buffers.emplace(name,new Buffer(blockSize));
@@ -13,8 +15,7 @@ void BufferObject::addBuffer(std::string name, int blockSize)
 
 void BufferObject::addTexture(std::string name, std::string path)
 {
-    textures.emplace(name,new Texture(path,texIter++));
-
+    textures.emplace(name,new Texture(path,BufferObject::texIter++));
 }
 
 void BufferObject::addBufferVertexAttrib(std::string name, int size, int offset)
@@ -25,6 +26,13 @@ void BufferObject::addBufferVertexAttrib(std::string name, int size, int offset)
         std::cout << "Buffer" << name << " not set" << std::endl;
 }
 
+void BufferObject::bindTextures()
+{
+    for(auto texture: textures)
+    {
+        (texture.second)->bind();
+    }
+}
 void BufferObject::init(GLenum drawType = GL_STATIC_DRAW)
 {
     glGenVertexArrays(1,&vao);

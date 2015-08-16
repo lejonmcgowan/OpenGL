@@ -21,7 +21,8 @@ private:
     std::map<std::string, Texture*> textures;
     GLuint vao;
     IndexBuffer indexBuffer;
-    int texIter = 0, attribIter = 0;
+    static int texIter;
+    int attribIter = 0;
 public:
     BufferObject(){};
     void addBuffer(std::string name, int blockSize);
@@ -33,9 +34,10 @@ public:
     GLuint getVAO(){return vao;}
 
     void init();
-    void bind(){glBindVertexArray(vao);};
-    void unbind(){glBindVertexArray(0);};
+    void bindVAO(){glBindVertexArray(vao);};
+    void unbindVAO(){glBindVertexArray(0);};
 
+    void bindTextures();
 
     void init(GLenum drawType);
 };

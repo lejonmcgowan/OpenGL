@@ -28,15 +28,15 @@ GLfloat texCoords[8] = {
 void BasicTriangleScene::render()
 {
     Scene::render();
+
     assert(checkGLError);
     shaders.bind();
     assert(checkGLError);
 
     glActiveTexture(GL_TEXTURE0);
-    object.getTexture("container").bind();
-    shaders.setUniform("textureColor1", 0);
-    object.getTexture("awesome").bind();
-    shaders.setUniform("textureColor2", 1);
+    shaders.setUniform("textureColor1", object.getTexture("container").getTexIndex());
+    shaders.setUniform("textureColor2", object.getTexture("awesome").getTexIndex());
+    object.bindTextures();
     assert(checkGLError);
     glBindVertexArray(object.getVAO());
     assert(checkGLError);
