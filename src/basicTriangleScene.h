@@ -16,11 +16,6 @@ private:
 public:
     virtual void render() override;
     virtual void init() override;
-    void switchShaders()
-    {
-        std::string nextShaderName = shaders.getCurrentShaderName() == "basic" ? "basic2" : "basic1";
-        shaders.setShader(nextShaderName);
-    }
 };
 
 

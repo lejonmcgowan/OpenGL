@@ -18,12 +18,14 @@ private:
     const std::string WINDOW_NAME;
     GLFWwindow *window;
     Scene* scene;
+    Keyboard keyboard;
 
 public:
     Window(int width,int height, std::string name = "window");
     void init(Scene* scene);
     void run();
     void stop();
+    void processKeys();
 };
 
 #endif // WINDOW_H
