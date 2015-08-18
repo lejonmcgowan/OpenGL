@@ -9,11 +9,10 @@
 
 class Keyboard {
 public:
-    static bool keyToggle[GLFW_KEY_LAST]; //true means the key is pressed
+    static bool keyToggle[]; //true means the key is pressed
 
     Keyboard() {
-        for (auto& key: Keyboard::keyToggle)
-            key = false;
+
     }
 
     static void glfwKeyboardCallback(GLFWwindow* window, int key, int scancode,

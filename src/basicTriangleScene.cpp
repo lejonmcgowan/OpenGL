@@ -86,3 +86,8 @@ void BasicTriangleScene::init() {
         shaders.setUniform("textureColor",0);
     shaders.unbind();
 }
+
+void BasicTriangleScene::processKeys(Keyboard &keyboard)
+{
+    Scene::processKeys(keyboard);
+}

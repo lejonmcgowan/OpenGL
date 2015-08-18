@@ -16,6 +16,7 @@ private:
 public:
     virtual void render() override;
     virtual void init() override;
+    virtual void processKeys(Keyboard& keyboard) override;
 };
 
 
