@@ -17,7 +17,7 @@ include_directories(SOIL_INCLDUE_DIRS)
 
 set(LIBRARIES ${OPENGL_LIBRARIES} ${GLFW_LIBRARIES} ${SOIL_LIBRARIES})
 
-add_library(src window.cpp shader.cpp basicTriangleScene.cpp BufferObject.cpp Buffer.cpp Texture.cpp IndexBuffer.cpp Keyboard.h Keyboard.cpp)
+add_library(src window.cpp shader.cpp basicTriangleScene.cpp BufferObject.cpp Buffer.cpp Texture.cpp IndexBuffer.cpp Keyboard.cpp)
 target_link_libraries(src ${LIBRARIES} ${GLFW_LIBRARY_FLAGS} ${GLEW_LIBRARIES})
 
 add_executable(${PROJECT_NAME} _main.cpp)

@@ -14,6 +14,8 @@
 #include <glm/detail/type_vec3.hpp>
 #include <glm/detail/type_vec4.hpp>
 
+#include "Transform.h"
+
 class Buffer {
 private:
     class AttribPointerData
@@ -37,7 +39,9 @@ public:
     Buffer() {}
     Buffer(int blockSize):blockSize(blockSize){}
     ~Buffer(){glDeleteBuffers(1,&handle);}
+
     GLuint getHandle(){return handle;}
+
     GLuint addVertexAttribPointer(int attribPointerIndex,int elementSize,int offset);
     void setAttribPointerState( int attribPointerIndex,bool enabled);
     void init(GLenum drawType);

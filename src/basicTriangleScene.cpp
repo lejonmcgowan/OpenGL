@@ -21,7 +21,7 @@ GLuint texture;
 GLfloat texCoords[8] = {
         0.0f, 1.0f,
         1.0f, 1.0f,
-        2.0f, 0.0f,
+        1.0f, 0.0f,
         0.0f,0.0f
 };
 
@@ -36,6 +36,8 @@ void BasicTriangleScene::render()
     glActiveTexture(GL_TEXTURE0);
     shaders.setUniform("textureColor1", object.getTexture("container").getTexIndex());
     shaders.setUniform("textureColor2", object.getTexture("awesome").getTexIndex());
+    shaders.setUniform("transform", object.getTransform().getTransformMatrix());
+
     object.bindTextures();
     assert(checkGLError);
     glBindVertexArray(object.getVAO());
@@ -90,4 +92,46 @@ void BasicTriangleScene::init() {
 void BasicTriangleScene::processKeys(Keyboard &keyboard)
 {
     Scene::processKeys(keyboard);
+
+    if(keyboard.keyPressed('W'))
+    {
+        object.getTransform().translateBy(glm::vec3(0.0f, 0.01f, 0.0f));
+    }
+    if(keyboard.keyPressed('A'))
+    {
+        object.getTransform().translateBy(glm::vec3(-0.01f, 0.0f, 0.0f));
+    }
+    if(keyboard.keyPressed('S'))
+    {
+        object.getTransform().translateBy(glm::vec3(0.0f, -0.01f, 0.0f));
+    }
+    if(keyboard.keyPressed('D'))
+    {
+        object.getTransform().translateBy(glm::vec3(0.01f, 0.0f, 0.0f));
+    }
+
+    if(keyboard.keyPressed('Q'))
+    {
+        object.getTransform().scaleIncreaseBy(-0.01f);
+    }
+
+    if(keyboard.keyPressed('E'))
+    {
+        object.getTransform().scaleIncreaseBy(0.01f);
+    }
+
+    if(keyboard.keyPressed('Z'))
+    {
+        object.getTransform().rotateBy(glm::vec3(0.0f,0.0f,-0.1f));
+    }
+
+    if(keyboard.keyPressed('X'))
+    {
+        object.getTransform().rotateBy(glm::vec3(0.0f,0.0f,0.1f));
+    }
+
+    if(keyboard.keyPressed('R'))
+    {
+        object.getTransform().reset();
+    }
 }
