@@ -1,6 +1,7 @@
 #include <assert.h>
 #include "window.h"
-
+int Window::WINDOW_WIDTH = 0;
+int Window::WINDOW_HEIGHT = 0;
 
 static void error_callback(int error, const char* description)
 {
@@ -8,10 +9,11 @@ static void error_callback(int error, const char* description)
 }
 
 Window::Window(int width, int height, std::string name):
-    WINDOW_WIDTH(width),
-    WINDOW_HEIGHT(height),
     WINDOW_NAME(name)
 {
+    Window::WINDOW_WIDTH = width;
+    Window::WINDOW_HEIGHT = height;
+
 }
 
 void Window::init(Scene* scene)

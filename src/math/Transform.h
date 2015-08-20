@@ -18,7 +18,7 @@
 #include <iostream>
 class Transform
 {
-private:
+protected:
     glm::mat4 transform;
 
     glm::vec3 rotation;
@@ -47,7 +47,7 @@ public:
         return rotation;
     }
 
-    void rotateTo(const glm::vec3 rotation)
+    void rotateTo(glm::vec3& rotation)
     {
         updateTransform = true;
         this->rotation = rotation;
@@ -58,7 +58,7 @@ public:
         return translation;
     }
 
-    void translateTo(const glm::vec3 translation)
+    void translateTo(glm::vec3& translation)
     {
         updateTransform = true;
         this->translation = translation;
@@ -69,13 +69,7 @@ public:
         return scale;
     }
 
-    void scaleTo(glm::vec3 &scale)
-    {
-        updateTransform = true;
-        this->scale = scale;
-    }
-
-    void scaleTo(glm::vec3 scale)
+    void scaleTo(glm::vec3& scale)
     {
         updateTransform = true;
         this->scale = scale;
@@ -87,7 +81,7 @@ public:
         this->scale *= factor;
     }
 
-    void scaleBy(glm::vec3 factor)
+    void scaleBy(glm::vec3& factor)
     {
         updateTransform = true;
         this->scale += factor;
@@ -101,7 +95,7 @@ public:
         scale.z += factor;
     }
 
-    void scaleIncreaseBy(glm::vec3 factor)
+    void scaleIncreaseBy(glm::vec3& factor)
     {
         updateTransform = true;
         scale.x += factor.x;
