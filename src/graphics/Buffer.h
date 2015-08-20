@@ -14,8 +14,6 @@
 #include <glm/detail/type_vec3.hpp>
 #include <glm/detail/type_vec4.hpp>
 
-#include "Transform.h"
-
 class Buffer {
 private:
     class AttribPointerData

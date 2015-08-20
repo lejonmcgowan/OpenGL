@@ -6,8 +6,8 @@
 #define BASICTRIANGLESCENE_H
 
 #include "scene.h"
-#include "BufferObject.h"
-#include "debugGL.h"
+#include "graphics/BufferObject.h"
+#include "utils/debugGL.h"
 
 class BasicTriangleScene: public Scene
 {

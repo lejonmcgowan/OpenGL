@@ -8,7 +8,7 @@
 
 #include <GL/glew.h>
 #include <string>
-#include "lib/SOIL.h"
+#include "../lib/SOIL.h"
 
 class Texture
 {

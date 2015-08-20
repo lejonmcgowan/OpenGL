@@ -3,11 +3,11 @@
 //
 
 #include "Buffer.h"
-#include "debugGL.h"
+#include "../utils/debugGL.h"
 
 GLuint Buffer::addVertexAttribPointer(int attribPointerIndex, int elementSize, int offset)
 {
-    attribPointerData.push_back(AttribPointerData(attribPointerIndex,elementSize * sizeof(GLfloat),offset));
+    attribPointerData.push_back(AttribPointerData(attribPointerIndex,elementSize,offset * sizeof(GLfloat)));
 }
 
 void Buffer::setAttribPointerState(int attribPointerIndex, bool enabled)
@@ -29,8 +29,8 @@ void Buffer::init(GLenum  drawType)
     {
         auto pointerData = attribPointerData[i];
 
-        glVertexAttribPointer(pointerData.index,blockSize,GL_FLOAT,GL_FALSE,
-                              pointerData.elementSize,(GLvoid *)(pointerData.offset));
+        glVertexAttribPointer(pointerData.index,pointerData.elementSize,GL_FLOAT,GL_FALSE,
+                              blockSize * sizeof(GLfloat),(GLvoid *)(pointerData.offset));
         assert(checkGLError);
         glEnableVertexAttribArray(pointerData.index);
         assert(checkGLError);

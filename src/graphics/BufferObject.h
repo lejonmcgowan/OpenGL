@@ -6,13 +6,14 @@
 #define TESTPROJECT2_BUFFEROBJECT_H
 
 
-#include "Buffer.h"
-#include "Texture.h"
-#include "IndexBuffer.h"
-
 #include <map>
 #include <string>
 #include <GL/glew.h>
+
+#include "Buffer.h"
+#include "Texture.h"
+#include "IndexBuffer.h"
+#include "../Transform.h"
 
 class BufferObject
 {

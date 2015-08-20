@@ -4,7 +4,7 @@
 
 #include <iostream>
 #include "BufferObject.h"
-#include "debugGL.h"
+#include "../utils/debugGL.h"
 
 int BufferObject::texIter = 0;
 

@@ -51,6 +51,8 @@ void Window::init(Scene* scene)
     std::cout << "scene assigned" << std::endl;
     this->scene->init();
     std::cout << "scene initialized" << std::endl;
+
+    glEnable(GL_DEPTH_TEST);
 }
 void Window::processKeys()
 {
@@ -62,7 +64,6 @@ void Window::run()
     while (!glfwWindowShouldClose(window))
     {
         glfwPollEvents();
-
         processKeys();
         scene->processKeys(keyboard);
 

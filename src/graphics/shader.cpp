@@ -1,5 +1,5 @@
 #include "shader.h"
-#include "debugGL.h"
+#include "../utils/debugGL.h"
 #include <sys/stat.h>
 #include <iostream>
 #include <fstream>
@@ -17,7 +17,6 @@ bool fileExists(const std::string& fileName)
     return 0 == ret;
 }
 
-//TODO: check getshadersource for possible leaks. puts junk into source occasionally
 const std::string Shader::getShaderSource(std::string path)
 {
     if( ! fileExists(path) )

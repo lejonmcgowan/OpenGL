@@ -3,13 +3,15 @@
 //
 
 #include <assert.h>
+#include <iostream>
 #include "Texture.h"
-#include "debugGL.h"
+#include "../utils/debugGL.h"
 
 void Texture::init()
 {
     assert(texNum > -1);
 
+    //std::cout << "path name: " << path << std::endl;
     glGenTextures(1, &handle);
     glBindTexture(type, handle);
 

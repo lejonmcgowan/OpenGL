@@ -7,9 +7,10 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <string>
-#include<iostream>
+#include <iostream>
 
-#include "basicTriangleScene.h"
+#include "BasicBillboardScene.h"
+#include "input/Keyboard.hpp"
 
 class Window
 {
