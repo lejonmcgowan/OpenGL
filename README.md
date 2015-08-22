@@ -11,11 +11,8 @@ a singular entity to keepp track of multiple buffers and shaders. THe general fl
 
 **Dependencies**:
 
-[GLEW](http://glew.sourceforge.net/)
-
-[GLFW](http://www.glfw.org/)
-
-[GLM](http://glm.g-truc.net/0.9.7/index.html)
-
-[SOIL](http://www.lonesock.net/soil.html)
+[GLEW](http://glew.sourceforge.net/)  
+[GLFW](http://www.glfw.org/)  
+[GLM](http://glm.g-truc.net/0.9.7/index.html)  
+[SOIL](http://www.lonesock.net/soil.html)  
 
