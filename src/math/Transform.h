@@ -47,7 +47,7 @@ public:
         return rotation;
     }
 
-    void rotateTo(glm::vec3& rotation)
+    void rotateTo(glm::vec3 rotation)
     {
         updateTransform = true;
         this->rotation = rotation;

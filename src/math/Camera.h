@@ -6,19 +6,23 @@
 #define TESTPROJECT2_CAMERA_H
 
 #include "Transform.h"
+#include "../utils/WindowContexts.h"
 
 class Camera: public Transform
 {
 private:
     glm::vec2 pitch_limits, yaw_limits, roll_limits;
     bool pitchFlag, yawFlag, rollFlag;
-    float fov, nearView = 0.1f, farView = 1000.f;
-    glm::vec3 frontBasis = glm::vec3(0.0f,0.0f,-2.0f), upBasis;
+    float fov =  glm::radians(45.0f), nearView = 0.1f, farView = 100.f;
+    glm::vec3 frontBasis = glm::vec3(0.0f,0.0f,-1.0f), upBasis = glm::vec3(0.0f,1.0f,0.0f);
 
-    inline float clamp(float value, float min, float max) { return min(max(value,min), max);}
+    inline float clamp(float value, float minValue, float maxValue) { return std::min(std::max(value,minValue), maxValue);}
 
 public:
-    Camera(){}
+    Camera()
+    {
+        translation = glm::vec3(0.0f,0.0f,3.0f);
+    }
 
     void enablePitchLimits(bool enabled){pitchFlag = enabled;}
     void enableYawLimits(bool enabled){yawFlag = enabled;}
@@ -52,26 +56,37 @@ public:
         roll_limits.y = limitMax;
     }
 
-    void rotateTo(glm::vec3 rotation) override
+    void rotateTo(glm::vec3 rotation)
     {
         Transform::rotateTo(rotation);
 
-        if(pitch_limits)
+        if(pitchFlag)
             rotation.x = clamp(rotation.x,pitch_limits.x,pitch_limits.y);
-        if(yaw_limits)
+        if(yawFlag)
             rotation.y = clamp(rotation.y,yaw_limits.x,yaw_limits.y);
-        if(pitch_limits)
+        if(pitchFlag)
+            rotation.z = clamp(rotation.z,roll_limits.x,roll_limits.y);
+    }
+    void rotateBy(glm::vec3 rotation)
+    {
+        Transform::rotateBy(rotation);
+
+        if(pitchFlag)
+            rotation.x = clamp(rotation.x,pitch_limits.x,pitch_limits.y);
+        if(yawFlag)
+            rotation.y = clamp(rotation.y,yaw_limits.x,yaw_limits.y);
+        if(pitchFlag)
             rotation.z = clamp(rotation.z,roll_limits.x,roll_limits.y);
     }
 
     glm::mat4 getViewMatrix()
     {
-        return glm::lookat(position, position + frontBasis, upBasis);
+        return glm::lookAt(translation, translation + frontBasis, upBasis);
     }
 
     glm::mat4 getPerspectiveMatrix()
     {
-        return glm::perspective(fov,Window::WINDOW_WIDTH / (float)Window::WINDOW_HEIGHT), nearView, farView);
+        return glm::perspective(fov,WindowContexts::WINDOW_WIDTH / (float)WindowContexts::WINDOW_HEIGHT, nearView, farView);
     }
 };
 #endif //TESTPROJECT2_CAMERA_H

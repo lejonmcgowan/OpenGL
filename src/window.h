@@ -16,12 +16,12 @@ class Window
 {
 private:
     const std::string WINDOW_NAME;
+    const int WINDOW_WIDTH, WINDOW_HEIGHT;
     GLFWwindow *window;
     Scene* scene;
     Keyboard keyboard;
 
 public:
-    static int WINDOW_WIDTH, WINDOW_HEIGHT;
     Window(int width,int height, std::string name = "window");
     void init(Scene* scene);
     void run();

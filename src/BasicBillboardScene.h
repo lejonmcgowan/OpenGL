@@ -8,10 +8,12 @@
 #include "scene.h"
 #include "graphics/BufferObject.h"
 #include "utils/debugGL.h"
+#include "math/Camera.h"
 
 class BasicTriangleScene: public Scene
 {
 private:
+    Camera camera;
     BufferObject object;
 public:
     virtual void render() override;

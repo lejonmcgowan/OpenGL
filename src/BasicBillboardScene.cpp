@@ -80,7 +80,10 @@ void BasicTriangleScene::render()
 
         shaders.setUniform("textureColor1", object.getTexture("container").getTexIndex());
         shaders.setUniform("textureColor2", object.getTexture("awesome").getTexIndex());
-        shaders.setUniform("transform", object.getTransform().getTransformMatrix());
+
+        shaders.setUniform("model", object.getTransform().getTransformMatrix());
+        shaders.setUniform("view", camera.getViewMatrix());
+        shaders.setUniform("projection", camera.getPerspectiveMatrix());
 
         object.bindTextures();
         assert(checkGLError);

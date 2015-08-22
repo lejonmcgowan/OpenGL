@@ -1,9 +1,13 @@
 #include "window.h"
+#include "utils/WindowContexts.h"
 
 
 int main(void)
 {
-    Window *window = new Window(640,480,"Test Window");
+    WindowContexts::WINDOW_WIDTH = 640;
+    WindowContexts::WINDOW_HEIGHT = 480;
+
+    Window *window = new Window(WindowContexts::WINDOW_WIDTH,WindowContexts::WINDOW_HEIGHT,"Test Window");
 
     window->init(new BasicTriangleScene());
     window->run();
