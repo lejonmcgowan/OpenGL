@@ -12,8 +12,11 @@ class Camera: public Transform
 private:
     glm::vec2 pitch_limits, yaw_limits, roll_limits;
     bool pitchFlag, yawFlag, rollFlag;
-    float fov;
+    float fov, nearView = 0.1f, farView = 1000.f;
+    glm::vec3 frontBasis = glm::vec3(0.0f,0.0f,-2.0f), upBasis;
+
     inline float clamp(float value, float min, float max) { return min(max(value,min), max);}
+
 public:
     Camera(){}
 
@@ -59,6 +62,16 @@ public:
             rotation.y = clamp(rotation.y,yaw_limits.x,yaw_limits.y);
         if(pitch_limits)
             rotation.z = clamp(rotation.z,roll_limits.x,roll_limits.y);
+    }
+
+    glm::mat4 getViewMatrix()
+    {
+        return glm::lookat(position, position + frontBasis, upBasis);
+    }
+
+    glm::mat4 getPerspectiveMatrix()
+    {
+        return glm::perspective(fov,Window::WINDOW_WIDTH / (float)Window::WINDOW_HEIGHT), nearView, farView);
     }
 };
 #endif //TESTPROJECT2_CAMERA_H
