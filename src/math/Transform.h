@@ -58,7 +58,7 @@ public:
         return translation;
     }
 
-    void translateTo(glm::vec3& translation)
+    void translateTo(glm::vec3 translation)
     {
         updateTransform = true;
         this->translation = translation;

@@ -6,6 +6,7 @@
 
 #include "graphics/shaderManager.h"
 #include "input/Keyboard.hpp"
+#include "input/Mouse.h"
 #include <vector>
 
 class Scene
@@ -21,7 +22,8 @@ public:
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     }
     virtual void init(){}
-    virtual void  processKeys(Keyboard& keyboard) {}
+    virtual void processKeys(Keyboard& keyboard) {}
+    virtual void processMouse(Mouse& mouse){}
 
 };
 

@@ -11,6 +11,7 @@
 
 #include "BasicBillboardScene.h"
 #include "input/Keyboard.hpp"
+#include "input/Mouse.h"
 
 class Window
 {
@@ -20,6 +21,7 @@ private:
     GLFWwindow *window;
     Scene* scene;
     Keyboard keyboard;
+    Mouse mouse;
 
 public:
     Window(int width,int height, std::string name = "window");
@@ -27,6 +29,7 @@ public:
     void run();
     void stop();
     void processKeys();
+    void processMouse();
 };
 
 #endif // WINDOW_H

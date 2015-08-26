@@ -33,7 +33,13 @@ void Window::init(Scene* scene)
 
     glfwMakeContextCurrent(window);
     glfwSwapInterval(1);
+
+    glfwSetKeyCallback(window,&Keyboard::glfwKeyboardCallback);
+    glfwSetCursorPosCallback(window,&Mouse::glfwMouseCursorCallback);
+    glfwSetMouseButtonCallback(window, &Mouse::glfwMouseButtonCallback);
+    glfwSetScrollCallback(window,&Mouse::glfwScrollCallback);
     glfwSetErrorCallback(error_callback);
+
     glewExperimental = GL_TRUE;
     if (glewInit() != GLEW_OK)
     {
@@ -47,8 +53,6 @@ void Window::init(Scene* scene)
     glViewport(0, 0, WINDOW_WIDTH, WINDOW_HEIGHT);
 
     this->scene = scene;
-    glfwSetKeyCallback(window,&Keyboard::glfwKeyboardCallback);
-
     std::cout << "scene assigned" << std::endl;
     this->scene->init();
     std::cout << "scene initialized" << std::endl;
@@ -65,8 +69,11 @@ void Window::run()
     while (!glfwWindowShouldClose(window))
     {
         glfwPollEvents();
+
         processKeys();
+        processMouse();
         scene->processKeys(keyboard);
+        scene->processMouse(mouse);
 
         scene->update();
         scene->render();
@@ -79,4 +86,9 @@ void Window::stop()
 {
     glfwDestroyWindow(window);
     glfwTerminate();
+}
+
+void Window::processMouse()
+{
+
 }

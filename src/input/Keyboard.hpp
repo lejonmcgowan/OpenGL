@@ -8,22 +8,18 @@
 #include <GLFW/glfw3.h>
 
 class Keyboard {
-public:
+private:
     static bool keyToggle[]; //true means the key is pressed
-
-    Keyboard() {
-
-    }
-
+public:
     static void glfwKeyboardCallback(GLFWwindow* window, int key, int scancode,
                                      int action, int mods) {
         switch (action)
         {
             case GLFW_PRESS:
-            Keyboard::keyToggle[key] = true;
+                Keyboard::keyToggle[key] = true;
                 break;
             case GLFW_RELEASE:
-            Keyboard::keyToggle[key] = false;
+                Keyboard::keyToggle[key] = false;
                 break;
         }
     }
