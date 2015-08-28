@@ -9,7 +9,7 @@
 #include <string>
 #include <iostream>
 
-#include "BasicBillboardScene.h"
+#include "scenes/SceneIncludes.h"
 #include "input/Keyboard.hpp"
 #include "input/Mouse.h"
 

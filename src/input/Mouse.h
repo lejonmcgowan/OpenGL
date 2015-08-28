@@ -15,7 +15,7 @@ class Mouse
 private:
     static bool mouseToggles[GLFW_MOUSE_BUTTON_LAST];
     static glm::vec2 currentCursorPosition, lastCursorPosition;
-    static glm::vec2 currentScrollOffset;
+    static glm::vec2 currentScrollPosition, lastScrollPosition;
     static bool initialized;
 public:
     //static callbacks
@@ -34,6 +34,7 @@ public:
         currentCursorPosition.x = (float)xPos;
         currentCursorPosition.y = (float)yPos;
     }
+
     static void glfwMouseButtonCallback(GLFWwindow* window, int button, int action, int mods)
     {
         if(action == GLFW_PRESS)
@@ -44,8 +45,10 @@ public:
 
     static void glfwScrollCallback(GLFWwindow* window, double xOffset, double yOffset)
     {
-        currentScrollOffset.x = xOffset;
-        currentScrollOffset.y = yOffset;
+        lastScrollPosition = currentScrollPosition;
+
+        currentScrollPosition.x = xOffset;
+        currentScrollPosition.y = yOffset;
     }
 
     //query from the events polled
@@ -56,12 +59,17 @@ public:
 
     glm::vec2 getMouseOffset()
     {
-        return currentCursorPosition - lastCursorPosition;
+        glm::vec2 offset = currentCursorPosition - lastCursorPosition;
+        offset.y *= -1;
+        lastCursorPosition = currentCursorPosition;
+        return offset;
     }
 
-    glm::vec2& getScrollOffset()
+    glm::vec2 getScrollOffset()
     {
-        return currentScrollOffset;
+        glm::vec2 offset = currentScrollPosition - lastScrollPosition;
+        lastScrollPosition = currentScrollPosition;
+        return offset;
     }
 
 };

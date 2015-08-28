@@ -36,6 +36,7 @@ void Window::init(Scene* scene)
 
     glfwSetKeyCallback(window,&Keyboard::glfwKeyboardCallback);
     glfwSetCursorPosCallback(window,&Mouse::glfwMouseCursorCallback);
+    //glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
     glfwSetMouseButtonCallback(window, &Mouse::glfwMouseButtonCallback);
     glfwSetScrollCallback(window,&Mouse::glfwScrollCallback);
     glfwSetErrorCallback(error_callback);
@@ -53,11 +54,7 @@ void Window::init(Scene* scene)
     glViewport(0, 0, WINDOW_WIDTH, WINDOW_HEIGHT);
 
     this->scene = scene;
-    std::cout << "scene assigned" << std::endl;
     this->scene->init();
-    std::cout << "scene initialized" << std::endl;
-
-    glEnable(GL_DEPTH_TEST);
 }
 void Window::processKeys()
 {
@@ -72,6 +69,7 @@ void Window::run()
 
         processKeys();
         processMouse();
+
         scene->processKeys(keyboard);
         scene->processMouse(mouse);
 

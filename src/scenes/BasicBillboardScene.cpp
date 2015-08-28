@@ -70,9 +70,11 @@ GLfloat texCoords[8] = {
         0.0f,0.0f
 };
 
-void BasicTriangleScene::render()
+void BasicBillboardScene::render()
 {
-    Scene::render();
+    glClearColor(0.2f,0.3f,0.3f,0.6f);
+    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+
 
     assert(checkGLError);
     shaders.bind();
@@ -87,26 +89,29 @@ void BasicTriangleScene::render()
 
         object.bindTextures();
         assert(checkGLError);
-        glBindVertexArray(object.getVAO());
+        object.bindVAO();
         assert(checkGLError);
 
         //glDrawElements(GL_TRIANGLES,6,GL_UNSIGNED_INT,0);
         glDrawArrays(GL_TRIANGLES, 0, 36);
         assert(checkGLError);
 
-        glBindVertexArray(0);
+        object.unbindVAO();
         assert(checkGLError);
     shaders.unbind();
 }
 
-void BasicTriangleScene::init() {
+void BasicBillboardScene::init() {
     //TODO: clean up string parsing for path
+
+    glEnable(GL_DEPTH_TEST);
+
     Scene::init();
     std::string srcPath = __FILE__;
     srcPath = srcPath.substr(0,srcPath.rfind('/') + 1);
-    std::string vertexPath("shd/basic.vert");
-    std::string fragmentPath2("shd/basic2.frag");
-    std::string fragmentPath("shd/basic.frag");
+    std::string vertexPath("../shd/basic.vert");
+    std::string fragmentPath2("../shd/basic2.frag");
+    std::string fragmentPath("../shd/basic.frag");
     std::cout << "making shader" << std::endl;
     Shader basic(srcPath + vertexPath,srcPath + fragmentPath);
     Shader basic2(srcPath + vertexPath,srcPath + fragmentPath2);
@@ -120,8 +125,8 @@ void BasicTriangleScene::init() {
     object.addBufferVertexAttrib("uberBuffer",3,0);
     object.addBufferVertexAttrib("uberBuffer",2, 3);
 
-    object.addTexture("container",srcPath + "assets/container.jpg");
-    object.addTexture("awesome",srcPath + "assets/awesomeface.png");
+    object.addTexture("container",srcPath + "../assets/container.jpg");
+    object.addTexture("awesome",srcPath + "../assets/awesomeface.png");
 
 
     object.init(GL_STATIC_DRAW);
@@ -133,26 +138,26 @@ void BasicTriangleScene::init() {
     shaders.unbind();
 }
 
-void BasicTriangleScene::processKeys(Keyboard &keyboard)
+void BasicBillboardScene::processKeys(Keyboard &keyboard)
 {
     Scene::processKeys(keyboard);
-
-    if(keyboard.keyPressed('W'))
-    {
-        object.getTransform().translateBy(glm::vec3(0.0f, 0.01f, 0.0f));
-    }
-    if(keyboard.keyPressed('A'))
-    {
-        object.getTransform().translateBy(glm::vec3(-0.01f, 0.0f, 0.0f));
-    }
-    if(keyboard.keyPressed('S'))
-    {
-        object.getTransform().translateBy(glm::vec3(0.0f, -0.01f, 0.0f));
-    }
-    if(keyboard.keyPressed('D'))
-    {
-        object.getTransform().translateBy(glm::vec3(0.01f, 0.0f, 0.0f));
-    }
+    Camera::WASDMove(camera,keyboard,0.03f);
+//    if(keyboard.keyPressed('W'))
+//    {
+//        object.getTransform().translateBy(glm::vec3(0.0f, 0.01f, 0.0f));
+//    }
+//    if(keyboard.keyPressed('A'))
+//    {
+//        object.getTransform().translateBy(glm::vec3(-0.01f, 0.0f, 0.0f));
+//    }
+//    if(keyboard.keyPressed('S'))
+//    {
+//        object.getTransform().translateBy(glm::vec3(0.0f, -0.01f, 0.0f));
+//    }
+//    if(keyboard.keyPressed('D'))
+//    {
+//        object.getTransform().translateBy(glm::vec3(0.01f, 0.0f, 0.0f));
+//    }
 
     if(keyboard.keyPressed('Q'))
     {
@@ -178,4 +183,10 @@ void BasicTriangleScene::processKeys(Keyboard &keyboard)
     {
         object.getTransform().reset();
     }
+}
+
+void BasicBillboardScene::processMouse(Mouse& mouse)
+{
+    Camera::WASDLook(camera,mouse,0.01f);
+    Camera::FOVScroll(camera,mouse,0.1f);
 }

@@ -42,7 +42,7 @@ public:
 
     GLuint addVertexAttribPointer(int attribPointerIndex,int elementSize,int offset);
     void setAttribPointerState( int attribPointerIndex,bool enabled);
-    void init(GLenum drawType);
+    void init(GLenum drawType = GL_STATIC_DRAW);
 
     void addData(GLfloat  element){ bufferData.push_back(element);}
     void addData(GLfloat element1, GLfloat element2)
