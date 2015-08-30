@@ -26,7 +26,7 @@ void BasicTriangleScene::init(GLFWwindow* window)
     vertexBuffer->addData(vertices,sizeof(vertices) / sizeof(GLfloat));
     colorBuffer->addData(colors,sizeof(colors) / sizeof(GLfloat));
 
-    shader = new Shader(PathFind::getAsset("assets/shd/triangle.vert"), PathFind::getAsset("assets/shd/triangle.frag"));
+    shader = new Shader(PathFind::getAsset("shd/triangle.vert"), PathFind::getAsset("shd/triangle.frag"));
     shader->bind();
 
     glGenVertexArrays(1,&VAO);

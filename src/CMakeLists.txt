@@ -17,7 +17,10 @@ include_directories(SOIL_INCLDUE_DIRS)
 
 set(LIBRARIES ${OPENGL_LIBRARIES} ${GLFW_LIBRARIES} ${SOIL_LIBRARIES})
 
-add_library(src window.cpp graphics/shader.cpp scenes/BasicBillboardScene.cpp graphics/BufferObject.cpp graphics/Buffer.cpp graphics/Texture.cpp graphics/IndexBuffer.cpp input/Keyboard.cpp utils/WindowContexts.cpp utils/WindowContexts.h utils/WindowContexts.cpp utils/WindowContexts.h input/Mouse.cpp input/Mouse.h scenes/BasicTriangleScene.cpp scenes/BasicTriangleScene.h)
+add_library(src window.cpp graphics/shader.cpp scenes/BasicBillboardScene.cpp graphics/BufferObject.cpp graphics/Buffer.cpp
+                graphics/Texture.cpp graphics/IndexBuffer.cpp input/Keyboard.cpp utils/WindowContexts.cpp utils/WindowContexts.h
+                utils/WindowContexts.cpp utils/WindowContexts.h input/Mouse.cpp input/Mouse.h scenes/BasicTriangleScene.cpp scenes/BasicTriangleScene.h)
+
 target_link_libraries(src ${LIBRARIES} ${GLFW_LIBRARY_FLAGS} ${GLEW_LIBRARIES})
 
 add_executable(${PROJECT_NAME} _main.cpp)

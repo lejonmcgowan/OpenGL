@@ -104,8 +104,8 @@ void BasicBillboardScene::init(GLFWwindow* window) {
 
     glfwSetInputMode(window,GLFW_CURSOR,GLFW_CURSOR_DISABLED);
 
-    Shader basic(PathFind::getAsset("assets/shd/basic.vert"), PathFind::getAsset("assets/shd/basic.frag"));
-    Shader basic2(PathFind::getAsset("assets/shd/basic.vert"), PathFind::getAsset("assets/shd/basic2.frag"));
+    Shader basic(PathFind::getAsset("shd/basic.vert"), PathFind::getAsset("shd/basic.frag"));
+    Shader basic2(PathFind::getAsset("shd/basic.vert"), PathFind::getAsset("shd/basic2.frag"));
     shaders.addShader("basic",basic);
     shaders.addShader("basic2",basic2);
     shaders.setShader("basic");
@@ -116,8 +116,8 @@ void BasicBillboardScene::init(GLFWwindow* window) {
     object.addBufferVertexAttrib("uberBuffer",3,0);
     object.addBufferVertexAttrib("uberBuffer",2, 3);
 
-    object.addTexture("container", PathFind::getAsset("assets/container.jpg"));
-    object.addTexture("awesome", PathFind::getAsset("assets/awesomeface.png"));
+    object.addTexture("container", PathFind::getAsset("container.jpg"));
+    object.addTexture("awesome", PathFind::getAsset("awesomeface.png"));
 
 
     object.init(GL_STATIC_DRAW);

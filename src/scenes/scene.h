@@ -13,7 +13,7 @@ class Scene
 {
 protected:
     ShaderManager shaders;
-    const GLFWwindow const * window;
+    const GLFWwindow* window;
 public:
     Scene(){};
     virtual void update(){}
