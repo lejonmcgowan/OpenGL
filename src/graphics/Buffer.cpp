@@ -3,9 +3,9 @@
 //
 
 #include "Buffer.h"
-#include "../utils/debugGL.h"
+#include "utils/debugGL.h"
 
-GLuint Buffer::addVertexAttribPointer(int attribPointerIndex, int elementSize, int offset)
+void Buffer::addVertexAttribPointer(int attribPointerIndex, int elementSize, int offset)
 {
     attribPointerData.push_back(AttribPointerData(attribPointerIndex,elementSize,offset * sizeof(GLfloat)));
 }

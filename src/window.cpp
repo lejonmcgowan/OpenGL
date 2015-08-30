@@ -54,7 +54,7 @@ void Window::init(Scene* scene)
     glViewport(0, 0, WINDOW_WIDTH, WINDOW_HEIGHT);
 
     this->scene = scene;
-    this->scene->init();
+    this->scene->init(window);
 }
 void Window::processKeys()
 {

@@ -3,7 +3,8 @@
 //
 
 #include "BasicTriangleScene.h"
-#include "../utils/debugGL.h"
+#include "utils/debugGL.h"
+#include "utils/PathFind.h"
 
 GLfloat vertices[] = {
         -0.5f, -0.5f, 0.0f, // Left
@@ -14,9 +15,9 @@ GLfloat colors[] = {1.0f,0.0f,0.0f,
                         0.0f,1.0f,0.0f,
                         0.0f,0.0f,1.0f};
 
-void BasicTriangleScene::init()
+void BasicTriangleScene::init(GLFWwindow* window)
 {
-    Scene::init();
+    Scene::init(window);
 
     vertexBuffer = new Buffer(3);
     colorBuffer = new Buffer(3);
@@ -25,12 +26,7 @@ void BasicTriangleScene::init()
     vertexBuffer->addData(vertices,sizeof(vertices) / sizeof(GLfloat));
     colorBuffer->addData(colors,sizeof(colors) / sizeof(GLfloat));
 
-    std::string srcPath = __FILE__;
-    srcPath = srcPath.substr(0,srcPath.rfind('/') + 1);
-    std::string vertexPath("../shd/triangle.vert");
-    std::string fragmentPath("../shd/triangle.frag");
-
-    shader = new Shader(srcPath + vertexPath, srcPath + fragmentPath);
+    shader = new Shader(PathFind::getAsset("assets/shd/triangle.vert"), PathFind::getAsset("assets/shd/triangle.frag"));
     shader->bind();
 
     glGenVertexArrays(1,&VAO);

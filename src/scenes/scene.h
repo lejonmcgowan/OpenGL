@@ -13,11 +13,12 @@ class Scene
 {
 protected:
     ShaderManager shaders;
+    const GLFWwindow const * window;
 public:
     Scene(){};
     virtual void update(){}
     virtual void render() {}
-    virtual void init(){}
+    virtual void init(GLFWwindow* window) {this->window = window;}
     virtual void processKeys(Keyboard& keyboard) {}
     virtual void processMouse(Mouse& mouse){}
 

@@ -6,8 +6,8 @@
 #define TESTPROJECT2_BASICTRIANGLESCENE_H
 
 #include "scene.h"
-#include "../graphics/Buffer.h"
-#include "../graphics/shader.h"
+#include "graphics/Buffer.h"
+#include "graphics/shader.h"
 
 class BasicTriangleScene : public Scene
 {
@@ -17,7 +17,7 @@ private:
     Buffer* colorBuffer;
     Shader* shader;
 public:
-    virtual void init() override;
+    virtual void init(GLFWwindow* window) override;
     virtual void render() override;
 };
 

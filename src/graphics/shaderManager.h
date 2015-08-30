@@ -61,21 +61,21 @@ public:
         shaders[shaderName].setUniform(uniformName,data);
     }
 
-    void setUniform(std::string uniformName, glm::vec2 data, std::string shaderName = "")
+    void setUniform(std::string uniformName, const glm::vec2& data, std::string shaderName = "")
     {
         if(shaderName.empty())
             shaderName =  currentShader.getName();
 
         shaders[shaderName].setUniform(uniformName,data);
     }
-    void setUniform(std::string uniformName, glm::vec3 data, std::string shaderName = "")
+    void setUniform(std::string uniformName, const glm::vec3& data, std::string shaderName = "")
     {
         if(shaderName.empty())
             shaderName =  currentShader.getName();
 
         shaders[shaderName].setUniform(uniformName,data);
     }
-    void setUniform(std::string uniformName, glm::vec4 data, std::string shaderName = "")
+    void setUniform(std::string uniformName, const glm::vec4& data, std::string shaderName = "")
     {
         if(shaderName.empty())
             shaderName =  currentShader.getName();
@@ -83,21 +83,21 @@ public:
         shaders[shaderName].setUniform(uniformName,data);
     }
 
-    void setUniform(std::string uniformName, glm::mat2 data, std::string shaderName = "")
+    void setUniform(std::string uniformName, const glm::mat2& data, std::string shaderName = "")
     {
         if(shaderName.empty())
             shaderName =  currentShader.getName();
 
         shaders[shaderName].setUniform(uniformName,data);
     }
-    void setUniform(std::string uniformName, glm::mat3 data, std::string shaderName = "")
+    void setUniform(std::string uniformName, const glm::mat3& data, std::string shaderName = "")
     {
         if(shaderName.empty())
             shaderName =  currentShader.getName();
 
         shaders[shaderName].setUniform(uniformName,data);
     }
-    void setUniform(std::string uniformName, glm::mat4 data, std::string shaderName = "")
+    void setUniform(std::string uniformName, const glm::mat4& data, std::string shaderName = "")
     {
         if(shaderName.empty())
             shaderName =  currentShader.getName();

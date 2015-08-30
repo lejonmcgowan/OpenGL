@@ -3,18 +3,12 @@
 //
 
 #include "BasicBillboardScene.h"
+#include "utils/PathFind.h"
 
 #include <iostream>
 #include <assert.h>
 
-GLfloat vertices_OLD[12] = {
-        -0.5f, 0.5f, 0.0f,
-        0.5f, 0.5f, 0.0f,
-        0.5f, -0.5f, 0.0f,
-        -0.5f, -0.5f, 0.0f
-};
-
-GLfloat vertices[180] = {
+GLfloat vertices2[180] = {
         -0.5f, -0.5f, -0.5f,  0.0f, 0.0f,
         0.5f, -0.5f, -0.5f,  1.0f, 0.0f,
         0.5f,  0.5f, -0.5f,  1.0f, 1.0f,
@@ -101,32 +95,29 @@ void BasicBillboardScene::render()
     shaders.unbind();
 }
 
-void BasicBillboardScene::init() {
+void BasicBillboardScene::init(GLFWwindow* window) {
     //TODO: clean up string parsing for path
 
     glEnable(GL_DEPTH_TEST);
 
-    Scene::init();
-    std::string srcPath = __FILE__;
-    srcPath = srcPath.substr(0,srcPath.rfind('/') + 1);
-    std::string vertexPath("../shd/basic.vert");
-    std::string fragmentPath2("../shd/basic2.frag");
-    std::string fragmentPath("../shd/basic.frag");
-    std::cout << "making shader" << std::endl;
-    Shader basic(srcPath + vertexPath,srcPath + fragmentPath);
-    Shader basic2(srcPath + vertexPath,srcPath + fragmentPath2);
+    Scene::init(window);
+
+    glfwSetInputMode(window,GLFW_CURSOR,GLFW_CURSOR_DISABLED);
+
+    Shader basic(PathFind::getAsset("assets/shd/basic.vert"), PathFind::getAsset("assets/shd/basic.frag"));
+    Shader basic2(PathFind::getAsset("assets/shd/basic.vert"), PathFind::getAsset("assets/shd/basic2.frag"));
     shaders.addShader("basic",basic);
     shaders.addShader("basic2",basic2);
     shaders.setShader("basic");
 
     std::cout << "starting binding"<< std::endl;
     object.addBuffer("uberBuffer", 5);
-    object.getBuffer("uberBuffer").addData(vertices, sizeof(vertices) / sizeof(GLfloat));
+    object.getBuffer("uberBuffer").addData(vertices2, sizeof(vertices2) / sizeof(GLfloat));
     object.addBufferVertexAttrib("uberBuffer",3,0);
     object.addBufferVertexAttrib("uberBuffer",2, 3);
 
-    object.addTexture("container",srcPath + "../assets/container.jpg");
-    object.addTexture("awesome",srcPath + "../assets/awesomeface.png");
+    object.addTexture("container", PathFind::getAsset("assets/container.jpg"));
+    object.addTexture("awesome", PathFind::getAsset("assets/awesomeface.png"));
 
 
     object.init(GL_STATIC_DRAW);

@@ -42,18 +42,18 @@ public:
         bufferData.push_back(element3);
         bufferData.push_back(element4);
     }
-    void addData(glm::ivec2 elements)
+    void addData(glm::ivec2& elements)
     {
         bufferData.push_back(elements.x);
         bufferData.push_back(elements.y);
     }
-    void addData(glm::ivec3 elements)
+    void addData(glm::ivec3& elements)
     {
         bufferData.push_back(elements.x);
         bufferData.push_back(elements.y);
         bufferData.push_back(elements.z);
     }
-    void addData(glm::ivec4 elements)
+    void addData(glm::ivec4& elements)
     {
         bufferData.push_back(elements.x);
         bufferData.push_back(elements.y);

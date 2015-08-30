@@ -51,13 +51,13 @@ public:
     void setUniform(std::string name, int data){glUniform1i(getUniformLocation(name),data);}
     void setUniform(std::string name, float data){glUniform1f(getUniformLocation(name),data);}
 
-    void setUniform(std::string name, glm::vec2 data){glUniform2f(getUniformLocation(name),data.x,data.y);}
-    void setUniform(std::string name, glm::vec3 data){glUniform3f(getUniformLocation(name),data.x,data.y,data.z);}
-    void setUniform(std::string name, glm::vec4 data){glUniform4f(getUniformLocation(name),data.x,data.y, data.z,data.w);};
+    void setUniform(std::string name, const glm::vec2& data){glUniform2f(getUniformLocation(name),data.x,data.y);}
+    void setUniform(std::string name, const glm::vec3& data){glUniform3f(getUniformLocation(name),data.x,data.y,data.z);}
+    void setUniform(std::string name, const glm::vec4& data){glUniform4f(getUniformLocation(name),data.x,data.y, data.z,data.w);};
 
-    void setUniform(std::string name, glm::mat2 data){glUniformMatrix2fv(getUniformLocation(name),1,GL_FALSE,glm::value_ptr(data));}
-    void setUniform(std::string name, glm::mat3 data){glUniformMatrix3fv(getUniformLocation(name),1,GL_FALSE,glm::value_ptr(data));}
-    void setUniform(std::string name, glm::mat4 data){glUniformMatrix4fv(getUniformLocation(name),1,GL_FALSE,glm::value_ptr(data));}
+    void setUniform(std::string name, const glm::mat2& data){glUniformMatrix2fv(getUniformLocation(name),1,GL_FALSE,glm::value_ptr(data));}
+    void setUniform(std::string name, const glm::mat3& data){glUniformMatrix3fv(getUniformLocation(name),1,GL_FALSE,glm::value_ptr(data));}
+    void setUniform(std::string name, const glm::mat4& data){glUniformMatrix4fv(getUniformLocation(name),1,GL_FALSE,glm::value_ptr(data));}
 
 };
 

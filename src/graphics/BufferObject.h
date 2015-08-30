@@ -13,7 +13,7 @@
 #include "Buffer.h"
 #include "Texture.h"
 #include "IndexBuffer.h"
-#include "../math/Transform.h"
+#include "math/Transform.h"
 
 class BufferObject
 {

@@ -6,7 +6,7 @@
 #define TESTPROJECT2_CAMERA_H
 
 #include "Transform.h"
-#include "../utils/WindowContexts.h"
+#include "utils/WindowContexts.h"
 
 class Camera: public Transform
 {

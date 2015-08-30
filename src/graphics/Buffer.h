@@ -40,7 +40,7 @@ public:
 
     GLuint getHandle(){return handle;}
 
-    GLuint addVertexAttribPointer(int attribPointerIndex,int elementSize,int offset);
+    void addVertexAttribPointer(int attribPointerIndex,int elementSize,int offset);
     void setAttribPointerState( int attribPointerIndex,bool enabled);
     void init(GLenum drawType = GL_STATIC_DRAW);
 
@@ -63,18 +63,18 @@ public:
         bufferData.push_back(element3);
         bufferData.push_back(element4);
     }
-    void addData(glm::vec2 elements)
+    void addData(glm::vec2& elements)
     {
         bufferData.push_back(elements.x);
         bufferData.push_back(elements.y);
     }
-    void addData(glm::vec3 elements)
+    void addData(glm::vec3& elements)
     {
         bufferData.push_back(elements.x);
         bufferData.push_back(elements.y);
         bufferData.push_back(elements.z);
     }
-    void addData(glm::vec4 elements)
+    void addData(glm::vec4& elements)
     {
         bufferData.push_back(elements.x);
         bufferData.push_back(elements.y);
