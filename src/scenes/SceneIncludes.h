@@ -8,5 +8,6 @@
 #include "scene.h"
 #include "BasicBillboardScene.h"
 #include "BasicTriangleScene.h"
+#include "LineScene.h"
 
 #endif //TESTPROJECT2_SCENEINLCUDES_H

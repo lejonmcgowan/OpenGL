@@ -128,3 +128,56 @@ GLint Shader::getUniformLocation(std::string name)
         uniforms[name] = glGetUniformLocation(program, name.c_str());
     return uniforms[name];
 }
+
+/*bunch of setuniform boilerplate*/
+
+void Shader::setUniform(std::string name, int data, int index = -1)
+{
+    if(index > -1)
+        name = makeIndexUniform(name,index);
+    glUniform1i(getUniformLocation(name),data);
+}
+void Shader::setUniform(std::string name, float data, int index = -1)
+{
+    if(index > -1)
+        name = makeIndexUniform(name,index);
+    glUniform1f(getUniformLocation(name),data);
+}
+
+void Shader::setUniform(std::string name, const glm::vec2& data, int index = -1)
+{
+    if(index > -1)
+        name = makeIndexUniform(name,index);
+    glUniform2f(getUniformLocation(name),data.x,data.y);
+}
+void Shader::setUniform(std::string name, const glm::vec3& data, int index = -1)
+{
+    if(index > -1)
+        name = makeIndexUniform(name,index);
+    glUniform3f(getUniformLocation(name),data.x,data.y,data.z);
+}
+void Shader::setUniform(std::string name, const glm::vec4& data, int index = -1)
+{
+    if(index > -1)
+        name = makeIndexUniform(name,index);
+    glUniform4f(getUniformLocation(name),data.x,data.y, data.z,data.w);
+}
+
+void Shader::setUniform(std::string name, const glm::mat2& data, int index = -1)
+{
+    if(index > -1)
+        name = makeIndexUniform(name,index);
+    glUniformMatrix2fv(getUniformLocation(name),1,GL_FALSE,glm::value_ptr(data));
+}
+void Shader::setUniform(std::string name, const glm::mat3& data, int index = -1)
+{
+    if(index > -1)
+        name = makeIndexUniform(name,index);
+    glUniformMatrix3fv(getUniformLocation(name),1,GL_FALSE,glm::value_ptr(data));
+}
+void Shader::setUniform(std::string name, const glm::mat4& data, int index = -1)
+{
+    if(index > -1)
+        name = makeIndexUniform(name,index);
+    glUniformMatrix4fv(getUniformLocation(name),1,GL_FALSE,glm::value_ptr(data));
+}

@@ -9,6 +9,8 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 
 set(CMAKE_MODULE_PATH "~/CMakeModules" ${CMAKE_MODULE_PATH})
 
+include_directories(${PROJECT_SOURCE_DIR} ${PROJECT_SOURCE_DIR}/src ${CMAKE_INCLUDE_PATH})
+
 add_subdirectory(src)
 
 
