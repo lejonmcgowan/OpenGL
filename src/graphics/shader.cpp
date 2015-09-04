@@ -118,8 +118,8 @@ void Shader::initialize(std::string vertexPath, std::string fragmentPath, std::s
 
     initialized = true;
     //maybe later? We'll see
-    //glDeleteShader(vertexShader);
-    //glDeleteShader(fragmentShader);
+    glDeleteShader(vertexShader);
+    glDeleteShader(fragmentShader);
 }
 
 GLint Shader::getUniformLocation(std::string name)
@@ -129,55 +129,153 @@ GLint Shader::getUniformLocation(std::string name)
     return uniforms[name];
 }
 
+void Shader::bind()
+{
+    if(!initialized)
+    {
+        std::cout << "shader " << name << "is uninitialized" << std::endl;
+        assert(0);
+    }
+    glUseProgram(program);
+}
+
 /*bunch of setuniform boilerplate*/
 
-void Shader::setUniform(std::string name, int data, int index = -1)
+void Shader::setUniform(std::string name, int data, int index)
 {
     if(index > -1)
         name = makeIndexUniform(name,index);
     glUniform1i(getUniformLocation(name),data);
 }
-void Shader::setUniform(std::string name, float data, int index = -1)
+void Shader::setUniform(std::string name, float data, int index)
 {
     if(index > -1)
         name = makeIndexUniform(name,index);
     glUniform1f(getUniformLocation(name),data);
 }
 
-void Shader::setUniform(std::string name, const glm::vec2& data, int index = -1)
+void Shader::setUniform(std::string name, const glm::vec2& data, int index)
 {
     if(index > -1)
         name = makeIndexUniform(name,index);
     glUniform2f(getUniformLocation(name),data.x,data.y);
 }
-void Shader::setUniform(std::string name, const glm::vec3& data, int index = -1)
+void Shader::setUniform(std::string name, const glm::vec3& data, int index)
 {
     if(index > -1)
         name = makeIndexUniform(name,index);
     glUniform3f(getUniformLocation(name),data.x,data.y,data.z);
 }
-void Shader::setUniform(std::string name, const glm::vec4& data, int index = -1)
+void Shader::setUniform(std::string name, const glm::vec4& data, int index)
 {
     if(index > -1)
         name = makeIndexUniform(name,index);
     glUniform4f(getUniformLocation(name),data.x,data.y, data.z,data.w);
 }
 
-void Shader::setUniform(std::string name, const glm::mat2& data, int index = -1)
+void Shader::setUniform(std::string name, const glm::mat2& data, int index)
 {
     if(index > -1)
         name = makeIndexUniform(name,index);
     glUniformMatrix2fv(getUniformLocation(name),1,GL_FALSE,glm::value_ptr(data));
 }
-void Shader::setUniform(std::string name, const glm::mat3& data, int index = -1)
+void Shader::setUniform(std::string name, const glm::mat3& data, int index)
 {
     if(index > -1)
         name = makeIndexUniform(name,index);
     glUniformMatrix3fv(getUniformLocation(name),1,GL_FALSE,glm::value_ptr(data));
 }
-void Shader::setUniform(std::string name, const glm::mat4& data, int index = -1)
+void Shader::setUniform(std::string name, const glm::mat4& data, int index)
 {
     if(index > -1)
         name = makeIndexUniform(name,index);
     glUniformMatrix4fv(getUniformLocation(name),1,GL_FALSE,glm::value_ptr(data));
 }
+
+void Shader::setStructUniform(std::string structName, std::string attributeName, int data, int index)
+{
+    setUniform(std::string(structName + "." + attributeName),data,index);
+}
+
+void Shader::setStructUniform(std::string structName, std::string attributeName, float data, int index)
+{
+    setUniform(std::string(structName + "." + attributeName),data,index);
+}
+
+
+void Shader::setStructUniform(std::string structName, std::string attributeName, const glm::vec2& data, int index)
+{
+    setUniform(std::string(structName + "." + attributeName),data,index);
+}
+
+
+void Shader::setStructUniform(std::string structName, std::string attributeName, const glm::vec3& data, int index)
+{
+    setUniform(std::string(structName + "." + attributeName),data,index);
+}
+
+
+void Shader::setStructUniform(std::string structName, std::string attributeName, const glm::vec4& data, int index)
+{
+    setUniform(std::string(structName + "." + attributeName),data,index);
+}
+
+
+void Shader::setStructUniform(std::string structName, std::string attributeName, const glm::mat2& data, int index)
+{
+    setUniform(std::string(structName + "." + attributeName),data,index);
+}
+
+
+void Shader::setStructUniform(std::string structName, std::string attributeName, const glm::mat3& data, int index)
+{
+    setUniform(std::string(structName + "." + attributeName),data,index);
+}
+
+
+void Shader::setStructUniform(std::string structName, std::string attributeName, const glm::mat4& data, int index)
+{
+    setUniform(std::string(structName + "." + attributeName),data,index);
+}
+
+void Shader::setStructArrayUniform(std::string structName, int structIndex, std::string attributeName, int data, int attributeIndex)
+{
+    setStructUniform(makeIndexUniform(structName, structIndex),attributeName,data,attributeIndex);
+}
+
+void Shader::setStructArrayUniform(std::string structName, int structIndex, std::string attributeName, float data, int attributeIndex)
+{
+    setStructUniform(makeIndexUniform(structName, structIndex),attributeName,data,attributeIndex);
+}
+
+void Shader::setStructArrayUniform(std::string structName, int structIndex, std::string attributeName, const glm::vec2& data, int attributeIndex)
+{
+    setStructUniform(makeIndexUniform(structName, structIndex),attributeName,data,attributeIndex);
+}
+
+void Shader::setStructArrayUniform(std::string structName, int structIndex, std::string attributeName, const glm::vec3& data, int attributeIndex)
+{
+    setStructUniform(makeIndexUniform(structName, structIndex),attributeName,data,attributeIndex);
+}
+
+void Shader::setStructArrayUniform(std::string structName, int structIndex, std::string attributeName, const glm::vec4& data, int attributeIndex)
+{
+    setStructUniform(makeIndexUniform(structName, structIndex),attributeName,data,attributeIndex);
+}
+
+void Shader::setStructArrayUniform(std::string structName, int structIndex, std::string attributeName, const glm::mat2& data, int attributeIndex)
+{
+    setStructUniform(makeIndexUniform(structName, structIndex),attributeName,data,attributeIndex);
+}
+
+void Shader::setStructArrayUniform(std::string structName, int structIndex, std::string attributeName, const glm::mat3& data, int attributeIndex)
+{
+    setStructUniform(makeIndexUniform(structName, structIndex),attributeName,data,attributeIndex);
+}
+
+void Shader::setStructArrayUniform(std::string structName, int structIndex, std::string attributeName, const glm::mat4& data, int attributeIndex)
+{
+    setStructUniform(makeIndexUniform(structName, structIndex),attributeName,data,attributeIndex);
+}
+
+

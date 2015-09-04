@@ -46,63 +46,119 @@ public:
         return currentShader.getName();
     }
 
-    void setUniform(std::string uniformName, int data, std::string shaderName = "")
+    void setUniform(std::string uniformName, int data, int index = -1)
     {
-        if(shaderName.empty())
-            shaderName =  currentShader.getName();
-
-        shaders[shaderName].setUniform(uniformName,data);
+        shaders[currentShader.getName()].setUniform(uniformName,data, index);
     }
-    void setUniform(std::string uniformName, float data, std::string shaderName = "")
+    void setUniform(std::string uniformName, float data, int index = -1)
     {
-        if(shaderName.empty())
-            shaderName =  currentShader.getName();
-
-        shaders[shaderName].setUniform(uniformName,data);
+        shaders[currentShader.getName()].setUniform(uniformName,data, index);
     }
 
-    void setUniform(std::string uniformName, const glm::vec2& data, std::string shaderName = "")
+    void setUniform(std::string uniformName, const glm::vec2& data, int index = -1)
     {
-        if(shaderName.empty())
-            shaderName =  currentShader.getName();
-
-        shaders[shaderName].setUniform(uniformName,data);
+        shaders[currentShader.getName()].setUniform(uniformName,data, index);
     }
-    void setUniform(std::string uniformName, const glm::vec3& data, std::string shaderName = "")
+    void setUniform(std::string uniformName, const glm::vec3& data, int index = -1)
     {
-        if(shaderName.empty())
-            shaderName =  currentShader.getName();
-
-        shaders[shaderName].setUniform(uniformName,data);
+        shaders[currentShader.getName()].setUniform(uniformName,data, index);
     }
-    void setUniform(std::string uniformName, const glm::vec4& data, std::string shaderName = "")
+    void setUniform(std::string uniformName, const glm::vec4& data, int index = -1)
     {
-        if(shaderName.empty())
-            shaderName =  currentShader.getName();
-
-        shaders[shaderName].setUniform(uniformName,data);
+        shaders[currentShader.getName()].setUniform(uniformName,data, index);
     }
 
-    void setUniform(std::string uniformName, const glm::mat2& data, std::string shaderName = "")
+    void setUniform(std::string uniformName, const glm::mat2& data, int index = -1)
     {
-        if(shaderName.empty())
-            shaderName =  currentShader.getName();
-
-        shaders[shaderName].setUniform(uniformName,data);
+        shaders[currentShader.getName()].setUniform(uniformName,data, index);
     }
-    void setUniform(std::string uniformName, const glm::mat3& data, std::string shaderName = "")
+    void setUniform(std::string uniformName, const glm::mat3& data, int index = -1)
     {
-        if(shaderName.empty())
-            shaderName =  currentShader.getName();
-
-        shaders[shaderName].setUniform(uniformName,data);
+        shaders[currentShader.getName()].setUniform(uniformName,data, index);
     }
-    void setUniform(std::string uniformName, const glm::mat4& data, std::string shaderName = "")
+    void setUniform(std::string uniformName, const glm::mat4& data, int index = -1)
     {
-        if(shaderName.empty())
-            shaderName =  currentShader.getName();
+        shaders[currentShader.getName()].setUniform(uniformName,data, index);
+    }
 
-        shaders[shaderName].setUniform(uniformName,data);
+    void setStructUniform(std::string structName, std::string attributeName, int data, int index = -1)
+    {
+        shaders[currentShader.getName()].setStructUniform(structName,attributeName,data, index);
+    }
+
+    void setStructUniform(std::string structName, std::string attributeName, float data, int index = -1)
+    {
+        shaders[currentShader.getName()].setStructUniform(structName,attributeName,data, index);
+    }
+
+    void setStructUniform(std::string structName, std::string attributeName, const glm::vec2& data, int index = -1)
+    {
+        shaders[currentShader.getName()].setStructUniform(structName,attributeName,data, index);
+    }
+
+    void setStructUniform(std::string structName, std::string attributeName, const glm::vec3& data, int index = -1)
+    {
+        shaders[currentShader.getName()].setStructUniform(structName,attributeName,data, index);
+    }
+
+    void setStructUniform(std::string structName, std::string attributeName, const glm::vec4& data, int index = -1)
+    {
+        shaders[currentShader.getName()].setStructUniform(structName,attributeName,data, index);
+    }
+
+    void setStructUniform(std::string structName, std::string attributeName, const glm::mat2& data, int index = -1)
+    {
+        shaders[currentShader.getName()].setStructUniform(structName,attributeName,data, index);
+    }
+
+    void setStructUniform(std::string structName, std::string attributeName, const glm::mat3& data, int index = -1)
+    {
+        shaders[currentShader.getName()].setStructUniform(structName,attributeName,data, index);
+    }
+
+    void setStructUniform(std::string structName, std::string attributeName, const glm::mat4& data, int index = -1)
+    {
+        shaders[currentShader.getName()].setStructUniform(structName,attributeName,data, index);
+    }
+
+    void setStrucArraytUniform(std::string structName, int structIndex, std::string attributeName, int data, int attributeIndex = -1)
+    {
+        shaders[currentShader.getName()].setStructArrayUniform(structName,structIndex, attributeName,data, attributeIndex);
+    }
+
+    void setStrucArraytUniform(std::string structName, int structIndex, std::string attributeName, float data, int attributeIndex = -1)
+    {
+        shaders[currentShader.getName()].setStructArrayUniform(structName,structIndex, attributeName,data,attributeIndex);
+    }
+
+    void setStrucArraytUniform(std::string structName, int structIndex, std::string attributeName, const glm::vec2& data, int attributeIndex = -1)
+    {
+        shaders[currentShader.getName()].setStructArrayUniform(structName,structIndex, attributeName,data, attributeIndex);
+    }
+
+    void setStrucArraytUniform(std::string structName, int structIndex, std::string attributeName, const glm::vec3& data, int attributeIndex = -1)
+    {
+        shaders[currentShader.getName()].setStructArrayUniform(structName,structIndex, attributeName,data, attributeIndex);
+    }
+
+    void setStrucArraytUniform(std::string structName, int structIndex, std::string attributeName, const glm::vec4& data, int attributeIndex = -1)
+    {
+        shaders[currentShader.getName()].setStructArrayUniform(structName,structIndex, attributeName,data, attributeIndex);
+    }
+
+    void setStrucArraytUniform(std::string structName, int structIndex, std::string attributeName, const glm::mat2& data, int attributeIndex = -1)
+    {
+        shaders[currentShader.getName()].setStructArrayUniform(structName,structIndex, attributeName,data, attributeIndex);
+    }
+
+    void setStrucArraytUniform(std::string structName, int structIndex, std::string attributeName, const glm::mat3& data, int attributeIndex = -1)
+    {
+        shaders[currentShader.getName()].setStructArrayUniform(structName,structIndex, attributeName,data, attributeIndex);
+    }
+
+    void setStrucArraytUniform(std::string structName, int structIndex, std::string attributeName, const glm::mat4& data, int attributeIndex = -1)
+    {
+        shaders[currentShader.getName()].setStructArrayUniform(structName,structIndex, attributeName,data, attributeIndex);
     }
 
 };
