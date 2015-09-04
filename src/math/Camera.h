@@ -112,9 +112,9 @@ public:
         updateViewTransform = true;
     }
 
-    void rotateTo(glm::vec3 rotation)
+    void rotateTo(glm::vec3 newRotation)
     {
-        Transform::rotateTo(rotation);
+        Transform::rotateTo(newRotation);
         updateViewTransform = true;
 
         if(yawFlag)
@@ -124,17 +124,15 @@ public:
         if(pitchFlag)
             rotation.z = clamp(rotation.z,roll_limits.x,roll_limits.y);
     }
-    void rotateBy(glm::vec3 rotation)
+    void rotateBy(glm::vec3 factor)
     {
-        Transform::rotateBy(rotation);
+        Transform::rotateBy(factor);
         updateViewTransform = true;
 
         if(yawFlag)
             rotation.x = clamp(rotation.x,yaw_limits.x,yaw_limits.y);
         if(pitchFlag) {
-            std::cout << glm::degrees(rotation.y) << std::endl;
             rotation.y = clamp(rotation.y, pitch_limits.x, pitch_limits.y);
-            std::cout << glm::degrees(rotation.y) << std::endl << std::endl;
         }
         if(pitchFlag)
             rotation.z = clamp(rotation.z,roll_limits.x,roll_limits.y);
