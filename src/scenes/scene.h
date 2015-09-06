@@ -4,9 +4,9 @@
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>
 
-#include "../graphics/shaderManager.h"
-#include "../input/Keyboard.hpp"
-#include "../input/Mouse.h"
+#include "graphics/shaderManager.h"
+#include "input/Keyboard.hpp"
+#include "input/Mouse.h"
 #include <vector>
 
 class Scene
