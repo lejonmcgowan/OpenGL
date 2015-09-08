@@ -35,14 +35,6 @@ void Window::init(Scene* scene)
     glfwMakeContextCurrent(window);
     glfwSwapInterval(1);
 
-    TwInit(TW_OPENGL_CORE, NULL);
-
-    glfwSetKeyCallback(window,&Keyboard::glfwKeyboardCallback);
-    glfwSetCursorPosCallback(window,&Mouse::glfwMouseCursorCallback);
-    glfwSetMouseButtonCallback(window, &Mouse::glfwMouseButtonCallback);
-    glfwSetScrollCallback(window,&Mouse::glfwScrollCallback);
-    glfwSetErrorCallback(error_callback);
-
     glewExperimental = GL_TRUE;
     if (glewInit() != GLEW_OK)
     {
@@ -54,6 +46,17 @@ void Window::init(Scene* scene)
     checkGLError;//gonna get invalid enum. can't do anything about it.
 
     glViewport(0, 0, WINDOW_WIDTH, WINDOW_HEIGHT);
+
+    TwInit(TW_OPENGL_CORE, NULL);
+    TwWindowSize(WINDOW_WIDTH, WINDOW_HEIGHT);
+
+    glfwSetKeyCallback(window,&Keyboard::glfwKeyboardCallback);
+    glfwSetCursorPosCallback(window,&Mouse::glfwMouseCursorCallback);
+    glfwSetMouseButtonCallback(window, &Mouse::glfwMouseButtonCallback);
+    glfwSetScrollCallback(window,&Mouse::glfwScrollCallback);
+    glfwSetErrorCallback(error_callback);
+
+
 
     this->scene = scene;
     this->scene->init(window);

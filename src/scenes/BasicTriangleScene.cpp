@@ -15,11 +15,12 @@ GLfloat colors[] = {1.0f,0.0f,0.0f,
                         0.0f,1.0f,0.0f,
                         0.0f,0.0f,1.0f};
 
+float bgcolor[] = {0.4f,0.3f,0.3f};
+
 void BasicTriangleScene::init(GLFWwindow* window)
 {
     Scene::init(window);
 
-    TwWindowSize(200, 200);
     tweakBar = TwNewBar("settings");
     vertexBuffer = new Buffer(3);
     colorBuffer = new Buffer(3);
@@ -36,12 +37,20 @@ void BasicTriangleScene::init(GLFWwindow* window)
         vertexBuffer->init();
         colorBuffer->init();
     glBindVertexArray(0);
+
+    TwAddVarRW(tweakBar, "Background Color", TW_TYPE_COLOR3F, &bgcolor, " label='Background Color' ");
+
+    glfwSetMouseButtonCallback(window, (GLFWmousebuttonfun)TwEventMouseButtonGLFW3);
+    glfwSetKeyCallback(window, (GLFWkeyfun)TwEventKeyGLFW3);
+    glfwSetCharModsCallback(window, (GLFWcharmodsfun) TwEventCharModsGLFW3);
+    glfwSetCursorPosCallback(window,(GLFWcursorposfun)TwEventCursorPosGLFW3);
+    glfwSetScrollCallback(window,(GLFWscrollfun)TwEventScrollGLFW3);
 }
 
 void BasicTriangleScene::render()
 {
     Scene::render();
-    glClearColor(0.3f,0.3f,0.3f,0.6f);
+    glClearColor(bgcolor[0],bgcolor[1],bgcolor[2],1.0f);
     glClear(GL_COLOR_BUFFER_BIT);
 
     TwDraw();
@@ -52,3 +61,4 @@ void BasicTriangleScene::render()
         glBindVertexArray(0);
     shader->unbind();
 }
+

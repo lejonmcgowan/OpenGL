@@ -3,6 +3,7 @@
 
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>
+#include "AntTweakBar.h"
 
 #include "graphics/shaderManager.h"
 #include "input/Keyboard.hpp"
@@ -20,7 +21,9 @@ public:
     virtual void render() {}
     virtual void init(GLFWwindow* window) {this->window = window;}
     virtual void processKeys(Keyboard& keyboard) {}
-    virtual void processMouse(Mouse& mouse){}
+    virtual void processMouse(Mouse& mouse)
+    {
+    }
 
 };
 

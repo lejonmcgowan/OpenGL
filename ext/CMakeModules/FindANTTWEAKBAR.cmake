@@ -42,7 +42,7 @@ ELSE (WIN32)
             /usr/include
             NO_DEFAULT_PATH)
 
-    FIND_LIBRARY( ANT_TWEAK_BAR_LIBRARY AntTweakBar
+    FIND_LIBRARY( ANT_TWEAK_BAR_LIBRARY libAntTweakBar.a
             PATHS
             ${LIBIGL_INCLUDE_DIR}/../external/AntTweakBar/lib
             ${PROJECT_SOURCE_DIR}/../../external/AntTweakBar/lib

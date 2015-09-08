@@ -10,6 +10,8 @@
 class Keyboard {
 private:
     static bool keyToggle[]; //true means the key is pressed
+    static int lastAction;
+    static int lastKeyPressed; //key unknown
 public:
     static void glfwKeyboardCallback(GLFWwindow* window, int key, int scancode,
                                      int action, int mods) {
@@ -17,16 +19,22 @@ public:
         {
             case GLFW_PRESS:
                 Keyboard::keyToggle[key] = true;
+                lastKeyPressed = key;
                 break;
             case GLFW_RELEASE:
                 Keyboard::keyToggle[key] = false;
+                lastKeyPressed = GLFW_KEY_UNKNOWN;
                 break;
         }
+        lastAction = action;
     }
 
     bool keyPressed(int key) {
         return keyToggle[key];
     }
+
+    int getLastAction(){return lastAction;}
+    int getLastKeyPressed(){return lastKeyPressed;}
 
 };
 #endif //TESTPROJECT2_KEYBOARD_HPP
