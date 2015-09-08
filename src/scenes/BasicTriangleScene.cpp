@@ -19,6 +19,8 @@ void BasicTriangleScene::init(GLFWwindow* window)
 {
     Scene::init(window);
 
+    TwWindowSize(200, 200);
+    tweakBar = TwNewBar("settings");
     vertexBuffer = new Buffer(3);
     colorBuffer = new Buffer(3);
     vertexBuffer->addVertexAttribPointer(0,3,0);
@@ -41,6 +43,8 @@ void BasicTriangleScene::render()
     Scene::render();
     glClearColor(0.3f,0.3f,0.3f,0.6f);
     glClear(GL_COLOR_BUFFER_BIT);
+
+    TwDraw();
 
     shader->bind();
         glBindVertexArray(VAO);

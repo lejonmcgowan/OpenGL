@@ -1,5 +1,6 @@
 #include <assert.h>
 #include "window.h"
+#include "AntTweakBar.h"
 
 static void error_callback(int error, const char* description)
 {
@@ -34,9 +35,10 @@ void Window::init(Scene* scene)
     glfwMakeContextCurrent(window);
     glfwSwapInterval(1);
 
+    TwInit(TW_OPENGL_CORE, NULL);
+
     glfwSetKeyCallback(window,&Keyboard::glfwKeyboardCallback);
     glfwSetCursorPosCallback(window,&Mouse::glfwMouseCursorCallback);
-    //glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
     glfwSetMouseButtonCallback(window, &Mouse::glfwMouseButtonCallback);
     glfwSetScrollCallback(window,&Mouse::glfwScrollCallback);
     glfwSetErrorCallback(error_callback);

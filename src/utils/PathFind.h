@@ -3,7 +3,7 @@
 class PathFind
 {
 public:
-    /*for accessing files. will assume that the directory is based eithe on the project root (for assets)*/
+    /*for accessing files. will assume that the directory is based the on the assets directory on the project root (for assets)*/
    static inline std::string getAsset(const char* relativePath)
     {
         std::string srcPath;

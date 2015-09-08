@@ -5,6 +5,7 @@
 #ifndef TESTPROJECT2_BASICTRIANGLESCENE_H
 #define TESTPROJECT2_BASICTRIANGLESCENE_H
 
+#include "AntTweakBar.h"
 #include "scene.h"
 #include "graphics/Buffer.h"
 #include "graphics/shader.h"
@@ -16,6 +17,7 @@ private:
     Buffer* vertexBuffer;
     Buffer* colorBuffer;
     Shader* shader;
+    TwBar* tweakBar;
 public:
     virtual void init(GLFWwindow* window) override;
     virtual void render() override;
