@@ -6,44 +6,52 @@
 #include "LineScene.h"
 #include <vector>
 
-GLfloat linePoints[] = {0.0f,0.0f,
-                        0.25f,0.25f,
-                        0.25f,0.0f,
-                        -0.25f,0.5f,
-                        -0.5f,-0.5f,
-                        0.5f,-0.5f};
+//GLfloat linePoints[] = {0.0f,0.0f,
+//                        0.25f,0.25f,
+//                        0.25f,0.0f,
+//                        -0.25f,0.5f,
+//                        -0.5f,-0.5f,
+//                        0.5f,-0.5f};
 
 GLfloat colors[] = {1.0f,0.0f,0.0f,
                     1.0f,0.0f,0.0f,
                     1.0f,0.0f,0.0f,
-                    1.0f,0.0f,0.0f,
-                    1.0f,0.0f,0.0f,
-                    1.0f,0.0f,0.0f};
+                    0.0f,1.0f,0.0f,
+                    0.0f,1.0f,0.0f,
+                    0.0f,1.0f,0.0f};
 
 std::vector<GLfloat> normals;
 
-void fillNormals()
+void LineScene::makeBufferLine(glm::highp_vec2 point1, glm::highp_vec2 point2, float thickness)
 {
-    for(int i = 0; i < sizeof(linePoints) / sizeof(GLfloat); i+=2)
-    {
-        normals.push_back(-linePoints[1]);
-        normals.push_back(linePoints[0]);
-    }
+    glm::vec2 line = point2 - point1;
+    glm::vec2 normal = glm::normalize(glm::vec2(line.x,-line.y));
+    normal *= (thickness / 2);
+
+    glm::vec2 a = point1 + normal;
+    glm::vec2 b = point1 - normal;
+    glm::vec2 c = point2 + normal;
+    glm::vec2 d = point2 - normal;
+
+    lineBuffer->addData(a);
+    lineBuffer->addData(d);
+    lineBuffer->addData(c);
+    lineBuffer->addData(a);
+    lineBuffer->addData(d);
+    lineBuffer->addData(b);
 }
+
 
 void LineScene::init(GLFWwindow *window)
 {
     Scene::init(window);
     glEnable(GL_DEPTH_TEST);
 
-    lineBuffer->addData(linePoints,sizeof(linePoints) / sizeof(GLfloat));
+    makeBufferLine(glm::vec2(-0.5, -0.25), glm::vec2(0.25, 0.75), 0.05f);
     colorBuffer->addData(colors,sizeof(colors) / sizeof(GLfloat));
-    fillNormals();
-    normalBuffer->addData(normals);
 
     lineBuffer->addVertexAttribPointer(0,2,0);
     colorBuffer->addVertexAttribPointer(1,3,0);
-    normalBuffer->addVertexAttribPointer(2,2,0);
 
     shader->initialize(PathFind::getAsset("shd/line.vert"),PathFind::getAsset("shd/line.frag"));
 
@@ -72,7 +80,7 @@ void LineScene::render()
         shader->setUniform("view",camera->getViewMatrix());
         shader->setUniform("projection",camera->getPerspectiveMatrix());
         glBindVertexArray(VAO);
-                glDrawArrays(GL_LINES,0,6);
+                glDrawArrays(GL_TRIANGLES,0,6);
         glBindVertexArray(0);
     shader->unbind();
 }

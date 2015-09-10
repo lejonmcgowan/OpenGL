@@ -31,6 +31,8 @@ public:
     virtual void init(GLFWwindow* window)  override;
     virtual void processKeys(Keyboard& keyboard) override;
     virtual void processMouse(Mouse& mouse) override;
+
+    void makeBufferLine(glm::highp_vec2 point1, glm::highp_vec2 point2, float thickness);
 };
 
 
