@@ -45,7 +45,7 @@ void LineScene::init(GLFWwindow *window)
     colorBuffer->addVertexAttribPointer(1,3,0);
     normalBuffer->addVertexAttribPointer(2,2,0);
 
-    shader->initialize(PathFind::getAsset("assets/shd/line.vert"),PathFind::getAsset("assets/shd/line.frag"));
+    shader->initialize(PathFind::getAsset("shd/line.vert"),PathFind::getAsset("shd/line.frag"));
 
     shader->bind();
         shader->setUniform("model",lineTransform->getTransformMatrix());

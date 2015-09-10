@@ -7,7 +7,7 @@
 
 #include "scene.h"
 #include "graphics/Buffer.h"
-#include "src/math/Camera.h"
+#include "math/Camera.h"
 
 class LineScene: public Scene
 {
