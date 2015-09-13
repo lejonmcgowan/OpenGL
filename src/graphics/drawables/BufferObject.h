@@ -10,9 +10,9 @@
 #include <string>
 #include <GL/glew.h>
 
-#include "Buffer.h"
-#include "Texture.h"
-#include "IndexBuffer.h"
+#include "graphics/Buffer.h"
+#include "graphics/Texture.h"
+#include "graphics/IndexBuffer.h"
 #include "math/Transform.h"
 
 class BufferObject
@@ -37,13 +37,13 @@ public:
     GLuint getVAO(){return vao;}
     Transform& getTransform(){return transform;}
 
-    void init();
     void bindVAO(){glBindVertexArray(vao);};
     void unbindVAO(){glBindVertexArray(0);};
 
     void bindTextures();
 
-    void init(GLenum drawType);
+    void init(GLenum drawType = GL_STATIC_DRAW);
+    void render(GLenum drawType, int numVertices);
 };
 
 

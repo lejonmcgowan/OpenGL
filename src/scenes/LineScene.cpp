@@ -20,12 +20,19 @@ GLfloat colors[] = {1.0f,0.0f,0.0f,
                     0.0f,1.0f,0.0f,
                     0.0f,1.0f,0.0f};
 
+std::vector<glm::vec2> points, thickLineBuffer;
+float thickness = 0.03f;
+
 std::vector<GLfloat> normals;
 
-void LineScene::makeBufferLine(glm::highp_vec2 point1, glm::highp_vec2 point2, float thickness)
+void make2PointBufferLine()
 {
+    thickLineBuffer.clear();
+    glm::vec2 point1 = points[0];
+    glm::vec2 point2 = points[1];
+
     glm::vec2 line = point2 - point1;
-    glm::vec2 normal = glm::normalize(glm::vec2(line.x,-line.y));
+    glm::vec2 normal = glm::normalize(glm::vec2(-line.y,line.x));
     normal *= (thickness / 2);
 
     glm::vec2 a = point1 + normal;
@@ -33,25 +40,32 @@ void LineScene::makeBufferLine(glm::highp_vec2 point1, glm::highp_vec2 point2, f
     glm::vec2 c = point2 + normal;
     glm::vec2 d = point2 - normal;
 
-    lineBuffer->addData(a);
-    lineBuffer->addData(d);
-    lineBuffer->addData(c);
-    lineBuffer->addData(a);
-    lineBuffer->addData(d);
-    lineBuffer->addData(b);
+
 }
 
+void addPoint(glm::vec2 point)
+{
+    points.push_back(point);
+    switch(points.size())
+    {
+        case 2: make2PointBufferLine();
+    }
+}
 
 void LineScene::init(GLFWwindow *window)
 {
     Scene::init(window);
     glEnable(GL_DEPTH_TEST);
 
-    makeBufferLine(glm::vec2(-0.5, -0.25), glm::vec2(0.25, 0.75), 0.05f);
+    addPoint(glm::vec2(-0.5, -0.25));
+    addPoint(glm::vec2(0.25, 0.75));
+
+    lineBuffer->addData(thickLineBuffer);
     colorBuffer->addData(colors,sizeof(colors) / sizeof(GLfloat));
 
     lineBuffer->addVertexAttribPointer(0,2,0);
     colorBuffer->addVertexAttribPointer(1,3,0);
+
 
     shader->initialize(PathFind::getAsset("shd/line.vert"),PathFind::getAsset("shd/line.frag"));
 

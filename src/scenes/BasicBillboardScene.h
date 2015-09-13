@@ -6,7 +6,7 @@
 #define BASICTRIANGLESCENE_H
 
 #include "scene.h"
-#include "graphics/BufferObject.h"
+#include "graphics/drawables/BufferObject.h"
 #include "utils/debugGL.h"
 #include "math/Camera.h"
 

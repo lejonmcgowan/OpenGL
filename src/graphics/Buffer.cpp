@@ -37,3 +37,13 @@ void Buffer::init(GLenum  drawType)
     }
     assert(checkGLError);
 }
+
+void Buffer::render(GLenum drawType, int numVertices, bool withIndexBuffer) {
+    if(!withIndexBuffer)
+        glDrawArrays(drawType,0, numVertices);
+    else
+        glDrawElements(drawType,numVertices,GL_UNSIGNED_INT,0);
+    assert(checkGLError);
+}
+
+

@@ -7,6 +7,7 @@
 
 #include <iostream>
 #include <assert.h>
+#include <src/graphics/drawables/PlaneBuffer.h>
 
 GLfloat vertices2[180] = {
         -0.5f, -0.5f, -0.5f,  0.0f, 0.0f,
@@ -64,6 +65,7 @@ GLfloat texCoords[8] = {
         0.0f,0.0f
 };
 
+PlaneBuffer *planeBuffer;
 void BasicBillboardScene::render()
 {
     glClearColor(0.2f,0.3f,0.3f,0.6f);
@@ -81,17 +83,8 @@ void BasicBillboardScene::render()
         shaders.setUniform("view", camera.getViewMatrix());
         shaders.setUniform("projection", camera.getPerspectiveMatrix());
 
-        object.bindTextures();
-        assert(checkGLError);
-        object.bindVAO();
-        assert(checkGLError);
-
-        //glDrawElements(GL_TRIANGLES,6,GL_UNSIGNED_INT,0);
-        glDrawArrays(GL_TRIANGLES, 0, 36);
-        assert(checkGLError);
-
-        object.unbindVAO();
-        assert(checkGLError);
+        object.render(GL_TRIANGLES,36);
+        planeBuffer->render();
     shaders.unbind();
 }
 
@@ -102,7 +95,7 @@ void BasicBillboardScene::init(GLFWwindow* window) {
 
     Scene::init(window);
 
-    glfwSetInputMode(window,GLFW_CURSOR,GLFW_CURSOR_DISABLED);
+    //glfwSetInputMode(window,GLFW_CURSOR,GLFW_CURSOR_DISABLED);
 
     Shader basic(PathFind::getAsset("shd/basic.vert"), PathFind::getAsset("shd/basic.frag"));
     Shader basic2(PathFind::getAsset("shd/basic.vert"), PathFind::getAsset("shd/basic2.frag"));
@@ -120,8 +113,9 @@ void BasicBillboardScene::init(GLFWwindow* window) {
     object.addTexture("awesome", PathFind::getAsset("awesomeface.png"));
 
 
-    object.init(GL_STATIC_DRAW);
+    object.init();
 
+    planeBuffer = new PlaneBuffer(5,5,5,5);
 
     shaders.bind(); //for nonchanging uniforms
         shaders.setUniform("myColor",glm::vec4(1.0f,1.0f,0.0f,1.0f));
@@ -133,22 +127,6 @@ void BasicBillboardScene::processKeys(Keyboard &keyboard)
 {
     Scene::processKeys(keyboard);
     Camera::WASDMove(camera,keyboard,0.03f);
-//    if(keyboard.keyPressed('W'))
-//    {
-//        object.getTransform().translateBy(glm::vec3(0.0f, 0.01f, 0.0f));
-//    }
-//    if(keyboard.keyPressed('A'))
-//    {
-//        object.getTransform().translateBy(glm::vec3(-0.01f, 0.0f, 0.0f));
-//    }
-//    if(keyboard.keyPressed('S'))
-//    {
-//        object.getTransform().translateBy(glm::vec3(0.0f, -0.01f, 0.0f));
-//    }
-//    if(keyboard.keyPressed('D'))
-//    {
-//        object.getTransform().translateBy(glm::vec3(0.01f, 0.0f, 0.0f));
-//    }
 
     if(keyboard.keyPressed('Q'))
     {
@@ -176,8 +154,14 @@ void BasicBillboardScene::processKeys(Keyboard &keyboard)
     }
 }
 
+bool followMouse = true;
 void BasicBillboardScene::processMouse(Mouse& mouse)
 {
-    Camera::WASDLook(camera,mouse,0.01f);
-    Camera::FOVScroll(camera,mouse,0.1f);
+    if(mouse.getMouseButtonPressed(GLFW_MOUSE_BUTTON_LEFT))
+        followMouse = !followMouse;
+    if(followMouse)
+    {
+        Camera::WASDLook(camera, mouse, 0.01f);
+        Camera::FOVScroll(camera, mouse, 0.1f);
+    }
 }

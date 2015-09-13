@@ -33,7 +33,7 @@ void BufferObject::bindTextures()
         (texture.second)->bind();
     }
 }
-void BufferObject::init(GLenum drawType = GL_STATIC_DRAW)
+void BufferObject::init(GLenum drawType)
 {
     glGenVertexArrays(1,&vao);
     glBindVertexArray(vao);
@@ -43,6 +43,22 @@ void BufferObject::init(GLenum drawType = GL_STATIC_DRAW)
     indexBuffer.init(drawType);
     for(auto texture: textures)
         (texture.second)->init();
+    if(indexBuffer.hasData())
+        indexBuffer.init();
 
     glBindVertexArray(0);
+}
+
+void BufferObject::render(GLenum drawType, int numVertices)
+{
+    bindTextures();
+    assert(checkGLError);
+    bindVAO();
+    for(auto buffer: buffers)
+    {
+        buffer.second->render(drawType,numVertices,indexBuffer.hasData());
+        assert(checkGLError);
+    }
+    unbindVAO();
+    assert(checkGLError);
 }

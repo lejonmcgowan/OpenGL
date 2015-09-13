@@ -21,7 +21,7 @@ public:
     IndexBuffer(){}
     GLuint getHandle(){return handle;}
 
-    void init(GLenum drawType);
+    void init(GLenum drawType = GL_STATIC_DRAW);
 
     void addData(GLuint  element){ bufferData.push_back(element);}
     void addData(GLuint element1, GLuint element2)
@@ -60,12 +60,15 @@ public:
         bufferData.push_back(elements.z);
         bufferData.push_back(elements.w);
     }
-    void addData(GLuint elements[], int numElements)
+
+    void addData(GLint elements[], int numElements)
     {
         for(int i = 0; i < numElements; i++)
             bufferData.push_back(elements[i]);
     }
+
     void addData(std::vector<GLuint>& elements){ bufferData.insert(bufferData.end(),elements.begin(),elements.end());}
+    bool hasData(){return bufferData.size() > 0;}
 };
 
 #endif //TESTPROJECT2_INDEXBUFFER_H

@@ -13,6 +13,7 @@
 #include <glm/detail/type_vec2.hpp>
 #include <glm/detail/type_vec3.hpp>
 #include <glm/detail/type_vec4.hpp>
+#include "IndexBuffer.h"
 
 class Buffer {
 private:
@@ -43,6 +44,7 @@ public:
     void addVertexAttribPointer(int attribPointerIndex,int elementSize,int offset);
     void setAttribPointerState( int attribPointerIndex,bool enabled);
     void init(GLenum drawType = GL_STATIC_DRAW);
+    void render(GLenum drawType, int numVertices, bool withIndexBuffer = false);
 
     void addData(GLfloat  element){ bufferData.push_back(element);}
     void addData(GLfloat element1, GLfloat element2)
@@ -87,6 +89,14 @@ public:
             bufferData.push_back(elements[i]);
     }
     void addData(std::vector<GLfloat>& elements){ bufferData.insert(bufferData.end(),elements.begin(),elements.end());}
+    void addData(std::vector<glm::vec2>& elements)
+    {
+        for(auto vec2: elements)
+        {
+            bufferData.insert(bufferData.end(), vec2.x);
+            bufferData.insert(bufferData.end(), vec2.y);
+        }
+    }
 };
 
 
