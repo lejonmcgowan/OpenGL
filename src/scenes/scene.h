@@ -14,7 +14,7 @@ class Scene
 {
 protected:
     ShaderManager shaders;
-    const GLFWwindow* window;
+    GLFWwindow* window;
 public:
     Scene(){};
     virtual void update(){}

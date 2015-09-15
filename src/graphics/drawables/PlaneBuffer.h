@@ -12,7 +12,6 @@
 class PlaneBuffer: public Drawable
 {
 private:
-    unsigned int vaoHandle;
     BufferObject bufferObject;
     int faces;
 

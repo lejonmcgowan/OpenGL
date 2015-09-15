@@ -8,6 +8,7 @@
 #include <iostream>
 #include <assert.h>
 #include <src/graphics/drawables/PlaneBuffer.h>
+#include <src/graphics/drawables/BufferSphere.h>
 
 GLfloat vertices2[180] = {
         -0.5f, -0.5f, -0.5f,  0.0f, 0.0f,
@@ -65,7 +66,7 @@ GLfloat texCoords[8] = {
         0.0f,0.0f
 };
 
-PlaneBuffer *planeBuffer;
+Drawable *drawableObject;
 void BasicBillboardScene::render()
 {
     glClearColor(0.2f,0.3f,0.3f,0.6f);
@@ -73,6 +74,7 @@ void BasicBillboardScene::render()
 
 
     assert(checkGLError);
+    shaders.setShader("basic");
     shaders.bind();
         assert(checkGLError);
 
@@ -84,18 +86,27 @@ void BasicBillboardScene::render()
         shaders.setUniform("projection", camera.getPerspectiveMatrix());
 
         object.render(GL_TRIANGLES,36);
-        planeBuffer->render();
+        drawableObject->render();
     shaders.unbind();
+
+    //shaders.setShader("basic2");
+//    shaders.bind();
+//        shaders.setUniform("model", object.getTransform().getTransformMatrix());
+//        shaders.setUniform("view", camera.getViewMatrix());
+//        shaders.setUniform("projection", camera.getPerspectiveMatrix());
+//        shaders.setUniform("myColor", glm::vec4(0.7f,0.0f,0.0f,1.0f));
+//        drawableObject->render();
+//    shaders.unbind();
 }
 
 void BasicBillboardScene::init(GLFWwindow* window) {
     //TODO: clean up string parsing for path
 
+    glfwSetInputMode(window,GLFW_CURSOR,GLFW_CURSOR_DISABLED);
+
     glEnable(GL_DEPTH_TEST);
 
     Scene::init(window);
-
-    //glfwSetInputMode(window,GLFW_CURSOR,GLFW_CURSOR_DISABLED);
 
     Shader basic(PathFind::getAsset("shd/basic.vert"), PathFind::getAsset("shd/basic.frag"));
     Shader basic2(PathFind::getAsset("shd/basic.vert"), PathFind::getAsset("shd/basic2.frag"));
@@ -115,7 +126,7 @@ void BasicBillboardScene::init(GLFWwindow* window) {
 
     object.init();
 
-    planeBuffer = new PlaneBuffer(5,5,5,5);
+    drawableObject = new PlaneBuffer(10,10,100,100);
 
     shaders.bind(); //for nonchanging uniforms
         shaders.setUniform("myColor",glm::vec4(1.0f,1.0f,0.0f,1.0f));
@@ -123,6 +134,7 @@ void BasicBillboardScene::init(GLFWwindow* window) {
     shaders.unbind();
 }
 
+bool cursorEnabled = true;
 void BasicBillboardScene::processKeys(Keyboard &keyboard)
 {
     Scene::processKeys(keyboard);
@@ -151,6 +163,14 @@ void BasicBillboardScene::processKeys(Keyboard &keyboard)
     if(keyboard.keyPressed('R'))
     {
         object.getTransform().reset();
+    }
+    if(keyboard.keyPressed('V'))
+    {
+        cursorEnabled = !cursorEnabled;
+        if(cursorEnabled)
+            glfwSetInputMode(window,GLFW_CURSOR,GLFW_CURSOR_NORMAL);
+        else
+            glfwSetInputMode(window,GLFW_CURSOR,GLFW_CURSOR_DISABLED);
     }
 }
 

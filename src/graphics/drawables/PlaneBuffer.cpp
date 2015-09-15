@@ -56,7 +56,7 @@ PlaneBuffer::PlaneBuffer(float xsize, float zsize, int xdivs, int zdivs, float s
     bufferObject.addBufferVertexAttrib("normalBuffer",3,0);
 
     bufferObject.getBuffer("texBuffer").addData(tex,texSize * (int)sizeof(GLfloat));
-    bufferObject.addBufferVertexAttrib("texBuffer",3,0);
+    bufferObject.addBufferVertexAttrib("texBuffer",2,0);
 
     int rowStart, nextRowStart;
     int idx = 0;
