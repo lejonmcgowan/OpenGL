@@ -18,10 +18,10 @@ void BufferObject::addTexture(std::string name, std::string path)
     textures.emplace(name,new Texture(path,BufferObject::texIter++));
 }
 
-void BufferObject::addBufferVertexAttrib(std::string name, int size, int offset)
+void BufferObject::addBufferVertexAttrib(std::string name, int size, int offset, int index)
 {
     if(buffers.count(name) > 0)
-        buffers[name]->addVertexAttribPointer(attribIter++,size,offset);
+        buffers[name]->addVertexAttribPointer(index,size,offset);
     else
         std::cout << "Buffer" << name << " not set" << std::endl;
 }

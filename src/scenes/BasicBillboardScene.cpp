@@ -9,64 +9,12 @@
 #include <assert.h>
 #include <src/graphics/drawables/PlaneBuffer.h>
 #include <src/graphics/drawables/BufferSphere.h>
+#include <src/graphics/drawables/BufferCube.h>
 
-GLfloat vertices2[180] = {
-        -0.5f, -0.5f, -0.5f,  0.0f, 0.0f,
-        0.5f, -0.5f, -0.5f,  1.0f, 0.0f,
-        0.5f,  0.5f, -0.5f,  1.0f, 1.0f,
-        0.5f,  0.5f, -0.5f,  1.0f, 1.0f,
-        -0.5f,  0.5f, -0.5f,  0.0f, 1.0f,
-        -0.5f, -0.5f, -0.5f,  0.0f, 0.0f,
-
-        -0.5f, -0.5f,  0.5f,  0.0f, 0.0f,
-        0.5f, -0.5f,  0.5f,  1.0f, 0.0f,
-        0.5f,  0.5f,  0.5f,  1.0f, 1.0f,
-        0.5f,  0.5f,  0.5f,  1.0f, 1.0f,
-        -0.5f,  0.5f,  0.5f,  0.0f, 1.0f,
-        -0.5f, -0.5f,  0.5f,  0.0f, 0.0f,
-
-        -0.5f,  0.5f,  0.5f,  1.0f, 0.0f,
-        -0.5f,  0.5f, -0.5f,  1.0f, 1.0f,
-        -0.5f, -0.5f, -0.5f,  0.0f, 1.0f,
-        -0.5f, -0.5f, -0.5f,  0.0f, 1.0f,
-        -0.5f, -0.5f,  0.5f,  0.0f, 0.0f,
-        -0.5f,  0.5f,  0.5f,  1.0f, 0.0f,
-
-        0.5f,  0.5f,  0.5f,  1.0f, 0.0f,
-        0.5f,  0.5f, -0.5f,  1.0f, 1.0f,
-        0.5f, -0.5f, -0.5f,  0.0f, 1.0f,
-        0.5f, -0.5f, -0.5f,  0.0f, 1.0f,
-        0.5f, -0.5f,  0.5f,  0.0f, 0.0f,
-        0.5f,  0.5f,  0.5f,  1.0f, 0.0f,
-
-        -0.5f, -0.5f, -0.5f,  0.0f, 1.0f,
-        0.5f, -0.5f, -0.5f,  1.0f, 1.0f,
-        0.5f, -0.5f,  0.5f,  1.0f, 0.0f,
-        0.5f, -0.5f,  0.5f,  1.0f, 0.0f,
-        -0.5f, -0.5f,  0.5f,  0.0f, 0.0f,
-        -0.5f, -0.5f, -0.5f,  0.0f, 1.0f,
-
-        -0.5f,  0.5f, -0.5f,  0.0f, 1.0f,
-        0.5f,  0.5f, -0.5f,  1.0f, 1.0f,
-        0.5f,  0.5f,  0.5f,  1.0f, 0.0f,
-        0.5f,  0.5f,  0.5f,  1.0f, 0.0f,
-        -0.5f,  0.5f,  0.5f,  0.0f, 0.0f,
-        -0.5f,  0.5f, -0.5f,  0.0f, 1.0f
-};
-
-GLuint indices[6] {
-        0,1,2,
-        2,3,0
-};
 GLuint texture;
-GLfloat texCoords[8] = {
-        0.0f, 1.0f,
-        1.0f, 1.0f,
-        1.0f, 0.0f,
-        0.0f,0.0f
-};
 
-Drawable *drawableObject;
+
+Drawable *drawableObject, *happyCube;
 void BasicBillboardScene::render()
 {
     glClearColor(0.2f,0.3f,0.3f,0.6f);
@@ -78,25 +26,17 @@ void BasicBillboardScene::render()
     shaders.bind();
         assert(checkGLError);
 
-        shaders.setUniform("textureColor1", object.getTexture("container").getTexIndex());
-        shaders.setUniform("textureColor2", object.getTexture("awesome").getTexIndex());
+        shaders.setUniform("textureColor1", 0);
+        shaders.setUniform("textureColor2", 1);
 
-        shaders.setUniform("model", object.getTransform().getTransformMatrix());
+        shaders.setUniform("model", happyCube->getTransform().getTransformMatrix());
         shaders.setUniform("view", camera.getViewMatrix());
         shaders.setUniform("projection", camera.getPerspectiveMatrix());
 
-        object.render(GL_TRIANGLES,36);
+        happyCube->render();
         drawableObject->render();
     shaders.unbind();
 
-    //shaders.setShader("basic2");
-//    shaders.bind();
-//        shaders.setUniform("model", object.getTransform().getTransformMatrix());
-//        shaders.setUniform("view", camera.getViewMatrix());
-//        shaders.setUniform("projection", camera.getPerspectiveMatrix());
-//        shaders.setUniform("myColor", glm::vec4(0.7f,0.0f,0.0f,1.0f));
-//        drawableObject->render();
-//    shaders.unbind();
 }
 
 void BasicBillboardScene::init(GLFWwindow* window) {
@@ -115,18 +55,8 @@ void BasicBillboardScene::init(GLFWwindow* window) {
     shaders.setShader("basic");
 
     std::cout << "starting binding"<< std::endl;
-    object.addBuffer("uberBuffer", 5);
-    object.getBuffer("uberBuffer").addData(vertices2, sizeof(vertices2) / sizeof(GLfloat));
-    object.addBufferVertexAttrib("uberBuffer",3,0);
-    object.addBufferVertexAttrib("uberBuffer",2, 3);
-
-    object.addTexture("container", PathFind::getAsset("container.jpg"));
-    object.addTexture("awesome", PathFind::getAsset("awesomeface.png"));
-
-
-    object.init();
-
-    drawableObject = new PlaneBuffer(10,10,100,100);
+    drawableObject = new PlaneBuffer(10,10,10,10);
+    happyCube = new BufferCube();
 
     shaders.bind(); //for nonchanging uniforms
         shaders.setUniform("myColor",glm::vec4(1.0f,1.0f,0.0f,1.0f));
@@ -142,27 +72,27 @@ void BasicBillboardScene::processKeys(Keyboard &keyboard)
 
     if(keyboard.keyPressed('Q'))
     {
-        object.getTransform().scaleIncreaseBy(-0.01f);
+        happyCube->getTransform().scaleIncreaseBy(-0.01f);
     }
 
     if(keyboard.keyPressed('E'))
     {
-        object.getTransform().scaleIncreaseBy(0.01f);
+        happyCube->getTransform().scaleIncreaseBy(0.01f);
     }
 
     if(keyboard.keyPressed('Z'))
     {
-        object.getTransform().rotateBy(glm::vec3(0.0f,-0.1f, 0.0f));
+        happyCube->getTransform().rotateBy(glm::vec3(0.0f,-0.1f, 0.0f));
     }
 
     if(keyboard.keyPressed('X'))
     {
-        object.getTransform().rotateBy(glm::vec3(0.0f,0.1f, 0.0f));
+        happyCube->getTransform().rotateBy(glm::vec3(0.0f,0.1f, 0.0f));
     }
 
     if(keyboard.keyPressed('R'))
     {
-        object.getTransform().reset();
+        happyCube->getTransform().reset();
     }
     if(keyboard.keyPressed('V'))
     {

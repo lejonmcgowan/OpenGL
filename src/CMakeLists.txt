@@ -36,7 +36,7 @@ endif(ANTTWEAKBAR_FOUND)
 add_library(src scenes/window.cpp graphics/shader.cpp scenes/BasicBillboardScene.cpp graphics/drawables/BufferObject.cpp graphics/Buffer.cpp
                 graphics/Texture.cpp graphics/IndexBuffer.cpp input/Keyboard.cpp utils/WindowContexts.cpp utils/WindowContexts.h
                 utils/WindowContexts.cpp utils/WindowContexts.h input/Mouse.cpp input/Mouse.h scenes/BasicTriangleScene.cpp scenes/BasicTriangleScene.h
-                scenes/LineScene.cpp scenes/LineScene.h graphics/drawables/PlaneBuffer.cpp graphics/drawables/PlaneBuffer.h graphics/drawables/Drawable.h graphics/drawables/BufferSphere.cpp graphics/drawables/BufferSphere.h)
+                scenes/LineScene.cpp scenes/LineScene.h graphics/drawables/PlaneBuffer.cpp graphics/drawables/PlaneBuffer.h graphics/drawables/Drawable.h graphics/drawables/BufferSphere.cpp graphics/drawables/BufferSphere.h graphics/drawables/BufferCube.cpp graphics/drawables/BufferCube.h)
 
 #set(GRAHICS_SRC "graphics/shader.cpp" "graphics/Buffer.cpp" "graphics/Texture.cpp" "graphics/IndexBuffer.cpp")
 #set(GRAPHICS_HEADERS "graphics/shader.h" "graphics/Buffer.h"  "graphics/Texture.h" "graphics/IndexBuffer.h")

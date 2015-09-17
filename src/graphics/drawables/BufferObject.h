@@ -29,7 +29,7 @@ public:
     BufferObject(){};
     void addBuffer(std::string name, int blockSize);
     void addTexture(std::string name, std::string path);
-    void addBufferVertexAttrib(std::string name,int size, int offset);
+    void addBufferVertexAttrib(std::string name,int size, int offset, int index = -1);
 
     Texture& getTexture(std::string name){return *textures[name];}
     Buffer& getBuffer(std::string name){return *buffers[name];}
