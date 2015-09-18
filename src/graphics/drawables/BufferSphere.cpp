@@ -32,10 +32,10 @@ stacks(stacks)
 
     // Create and populate the buffer objects
     bufferObject.getBuffer("vertexBuffer").addData(v,3 * nVerts * (int)sizeof(GLfloat));
-    bufferObject.addBufferVertexAttrib("vertexBuffer",3,0);
+    bufferObject.addBufferVertexAttrib("vertexBuffer",3,0,0);
 
     bufferObject.getBuffer("normalBuffer").addData(n,3 * nVerts * (int)sizeof(GLfloat));
-    bufferObject.addBufferVertexAttrib("normalBuffer",3,0);
+    bufferObject.addBufferVertexAttrib("normalBuffer",3,0,2);
 
     bufferObject.getBuffer("texBuffer").addData(tex,2 * nVerts * (int)sizeof(GLfloat));
 
@@ -48,6 +48,8 @@ stacks(stacks)
 
     // DO IT
     bufferObject.init();
+
+    VAOHandle = bufferObject.getVAO();
 }
 
 void BufferSphere::generateVerts(float * verts, float * norms, float * tex, int * el)

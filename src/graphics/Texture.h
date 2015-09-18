@@ -38,6 +38,8 @@ public:
     void init();
 
     void bind();
+
+    ~Texture(){glDeleteTextures(1,&handle);}
 };
 
 

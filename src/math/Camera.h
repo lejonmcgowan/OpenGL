@@ -23,7 +23,6 @@ private:
 
     float clamp(float value, float minValue, float maxValue)
     {
-        std::cout << "clamping " << glm::degrees(value) <<  " in range [" << glm::degrees(minValue) << "," << glm::degrees(maxValue) << "]" << std::endl;
         return std::min(std::max(value,minValue), maxValue);
     }
 

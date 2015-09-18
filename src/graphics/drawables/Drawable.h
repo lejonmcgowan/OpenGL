@@ -5,12 +5,14 @@
 
 class Drawable
 {
-private:
+protected:
     Transform transform;
+    int VAOHandle;
 public:
     Drawable(){};
 
     virtual void render() = 0;
+    virtual int getVAO(){return VAOHandle;};
     Transform& getTransform(){ return transform;}
 };
 

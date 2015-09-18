@@ -11,7 +11,7 @@
 #define checkGLError !debugGL::checkErrors(__FILE__,__LINE__)
 
 namespace debugGL{
-    static int firstError = true; //for the Glew error that inevitably pops up. Should'nt have to print to output for that
+    static bool firstError = true; //for the Glew error that inevitably pops up. Should'nt have to print to output for that
     static int checkErrors(const char * file, int line) {
         //
         // Returns 1 if an OpenGL error occurred, 0 otherwise.
@@ -20,11 +20,9 @@ namespace debugGL{
         int    retCode = 0;
 
         glErr = glGetError();
-        while (glErr != GL_NO_ERROR)
-        {
-            const char * message = "";
-            switch( glErr )
-            {
+        while (glErr != GL_NO_ERROR) {
+            const char *message = "";
+            switch (glErr) {
                 case GL_INVALID_ENUM:
                     message = "Invalid enum";
                     break;
@@ -43,10 +41,10 @@ namespace debugGL{
                 default:
                     message = "Unknown error";
             }
-            if(!firstError)
+            if (debugGL::firstError)
                 printf("glError in file %s @ line %d: %s\n", file, line, message);
             else
-                firstError = false;
+                debugGL::firstError = false;
             retCode = 1;
             glErr = glGetError();
         }

@@ -79,6 +79,8 @@ PlaneBuffer::PlaneBuffer(float xsize, float zsize, int xdivs, int zdivs, float s
 
     bufferObject.init();
 
+    VAOHandle = bufferObject.getVAO();
+
     delete [] v;
     delete [] n;
     delete [] tex;

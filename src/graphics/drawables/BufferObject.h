@@ -20,18 +20,13 @@ class BufferObject
 private:
     Transform transform;
     std::map<std::string, Buffer*> buffers;
-    std::map<std::string, Texture*> textures;
     GLuint vao;
     IndexBuffer indexBuffer;
-    static int texIter;
-    int attribIter = 0;
 public:
     BufferObject(){};
     void addBuffer(std::string name, int blockSize);
-    void addTexture(std::string name, std::string path);
-    void addBufferVertexAttrib(std::string name,int size, int offset, int index = -1);
+    void addBufferVertexAttrib(std::string name,int size, int offset, int index);
 
-    Texture& getTexture(std::string name){return *textures[name];}
     Buffer& getBuffer(std::string name){return *buffers[name];}
     IndexBuffer& getIndexBuffer(){return indexBuffer;}
     GLuint getVAO(){return vao;}
@@ -39,8 +34,6 @@ public:
 
     void bindVAO(){glBindVertexArray(vao);};
     void unbindVAO(){glBindVertexArray(0);};
-
-    void bindTextures();
 
     void init(GLenum drawType = GL_STATIC_DRAW);
     void render(GLenum drawType, int numVertices);

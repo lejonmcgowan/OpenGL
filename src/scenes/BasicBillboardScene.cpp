@@ -10,6 +10,7 @@
 #include <src/graphics/drawables/PlaneBuffer.h>
 #include <src/graphics/drawables/BufferSphere.h>
 #include <src/graphics/drawables/BufferCube.h>
+#include <src/graphics/TextureManager.h>
 
 GLuint texture;
 
@@ -19,15 +20,15 @@ void BasicBillboardScene::render()
 {
     glClearColor(0.2f,0.3f,0.3f,0.6f);
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-
-
     assert(checkGLError);
+
     shaders.setShader("basic");
     shaders.bind();
+        TextureManager::bindTextures();
         assert(checkGLError);
 
-        shaders.setUniform("textureColor1", 0);
-        shaders.setUniform("textureColor2", 1);
+        shaders.setUniform("textureColor1", TextureManager::getTexIndex("happy"));
+        //shaders.setUniform("textureColor2", TextureManager::getTexIndex("wood"));
 
         shaders.setUniform("model", happyCube->getTransform().getTransformMatrix());
         shaders.setUniform("view", camera.getViewMatrix());
@@ -35,14 +36,16 @@ void BasicBillboardScene::render()
 
         happyCube->render();
         drawableObject->render();
+        TextureManager::unbindTextures();
     shaders.unbind();
+
 
 }
 
 void BasicBillboardScene::init(GLFWwindow* window) {
     //TODO: clean up string parsing for path
 
-    glfwSetInputMode(window,GLFW_CURSOR,GLFW_CURSOR_DISABLED);
+    //glfwSetInputMode(window,GLFW_CURSOR,GLFW_CURSOR_DISABLED);
 
     glEnable(GL_DEPTH_TEST);
 
@@ -57,6 +60,11 @@ void BasicBillboardScene::init(GLFWwindow* window) {
     std::cout << "starting binding"<< std::endl;
     drawableObject = new PlaneBuffer(10,10,10,10);
     happyCube = new BufferCube();
+
+    TextureManager::addTexture("happy",PathFind::getAsset("awesomeface.png"));
+    //::addTexture("wood",PathFind::getAsset("container.jpg"));
+
+    TextureManager::init();
 
     shaders.bind(); //for nonchanging uniforms
         shaders.setUniform("myColor",glm::vec4(1.0f,1.0f,0.0f,1.0f));

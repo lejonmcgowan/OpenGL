@@ -66,10 +66,8 @@ BufferCube::BufferCube() {
         bufferObject.addBufferVertexAttrib("uberBuffer",3,0,0);
         bufferObject.addBufferVertexAttrib("uberBuffer",2, 3,1);
 
-        bufferObject.addTexture("container", PathFind::getAsset("container.jpg"));
-        bufferObject.addTexture("awesome", PathFind::getAsset("awesomeface.png"));
-
         bufferObject.init();
+        VAOHandle = bufferObject.getVAO();
 }
 
 void BufferCube::render()

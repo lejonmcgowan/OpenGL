@@ -30,5 +30,7 @@ void Texture::init()
 void Texture::bind()
 {
     glActiveTexture(GL_TEXTURE0 + texNum);
+    std::cout << texNum << std::endl;
+    assert(checkGLError);
     glBindTexture(type, handle);
 }
