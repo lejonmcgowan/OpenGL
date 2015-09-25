@@ -20,10 +20,8 @@ public:
     virtual void update(){}
     virtual void render() {}
     virtual void init(GLFWwindow* window) {this->window = window;}
-    virtual void processKeys(Keyboard& keyboard) {}
-    virtual void processMouse(Mouse& mouse)
-    {
-    }
+    virtual bool processKeys(Keyboard &keyboard){return false;}
+    virtual bool processMouse(Mouse &mouse){return false;}
 
 };
 

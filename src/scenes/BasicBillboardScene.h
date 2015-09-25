@@ -18,8 +18,8 @@ private:
 public:
     virtual void render() override;
     virtual void init(GLFWwindow* window) override;
-    virtual void processKeys(Keyboard& keyboard) override;
-    virtual void processMouse(Mouse& keyboard) override;
+    virtual bool processKeys(Keyboard &keyboard) override;
+    virtual bool processMouse(Mouse &keyboard) override;
 };
 
 

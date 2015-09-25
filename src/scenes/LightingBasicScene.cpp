@@ -3,6 +3,7 @@
 //
 
 #include <src/utils/PathFind.h>
+#include <src/graphics/drawables/PlaneBuffer.h>
 #include "LightingBasicScene.h"
 
 LightingBasicScene::LightingBasicScene() : Scene()
@@ -25,14 +26,26 @@ void LightingBasicScene::init(GLFWwindow *window)
     Scene::init(window);
     Shader basicLighting(PathFind::getAsset("shd/basiclighting.vert"), PathFind::getAsset("shd/basiclighting.frag"));
     shaders.addShader("basicLighting", basicLighting);
+
+    objects.push_back(new PlaneBuffer(10,10,10,10));
 }
 
-void LightingBasicScene::processKeys(Keyboard &keyboard)
+bool LightingBasicScene::processKeys(Keyboard &keyboard)
 {
-    Scene::processKeys(keyboard);
+    if(!Scene::processKeys(keyboard))
+    {
+        //stuuffff
+    }
+
+    return true;
 }
 
-void LightingBasicScene::processMouse(Mouse &mouse)
+bool LightingBasicScene::processMouse(Mouse &mouse)
 {
-    Scene::processMouse(mouse);
+    if(!Scene::processMouse(mouse))
+    {
+        //stuff...
+    }
+
+    return true;
 }

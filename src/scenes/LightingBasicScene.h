@@ -6,12 +6,14 @@
 #define TESTPROJECT2_LIGHTINGBASICSCENE_H
 
 
+#include <src/graphics/drawables/Drawable.h>
 #include "scene.h"
 
 class LightingBasicScene: public Scene
 {
 private:
     ShaderManager shaders;
+    std::vector<Drawable *> objects;
 public:
     LightingBasicScene();
 
@@ -21,9 +23,9 @@ public:
 
     virtual void init(GLFWwindow *window) override;
 
-    virtual void processKeys(Keyboard &keyboard) override;
+    virtual bool processKeys(Keyboard &keyboard) override;
 
-    virtual void processMouse(Mouse &mouse) override;
+    virtual bool processMouse(Mouse &mouse) override;
 };
 
 

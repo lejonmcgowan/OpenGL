@@ -99,12 +99,12 @@ void LineScene::render()
     shader->unbind();
 }
 
-void LineScene::processKeys(Keyboard &keyboard)
+bool LineScene::processKeys(Keyboard &keyboard)
 {
     Scene::processKeys(keyboard);
 }
 
-void LineScene::processMouse(Mouse &mouse)
+bool LineScene::processMouse(Mouse &mouse)
 {
     Scene::processMouse(mouse);
 }

@@ -73,7 +73,7 @@ void BasicBillboardScene::init(GLFWwindow* window) {
 }
 
 bool cursorEnabled = true;
-void BasicBillboardScene::processKeys(Keyboard &keyboard)
+bool BasicBillboardScene::processKeys(Keyboard &keyboard)
 {
     Scene::processKeys(keyboard);
     Camera::WASDMove(camera,keyboard,0.03f);
@@ -113,7 +113,7 @@ void BasicBillboardScene::processKeys(Keyboard &keyboard)
 }
 
 bool followMouse = true;
-void BasicBillboardScene::processMouse(Mouse& mouse)
+bool BasicBillboardScene::processMouse(Mouse &mouse)
 {
     if(mouse.getMouseButtonPressed(GLFW_MOUSE_BUTTON_LEFT))
         followMouse = !followMouse;

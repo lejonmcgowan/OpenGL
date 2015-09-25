@@ -5,7 +5,7 @@
 #include "TextureManager.h"
 
 std::map<std::string,Texture> TextureManager::textures;
-bool TextureManager::availableIndeces[size] = {0};
+bool* TextureManager::availableIndeces = TextureManager::makeArray();
 
 void TextureManager::addTexture(std::string name, std::string imagePath)
 {
@@ -14,12 +14,15 @@ void TextureManager::addTexture(std::string name, std::string imagePath)
 
 void TextureManager::removeTexture(std::string name)
 {
+    availableIndeces[textures[name].getTexIndex()] = false;
     textures.erase(name);
 }
 
 void TextureManager::clearTextures()
 {
     textures.clear();
+    delete[] availableIndeces;
+    availableIndeces = makeArray();
 }
 
 void TextureManager::bindTextures()
