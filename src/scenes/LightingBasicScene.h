@@ -10,7 +10,8 @@
 
 class LightingBasicScene: public Scene
 {
-
+private:
+    ShaderManager shaders;
 public:
     LightingBasicScene();
 
