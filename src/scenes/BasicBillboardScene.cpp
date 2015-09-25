@@ -27,15 +27,16 @@ void BasicBillboardScene::render()
         TextureManager::bindTextures();
         assert(checkGLError);
 
-        shaders.setUniform("textureColor1", TextureManager::getTexIndex("happy"));
-        //shaders.setUniform("textureColor2", TextureManager::getTexIndex("wood"));
+        shaders.setUniform("textureColor1", TextureManager::getTexIndex("wood"));
+        shaders.setUniform("textureColor2", TextureManager::getTexIndex("happy"));
+        shaders.setUniform("myColor",glm::vec4(1.0f,1.0f,1.0f,1.0f));
 
         shaders.setUniform("model", happyCube->getTransform().getTransformMatrix());
         shaders.setUniform("view", camera.getViewMatrix());
         shaders.setUniform("projection", camera.getPerspectiveMatrix());
 
         happyCube->render();
-        drawableObject->render();
+        //drawableObject->render();
         TextureManager::unbindTextures();
     shaders.unbind();
 
@@ -55,19 +56,19 @@ void BasicBillboardScene::init(GLFWwindow* window) {
     Shader basic2(PathFind::getAsset("shd/basic.vert"), PathFind::getAsset("shd/basic2.frag"));
     shaders.addShader("basic",basic);
     shaders.addShader("basic2",basic2);
-    shaders.setShader("basic");
+    shaders.setShader("basic2");
 
     std::cout << "starting binding"<< std::endl;
     drawableObject = new PlaneBuffer(10,10,10,10);
-    happyCube = new BufferCube();
+    happyCube = new BufferSphere(1.0f,50,50);
 
     TextureManager::addTexture("happy",PathFind::getAsset("awesomeface.png"));
-    //::addTexture("wood",PathFind::getAsset("container.jpg"));
+    TextureManager::addTexture("wood",PathFind::getAsset("container.jpg"));
 
     TextureManager::init();
 
     shaders.bind(); //for nonchanging uniforms
-        shaders.setUniform("myColor",glm::vec4(1.0f,1.0f,0.0f,1.0f));
+        shaders.setUniform("myColor",glm::vec4(1.0f,1.0f,1.0f,1.0f));
         shaders.setUniform("textureColor",0);
     shaders.unbind();
 }

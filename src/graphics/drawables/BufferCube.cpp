@@ -62,7 +62,7 @@ GLfloat texCoords[8] = {
 };
 
 BufferCube::BufferCube() {
-        bufferObject.addBuffer("uberBuffer", 5);
+        bufferObject.addBuffer("uberBuffer", 8);
         bufferObject.getBuffer("uberBuffer").addData(vertices, sizeof(vertices) / sizeof(GLfloat));
         bufferObject.addBufferVertexAttrib("uberBuffer",3,0,0);
         bufferObject.addBufferVertexAttrib("uberBuffer",3,3,1);

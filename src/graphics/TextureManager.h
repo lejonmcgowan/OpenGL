@@ -16,7 +16,7 @@ class TextureManager
 {
 private:
     const static int size = GL_MAX_COMBINED_TEXTURE_IMAGE_UNITS;
-    static std::map<std::string,Texture> textures;
+    static std::map<std::string,Texture *> textures;
     static bool* availableIndeces; //true means the index is occupied
 
     static int getNextIndex()

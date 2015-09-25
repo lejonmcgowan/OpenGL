@@ -33,4 +33,5 @@ void Texture::bind()
     std::cout << texNum << std::endl;
     assert(checkGLError);
     glBindTexture(type, handle);
+    assert(checkGLError);
 }

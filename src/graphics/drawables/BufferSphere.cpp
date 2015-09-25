@@ -38,7 +38,7 @@ stacks(stacks)
     bufferObject.addBufferVertexAttrib("normalBuffer",3,0,1);
 
     bufferObject.getBuffer("texBuffer").addData(tex,2 * nVerts * (int)sizeof(GLfloat));
-    bufferObject.addBufferVertexAttrib("texBuffer",2,0,0);
+    bufferObject.addBufferVertexAttrib("texBuffer",2,0,2);
 
     bufferObject.getIndexBuffer().addData(el,elements * (int)sizeof(GLint));
 

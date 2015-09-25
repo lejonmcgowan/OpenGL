@@ -60,5 +60,6 @@ void BasicTriangleScene::render()
               glDrawArrays(GL_TRIANGLES,0,3);
         glBindVertexArray(0);
     shader->unbind();
+
 }
 

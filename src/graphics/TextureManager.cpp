@@ -4,22 +4,27 @@
 
 #include "TextureManager.h"
 
-std::map<std::string,Texture> TextureManager::textures;
+std::map<std::string,Texture *> TextureManager::textures;
 bool* TextureManager::availableIndeces = TextureManager::makeArray();
 
 void TextureManager::addTexture(std::string name, std::string imagePath)
 {
-    textures.emplace(name,Texture(imagePath, getNextIndex()));
+    textures.emplace(name,new Texture(imagePath, getNextIndex()));
 }
 
 void TextureManager::removeTexture(std::string name)
 {
-    availableIndeces[textures[name].getTexIndex()] = false;
+    availableIndeces[textures[name]->getTexIndex()] = false;
     textures.erase(name);
 }
 
 void TextureManager::clearTextures()
 {
+    for (auto texture : textures)
+    {
+        delete texture.second;
+    }
+
     textures.clear();
     delete[] availableIndeces;
     availableIndeces = makeArray();
@@ -28,7 +33,7 @@ void TextureManager::clearTextures()
 void TextureManager::bindTextures()
 {
     for(auto texture: textures)
-        texture.second.bind();
+        (texture.second)->bind();
 }
 
 void TextureManager::unbindTextures()
@@ -38,11 +43,11 @@ void TextureManager::unbindTextures()
 
 int TextureManager::getTexIndex(std::string name)
 {
-    return textures[name].getTexIndex();
+    return textures[name]->getTexIndex();
 }
 
 void TextureManager::init()
 {
     for(auto texture: textures)
-        texture.second.init();
+        (texture.second)->init();
 }
