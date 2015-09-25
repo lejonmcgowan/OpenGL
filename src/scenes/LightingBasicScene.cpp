@@ -27,7 +27,8 @@ void LightingBasicScene::init(GLFWwindow *window)
     Shader basicLighting(PathFind::getAsset("shd/basiclighting.vert"), PathFind::getAsset("shd/basiclighting.frag"));
     shaders.addShader("basicLighting", basicLighting);
 
-    objects.push_back(new PlaneBuffer(10,10,10,10));
+    objects["plane"] = new PlaneBuffer(10,10,10,10);
+    objects["plane"]->getTransform().translateBy(glm::vec3(0.0f,-0.5f,0.0f));
 }
 
 bool LightingBasicScene::processKeys(Keyboard &keyboard)

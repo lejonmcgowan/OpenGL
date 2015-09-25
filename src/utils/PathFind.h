@@ -1,5 +1,8 @@
 #include <string>
 
+#define findAsset(name) PathFind::getAsset(name)
+#define findShader(name) PathFind::getAsset("shd/" name)
+
 class PathFind
 {
 public:

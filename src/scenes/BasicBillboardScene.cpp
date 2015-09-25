@@ -14,8 +14,8 @@
 
 GLuint texture;
 
-
 Drawable *drawableObject, *happyCube;
+
 void BasicBillboardScene::render()
 {
     glClearColor(0.2f,0.3f,0.3f,0.6f);
@@ -27,8 +27,8 @@ void BasicBillboardScene::render()
         TextureManager::bindTextures();
         assert(checkGLError);
 
-        shaders.setUniform("textureColor1", TextureManager::getTexIndex("wood"));
-        shaders.setUniform("textureColor2", TextureManager::getTexIndex("happy"));
+        shaders.setUniform("textureColor1", texIndex("wood"));
+        shaders.setUniform("textureColor2", texIndex("happy"));
         shaders.setUniform("myColor",glm::vec4(1.0f,1.0f,1.0f,1.0f));
 
         shaders.setUniform("model", happyCube->getTransform().getTransformMatrix());
@@ -52,8 +52,8 @@ void BasicBillboardScene::init(GLFWwindow* window) {
 
     Scene::init(window);
 
-    Shader basic(PathFind::getAsset("shd/basic.vert"), PathFind::getAsset("shd/basic.frag"));
-    Shader basic2(PathFind::getAsset("shd/basic.vert"), PathFind::getAsset("shd/basic2.frag"));
+    Shader basic(findShader("basic.vert"), findShader("basic.frag"));
+    Shader basic2(findShader("basic.vert"), findShader("basic2.frag"));
     shaders.addShader("basic",basic);
     shaders.addShader("basic2",basic2);
     shaders.setShader("basic2");
@@ -62,8 +62,8 @@ void BasicBillboardScene::init(GLFWwindow* window) {
     drawableObject = new PlaneBuffer(10,10,10,10);
     happyCube = new BufferSphere(1.0f,50,50);
 
-    TextureManager::addTexture("happy",PathFind::getAsset("awesomeface.png"));
-    TextureManager::addTexture("wood",PathFind::getAsset("container.jpg"));
+    TextureManager::addTexture("happy",findAsset("awesomeface.png"));
+    TextureManager::addTexture("wood",findAsset("container.jpg"));
 
     TextureManager::init();
 

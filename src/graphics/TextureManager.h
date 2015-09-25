@@ -12,6 +12,8 @@
 #include <map>
 #include <iostream>
 
+#define texIndex(name) TextureManager::getTexIndex(name)
+
 class TextureManager
 {
 private:
