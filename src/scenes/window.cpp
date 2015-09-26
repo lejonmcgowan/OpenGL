@@ -47,9 +47,11 @@ void Window::init(Scene* scene)
 
     glViewport(0, 0, WINDOW_WIDTH, WINDOW_HEIGHT);
 
+    //for AntTweakBar
     TwInit(TW_OPENGL_CORE, NULL);
     TwWindowSize(WINDOW_WIDTH, WINDOW_HEIGHT);
 
+    //set all callbacks to direct towards static classes to be used in scenes
     glfwSetKeyCallback(window,&Keyboard::glfwKeyboardCallback);
     glfwSetCursorPosCallback(window,&Mouse::glfwMouseCursorCallback);
     glfwSetMouseButtonCallback(window, &Mouse::glfwMouseButtonCallback);
@@ -66,22 +68,33 @@ void Window::processKeys()
     if(keyboard.keyPressed(GLFW_KEY_ESCAPE))
         glfwSetWindowShouldClose(window, true);
 }
-void Window::run()
+void Window::run() //timestep
 {
+    double time; //not used for now, but useful for later when I need time in my scene
+    const double timestep = 1 / 60.0f; //for an ideal 60FPS
+
+    double lastTime = glfwGetTime();
+
     while (!glfwWindowShouldClose(window))
     {
-        glfwPollEvents();
+        double currentTime = glfwGetTime();
+        double frameTime = currentTime - lastTime;
+        if(frameTime > timestep)
+        {
+            glfwPollEvents();
 
-        processKeys();
-        processMouse();
+            processKeys();
+            processMouse();
 
-        scene->processKeys(keyboard);
-        scene->processMouse(mouse);
+            scene->processKeys(keyboard);
+            scene->processMouse(mouse);
 
-        scene->update();
-        scene->render();
+            scene->update();
+            scene->render();
 
-        glfwSwapBuffers(window);
+            glfwSwapBuffers(window);
+            lastTime = glfwGetTime();
+        }
     }
 }
 

@@ -46,7 +46,7 @@ void BasicBillboardScene::render()
 void BasicBillboardScene::init(GLFWwindow* window) {
     //TODO: clean up string parsing for path
 
-    //glfwSetInputMode(window,GLFW_CURSOR,GLFW_CURSOR_DISABLED);
+    glfwSetInputMode(window,GLFW_CURSOR,GLFW_CURSOR_DISABLED);
 
     glEnable(GL_DEPTH_TEST);
 
@@ -60,7 +60,7 @@ void BasicBillboardScene::init(GLFWwindow* window) {
 
     std::cout << "starting binding"<< std::endl;
     drawableObject = new PlaneBuffer(10,10,10,10);
-    happyCube = new BufferSphere(1.0f,50,50);
+    happyCube = new BufferSphere(1.0f,20,20);
 
     TextureManager::addTexture("happy",findAsset("awesomeface.png"));
     TextureManager::addTexture("wood",findAsset("container.jpg"));
