@@ -7,6 +7,10 @@
 
 #include "Transform.h"
 #include "utils/WindowContexts.h"
+#include "input/Mouse.h"
+#include "input/Keyboard.hpp"
+
+#include <iostream>
 
 class Camera: public Transform
 {
@@ -92,7 +96,6 @@ public:
         if(updatePerspectiveTransform)
         {
             perspectiveMatrix = glm::perspective(fov,WindowContexts::WINDOW_WIDTH / (float)WindowContexts::WINDOW_HEIGHT, nearView, farView);
-            //std::cout << glm::degrees(fov) << std::endl;
             updatePerspectiveTransform = false;
         }
 
@@ -167,9 +170,12 @@ public:
 
     static void WASDLook(Camera& camera, Mouse& mouse, float sensitivity)
     {
-        glm::vec3 offsets = glm::vec3(mouse.getMouseOffset() * sensitivity, 0.0f);
+        glm::vec2 offsets = mouse.getMouseOffset();
+        std::cout << "returned offset: (" << offsets.x << "," << offsets.y << ")" <<std::endl;
+        offsets *= sensitivity;
 
-        camera.rotateBy(offsets);
+        //std::cout << "(" << offsets.x << "," << offsets.y << "," << offsets.z << ")" << std::endl;
+    camera.rotateBy(glm::vec3(offsets,0.0f));
     }
 
     static void FOVScroll(Camera& camera, Mouse& mouse, float sensitivity)

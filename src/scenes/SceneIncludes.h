@@ -9,5 +9,6 @@
 #include "BasicBillboardScene.h"
 #include "BasicTriangleScene.h"
 #include "LineScene.h"
+#include "LightingBasicScene.h"
 
 #endif //TESTPROJECT2_SCENEINLCUDES_H

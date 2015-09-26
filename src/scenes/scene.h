@@ -32,11 +32,11 @@ public:
     virtual bool processMouse(Mouse &mouse)
     {
         bool consumed = false;
-        consumed = consumed && TwEventMouseButtonGLFW3(window,mouse.getLastButton(), mouse.getLastAction(), mouse.getLastMods());
+        consumed = consumed || TwEventMouseButtonGLFW3(window,mouse.getLastButton(), mouse.getLastAction(), mouse.getLastMods());
         glm::vec2 offsets = mouse.getScrollOffset();
-        consumed = consumed && TwEventScrollGLFW3(window,offsets.x,offsets.y);
+        consumed = consumed || TwEventScrollGLFW3(window,offsets.x,offsets.y);
         glm::vec2 mousePos = mouse.getMouseOffset();
-        consumed = consumed && TwEventCursorPosGLFW3(window,mousePos.x,mousePos.y);
+        consumed = consumed || TwEventCursorPosGLFW3(window,mousePos.x,mousePos.y);
 
         return consumed;
     }

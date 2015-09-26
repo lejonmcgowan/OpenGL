@@ -44,7 +44,6 @@ void BasicBillboardScene::render()
 }
 
 void BasicBillboardScene::init(GLFWwindow* window) {
-    //TODO: clean up string parsing for path
 
     glfwSetInputMode(window,GLFW_CURSOR,GLFW_CURSOR_DISABLED);
 
@@ -111,6 +110,8 @@ bool BasicBillboardScene::processKeys(Keyboard &keyboard)
         else
             glfwSetInputMode(window,GLFW_CURSOR,GLFW_CURSOR_DISABLED);
     }
+
+    return true;
 }
 
 bool followMouse = true;
@@ -123,4 +124,6 @@ bool BasicBillboardScene::processMouse(Mouse &mouse)
         Camera::WASDLook(camera, mouse, 0.01f);
         Camera::FOVScroll(camera, mouse, 0.1f);
     }
+
+    return true;
 }

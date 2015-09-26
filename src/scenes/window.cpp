@@ -106,5 +106,6 @@ void Window::stop()
 
 void Window::processMouse()
 {
-
+    glfwGetCursorPos(window,&cursorPos.x, &cursorPos.y);
+    mouse.updateCursor(glm::vec2(cursorPos));
 }
