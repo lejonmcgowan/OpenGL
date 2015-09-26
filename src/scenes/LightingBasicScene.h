@@ -14,6 +14,7 @@ class LightingBasicScene: public Scene
 private:
     ShaderManager shaders;
     std::map<std::string, Drawable *> objects;
+
 public:
     LightingBasicScene();
 

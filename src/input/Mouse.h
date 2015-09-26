@@ -17,6 +17,7 @@ private:
     static glm::vec2 currentCursorPosition, lastCursorPosition;
     static glm::vec2 currentScrollPosition, lastScrollPosition;
     static bool initialized;
+    static int lastButton, lastAction, lastMods;
 public:
     //static callbacks
     static void glfwMouseCursorCallback(GLFWwindow* window, double xPos, double yPos)
@@ -41,6 +42,25 @@ public:
             mouseToggles[button] = true;
         else if(action == GLFW_RELEASE)
             mouseToggles[button] = false;
+
+        lastAction = action;
+        lastButton = button;
+        lastMods = mods;
+    }
+
+    static int getLastButton()
+    {
+        return lastButton;
+    }
+
+    static int getLastAction()
+    {
+        return lastAction;
+    }
+
+    static int getLastMods()
+    {
+        return lastMods;
     }
 
     static void glfwScrollCallback(GLFWwindow* window, double xOffset, double yOffset)
@@ -71,7 +91,6 @@ public:
         lastScrollPosition = currentScrollPosition;
         return offset;
     }
-
 };
 
 

@@ -12,6 +12,8 @@ private:
     static bool keyToggle[]; //true means the key is pressed
     static int lastAction;
     static int lastKeyPressed; //key unknown
+    static int lastMods;
+    static int lastScancode;
 public:
     static void glfwKeyboardCallback(GLFWwindow* window, int key, int scancode,
                                      int action, int mods) {
@@ -27,6 +29,8 @@ public:
                 break;
         }
         lastAction = action;
+        lastMods = mods;
+        lastScancode = scancode;
     }
 
     bool keyPressed(int key) {
@@ -35,6 +39,8 @@ public:
 
     int getLastAction(){return lastAction;}
     int getLastKeyPressed(){return lastKeyPressed;}
+    int getLastMods(){return lastMods;}
+    int getLastScancode(){return lastScancode;}
 
 };
 #endif //TESTPROJECT2_KEYBOARD_HPP
