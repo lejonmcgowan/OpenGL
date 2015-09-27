@@ -22,6 +22,7 @@ private:
     Scene* scene;
     Keyboard keyboard;
     Mouse mouse;
+    glm::dvec2 cursorPos;
 
 public:
     Window(int width,int height, std::string name = "window");

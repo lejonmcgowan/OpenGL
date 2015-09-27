@@ -9,13 +9,14 @@
 #include <GLFW/glfw3.h>
 #include <glm/detail/type_vec.hpp>
 #include <glm/detail/type_vec2.hpp>
+#include <iostream>
 
 class Mouse
 {
 private:
     static bool mouseToggles[GLFW_MOUSE_BUTTON_LAST];
-    static glm::vec2 currentCursorPosition, lastCursorPosition;
-    static glm::vec2 currentScrollPosition, lastScrollPosition;
+    static glm::vec2 currentCursorPosition, lastCursorPosition, cursorOffset;
+    static glm::vec2 currentScrollPosition, lastScrollPosition, scrollOffset;
     static bool initialized;
     static int lastButton, lastAction, lastMods;
 public:
@@ -29,11 +30,7 @@ public:
             initialized = true;
         }
 
-        lastCursorPosition.x = currentCursorPosition.x;
-        lastCursorPosition.y = currentCursorPosition.y;
-
-        currentCursorPosition.x = (float)xPos;
-        currentCursorPosition.y = (float)yPos;
+      //  updateCursor(glm::vec2(xPos,yPos));
     }
 
     static void glfwMouseButtonCallback(GLFWwindow* window, int button, int action, int mods)
@@ -69,6 +66,8 @@ public:
 
         currentScrollPosition.x = xOffset;
         currentScrollPosition.y = yOffset;
+
+        scrollOffset = currentScrollPosition - lastScrollPosition;
     }
 
     //query from the events polled
@@ -79,17 +78,22 @@ public:
 
     glm::vec2 getMouseOffset()
     {
-        glm::vec2 offset = currentCursorPosition - lastCursorPosition;
-        offset.y *= -1;
-        lastCursorPosition = currentCursorPosition;
-        return offset;
+        return cursorOffset;
     }
 
     glm::vec2 getScrollOffset()
     {
-        glm::vec2 offset = currentScrollPosition - lastScrollPosition;
-        lastScrollPosition = currentScrollPosition;
-        return offset;
+        return scrollOffset;
+    }
+
+    static void updateCursor(glm::vec2 currentPos)
+    {
+        lastCursorPosition = currentCursorPosition;
+
+        currentCursorPosition = currentPos;
+
+        cursorOffset = currentCursorPosition - lastCursorPosition;
+        cursorOffset.y *= -1;
     }
 };
 
