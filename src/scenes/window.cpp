@@ -48,12 +48,13 @@ void Window::init(Scene* scene)
     glViewport(0, 0, WINDOW_WIDTH, WINDOW_HEIGHT);
 
     //for AntTweakBar
+    TwDefine(" GLOBAL fontscaling=2 "); // use large font
     TwInit(TW_OPENGL_CORE, NULL);
     TwWindowSize(WINDOW_WIDTH, WINDOW_HEIGHT);
 
     //set all callbacks to direct towards static classes to be used in scenes
     glfwSetKeyCallback(window,&Keyboard::glfwKeyboardCallback);
-    glfwSetCursorPosCallback(window,&Mouse::glfwMouseCursorCallback);
+    glfwSetCursorPosCallback(window,(GLFWcursorposfun)TwEventCursorPosGLFW3);
     glfwSetMouseButtonCallback(window, &Mouse::glfwMouseButtonCallback);
     glfwSetScrollCallback(window,&Mouse::glfwScrollCallback);
     glfwSetErrorCallback(error_callback);

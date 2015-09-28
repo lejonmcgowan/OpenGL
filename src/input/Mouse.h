@@ -81,6 +81,11 @@ public:
         return cursorOffset;
     }
 
+    glm::vec2 getCursorPos()
+    {
+        return currentCursorPosition;
+    }
+
     glm::vec2 getScrollOffset()
     {
         return scrollOffset;
