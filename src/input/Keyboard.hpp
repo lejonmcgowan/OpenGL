@@ -33,8 +33,11 @@ public:
         lastScancode = scancode;
     }
 
-    bool keyPressed(int key) {
-        return keyToggle[key];
+    bool keyPressed(int key)
+    {
+        bool result = keyToggle[key];
+        keyToggle[key] = false; //will eliminate key repetition issue?
+        return result;
     }
 
     int getLastAction(){return lastAction;}
