@@ -6,10 +6,12 @@
 #define TESTPROJECT2_KEYBOARD_HPP
 
 #include <GLFW/glfw3.h>
+#include <valarray>
 
-class Keyboard {
+class Keyboard
+{
 private:
-    static bool keyToggle[]; //true means the key is pressed
+    static int keyToggle[]; //true means the key is pressed
     static int lastAction;
     static int lastKeyPressed; //key unknown
     static int lastMods;
@@ -20,11 +22,19 @@ public:
         switch (action)
         {
             case GLFW_PRESS:
-                Keyboard::keyToggle[key] = true;
-                lastKeyPressed = key;
+                if(keyToggle[key] == GLFW_PRESS)
+                {
+                    Keyboard::keyToggle[key] = GLFW_REPEAT;
+                    lastKeyPressed = key;
+                }
+                else
+                {
+                    Keyboard::keyToggle[key] = GLFW_PRESS;
+                    lastKeyPressed = GLFW_KEY_UNKNOWN;
+                }
                 break;
             case GLFW_RELEASE:
-                Keyboard::keyToggle[key] = false;
+                Keyboard::keyToggle[key] = GLFW_RELEASE;
                 lastKeyPressed = GLFW_KEY_UNKNOWN;
                 break;
         }
@@ -35,9 +45,14 @@ public:
 
     bool keyPressed(int key)
     {
-        bool result = keyToggle[key];
-        keyToggle[key] = false; //will eliminate key repetition issue?
-        return result;
+        int result = keyToggle[key];
+        return result == GLFW_PRESS;
+    }
+
+    bool keyHeld(int key)
+    {
+        int result = keyToggle[key];
+        return result == GLFW_RELEASE;
     }
 
     int getLastAction(){return lastAction;}

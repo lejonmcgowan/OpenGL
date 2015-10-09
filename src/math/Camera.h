@@ -158,14 +158,14 @@ public:
     //convienience methods for use in scenes
     static void WASDMove(Camera& camera, Keyboard& keyboard, float sensitivity)
     {
-        if(keyboard.keyPressed(GLFW_KEY_W))
-            camera.forwardBy(sensitivity);
-        if(keyboard.keyPressed(GLFW_KEY_A))
-            camera.strafeBy(-sensitivity);
-        if(keyboard.keyPressed(GLFW_KEY_S))
+        if(keyboard.keyHeld(GLFW_KEY_W))
             camera.forwardBy(-sensitivity);
-        if(keyboard.keyPressed(GLFW_KEY_D))
+        if(keyboard.keyHeld(GLFW_KEY_A))
             camera.strafeBy(sensitivity);
+        if(keyboard.keyHeld(GLFW_KEY_S))
+            camera.forwardBy(sensitivity);
+        if(keyboard.keyHeld(GLFW_KEY_D))
+            camera.strafeBy(-sensitivity);
     }
 
     static void WASDLook(Camera& camera, Mouse& mouse, float sensitivity)

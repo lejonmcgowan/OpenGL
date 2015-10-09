@@ -97,7 +97,7 @@ bool LightingBasicScene::processKeys(Keyboard& keyboard)
     if(!Scene::processKeys(keyboard))
     {
         //stuuffff
-        Camera::WASDMove(camera,keyboard,0.03f);
+        Camera::WASDMove(camera,keyboard,0.05f);
     }
 
     return true;

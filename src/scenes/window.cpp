@@ -33,7 +33,7 @@ void Window::init(Scene* scene)
     }
 
     glfwMakeContextCurrent(window);
-    glfwSwapInterval(1);
+    glfwSwapInterval(2);
 
     glewExperimental = GL_TRUE;
     if (glewInit() != GLEW_OK)
@@ -48,7 +48,7 @@ void Window::init(Scene* scene)
     glViewport(0, 0, WINDOW_WIDTH, WINDOW_HEIGHT);
 
     //for AntTweakBar
-    TwDefine(" GLOBAL fontscaling=2 "); // use large font
+    //TwDefine(" GLOBAL fontscaling=2 "); // use large font
     TwInit(TW_OPENGL_CORE, NULL);
     TwWindowSize(WINDOW_WIDTH, WINDOW_HEIGHT);
 
@@ -56,10 +56,10 @@ void Window::init(Scene* scene)
     glfwSetKeyCallback(window,&Keyboard::glfwKeyboardCallback);
     glfwSetCursorPosCallback(window,(GLFWcursorposfun)TwEventCursorPosGLFW3);
     glfwSetMouseButtonCallback(window, &Mouse::glfwMouseButtonCallback);
-    glfwSetScrollCallback(window,&Mouse::glfwScrollCallback);
+    //glfwSetScrollCallback(window,&Mouse::glfwScrollCallback);
     glfwSetErrorCallback(error_callback);
 
-
+    glfwSetInputMode(window, GLFW_STICKY_KEYS, GL_FALSE);
 
     this->scene = scene;
     this->scene->init(window);
