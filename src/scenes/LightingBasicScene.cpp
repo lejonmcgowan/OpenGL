@@ -33,6 +33,7 @@ void LightingBasicScene::render()
     shaders.bind();
         shaders.setUniform("lightColor", lightColor);
         shaders.setUniform("lightPos", objects["lightSphere"]->getTransform().getTranslation());
+        shaders.setUniform("viewPos", camera.getTranslation());
         shaders.setUniform("ambientColor", glm::vec3(0.0f,1.0f,1.0f));
 
         shaders.setUniform("model",objects["sphere"]->getTransform().getTransformMatrix());
