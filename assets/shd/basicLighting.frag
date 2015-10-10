@@ -22,8 +22,9 @@ void main()
     vec3 diffuse = difffuseStrength * lightColor;
 
     vec3 viewDir = normalize(viewPos - worldCoord);
-    vec3 reflectDir = reflect(-lightDir,surfaceNormal);
-    float specExponent = pow(max(dot(viewDir,reflectDir),0.0f),64);
+    //vec3 reflectDir = reflect(-lightDir,surfaceNormal);
+    vec3 halfVector = normalize(viewPos + lightPos);
+    float specExponent = pow(max(dot(viewDir,halfVector),0.0f),32);
 
 	vec3 specular = specularStrength * specExponent * lightColor;
 	vec3 result = (ambient + diffuse + specular) * ambientColor;
