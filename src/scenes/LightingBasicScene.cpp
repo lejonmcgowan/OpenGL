@@ -111,7 +111,7 @@ bool LightingBasicScene::processKeys(Keyboard& keyboard)
 
 bool LightingBasicScene::processMouse(Mouse& mouse)
 {
-    if(mouse.getMouseButtonPressed(GLFW_MOUSE_BUTTON_LEFT))
+    if(!cursorEnabled || mouse.getMouseButtonPressed(GLFW_MOUSE_BUTTON_LEFT))
         Camera::WASDLook(camera,mouse,0.03f);
 
     Camera::FOVScroll(camera, mouse, 0.1f);
