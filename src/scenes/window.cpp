@@ -54,9 +54,9 @@ void Window::init(Scene* scene)
 
     //set all callbacks to direct towards static classes to be used in scenes
     glfwSetKeyCallback(window,&Keyboard::glfwKeyboardCallback);
-    glfwSetCursorPosCallback(window,(GLFWcursorposfun)TwEventCursorPosGLFW3);
+    glfwSetCursorPosCallback(window,(GLFWcursorposfun)&Mouse::glfwMouseCursorCallback);
     glfwSetMouseButtonCallback(window, &Mouse::glfwMouseButtonCallback);
-    //glfwSetScrollCallback(window,&Mouse::glfwScrollCallback);
+    glfwSetScrollCallback(window,&Mouse::glfwScrollCallback);
     glfwSetErrorCallback(error_callback);
 
     glfwSetInputMode(window, GLFW_STICKY_KEYS, GL_FALSE);
@@ -107,6 +107,5 @@ void Window::stop()
 
 void Window::processMouse()
 {
-    glfwGetCursorPos(window,&cursorPos.x, &cursorPos.y);
-    mouse.updateCursor(glm::vec2(cursorPos));
+
 }

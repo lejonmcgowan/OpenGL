@@ -6,7 +6,7 @@
 #include "AntTweakBar.h"
 
 #include "graphics/shaderManager.h"
-#include "input/Keyboard.hpp"
+#include "input/Keyboard.h"
 #include "input/Mouse.h"
 #include <vector>
 
@@ -23,20 +23,11 @@ public:
     virtual void init(GLFWwindow* window) {this->window = window;}
     virtual bool processKeys(Keyboard &keyboard)
     {
-        return TwEventKeyGLFW3(window,
-                               keyboard.getLastKeyPressed(),
-                               keyboard.getLastScancode(),
-                               keyboard.getLastAction(),
-                               keyboard.getLastMods());
+        return false;
     }
     virtual bool processMouse(Mouse &mouse)
     {
-        bool consumed = false;
-        consumed = consumed || TwEventMouseButtonGLFW3(window,mouse.getLastButton(), mouse.getLastAction(), mouse.getLastMods());
-        glm::vec2 offsets = mouse.getScrollOffset();
-        consumed = consumed || TwEventScrollGLFW3(window,offsets.x,offsets.y);
-
-        return consumed;
+        return false;
     }
 
 };

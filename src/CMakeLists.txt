@@ -33,10 +33,29 @@ else (ANTTWEAKBAR_FOUND)
 endif(ANTTWEAKBAR_FOUND)
 
 
-add_library(src scenes/window.cpp graphics/shader.cpp scenes/BasicBillboardScene.cpp graphics/drawables/BufferObject.cpp graphics/Buffer.cpp
-                graphics/Texture.cpp graphics/IndexBuffer.cpp input/Keyboard.cpp utils/WindowContexts.cpp utils/WindowContexts.h
-                utils/WindowContexts.cpp utils/WindowContexts.h input/Mouse.cpp input/Mouse.h scenes/BasicTriangleScene.cpp scenes/BasicTriangleScene.h
-                scenes/LineScene.cpp scenes/LineScene.h graphics/drawables/PlaneBuffer.cpp graphics/drawables/PlaneBuffer.h graphics/drawables/Drawable.h graphics/drawables/BufferSphere.cpp graphics/drawables/BufferSphere.h graphics/drawables/BufferCube.cpp graphics/drawables/BufferCube.h graphics/TextureManager.cpp graphics/TextureManager.h scenes/LightingBasicScene.cpp scenes/LightingBasicScene.h)
+add_library(src  graphics/shader.cpp  graphics/drawables/BufferObject.cpp graphics/Buffer.cpp
+                 graphics/Texture.cpp graphics/IndexBuffer.cpp
+                 graphics/drawables/PlaneBuffer.cpp
+                 graphics/drawables/PlaneBuffer.h
+                 graphics/drawables/Drawable.h
+                 graphics/drawables/BufferSphere.cpp
+                 graphics/drawables/BufferSphere.h
+                 graphics/drawables/BufferCube.cpp
+                 graphics/drawables/BufferCube.h
+                 graphics/TextureManager.cpp
+                 graphics/TextureManager.h )
+
+add_library(utils utils/WindowContexts.cpp utils/WindowContexts.h)
+add_library(scenes  scenes/window.cpp scenes/window.h
+                    scenes/BasicBillboardScene.cpp scenes/BasicBillboardScene.h
+                    scenes/LineScene.cpp scenes/LineScene.h
+                    scenes/LightingBasicScene.cpp scenes/LightingBasicScene.h
+                    scenes/BasicTriangleScene.cpp scenes/BasicTriangleScene.h
+                    scenes/SceneIncludes.h)
+
+add_library(input input/Keyboard.cpp input/Keyboard.h input/Keyboard.h input/Mouse.cpp input/Mouse.h)
+
+add_library(math math/Transform.h math/Camera.h math/mathNothing.cpp math/mathNothing.cpp)
 
 #set(GRAHICS_SRC "graphics/shader.cpp" "graphics/Buffer.cpp" "graphics/Texture.cpp" "graphics/IndexBuffer.cpp")
 #set(GRAPHICS_HEADERS "graphics/shader.h" "graphics/Buffer.h"  "graphics/Texture.h" "graphics/IndexBuffer.h")
@@ -53,14 +72,14 @@ add_library(src scenes/window.cpp graphics/shader.cpp scenes/BasicBillboardScene
 #set(UTILS_HEADERS "utils/debugGL.h" "utils/PathFind.h" "utils/WindowContexts.h")
 #
 #add_library(graphics ${GRAPHICS_SRC} ${GRAPHICS_HEADERS})
-#add_executable(input ${INPUT_SRC} ${INPUT_HEADERS})
-#add_executable(math ${MATH_HEADERS})
-#add_executable(scenes ${SCENE_SRC} ${SCENE_HEADERS})
-#add_executable(utils ${UTILS_SRC} ${UTILS_HEADERS})
+#add_library(input ${INPUT_SRC} ${INPUT_HEADERS})
+#add_library(math ${MATH_HEADERS})
+#add_library(scenes ${SCENE_SRC} ${SCENE_HEADERS})
+#add_library(utils ${UTILS_SRC} ${UTILS_HEADERS})
 
 include_directories(${CMAKE_SOURCE_DIR} ${CMAKE_SOURCE_DIR}/src ${CMAKE_SOURCE_DIR}/ext ${CMAKE_SOURCE_DIR}/ext/include)
 
 target_link_libraries(src ${LIBRARIES} ${GLFW_LIBRARY_FLAGS} ${GLEW_LIBRARIES})
 
 add_executable(${PROJECT_NAME} _main.cpp)
-target_link_libraries(${PROJECT_NAME} src)
+target_link_libraries(${PROJECT_NAME}  utils scenes input src)

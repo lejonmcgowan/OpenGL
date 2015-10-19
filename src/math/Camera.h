@@ -8,7 +8,7 @@
 #include "Transform.h"
 #include "utils/WindowContexts.h"
 #include "input/Mouse.h"
-#include "input/Keyboard.hpp"
+#include "input/Keyboard.h"
 
 #include <iostream>
 
@@ -158,14 +158,14 @@ public:
     //convienience methods for use in scenes
     static void WASDMove(Camera& camera, Keyboard& keyboard, float sensitivity)
     {
-        if(keyboard.keyHeld(GLFW_KEY_W))
-            camera.forwardBy(-sensitivity);
-        if(keyboard.keyHeld(GLFW_KEY_A))
-            camera.strafeBy(sensitivity);
-        if(keyboard.keyHeld(GLFW_KEY_S))
+        if(keyboard.keyPressed(GLFW_KEY_W))
             camera.forwardBy(sensitivity);
-        if(keyboard.keyHeld(GLFW_KEY_D))
+        if(keyboard.keyPressed(GLFW_KEY_A))
             camera.strafeBy(-sensitivity);
+        if(keyboard.keyPressed(GLFW_KEY_S))
+            camera.forwardBy(-sensitivity);
+        if(keyboard.keyPressed(GLFW_KEY_D))
+            camera.strafeBy(sensitivity);
     }
 
     static void WASDLook(Camera& camera, Mouse& mouse, float sensitivity)
@@ -175,7 +175,7 @@ public:
         offsets *= sensitivity;
 
         //std::cout << "(" << offsets.x << "," << offsets.y << "," << offsets.z << ")" << std::endl;
-    camera.rotateBy(glm::vec3(offsets,0.0f));
+        camera.rotateBy(glm::vec3(offsets,0.0f));
     }
 
     static void FOVScroll(Camera& camera, Mouse& mouse, float sensitivity)

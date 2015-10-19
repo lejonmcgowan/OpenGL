@@ -92,28 +92,29 @@ void LightingBasicScene::init(GLFWwindow *window)
     TwAddVarRW(tweakBars[0],"color",TW_TYPE_COLOR3F,&lightColor," label='Lighting Color' ");
     TwDefine(" GLOBAL fontsize=3 "); // use large font
 }
-
+bool cursorEnabled = true;
 bool LightingBasicScene::processKeys(Keyboard& keyboard)
 {
-    if(!Scene::processKeys(keyboard))
+    if(keyboard.keySinglePressed('V'))
     {
-        //stuuffff
-        Camera::WASDMove(camera,keyboard,0.05f);
+        cursorEnabled = !cursorEnabled;
+        if(cursorEnabled)
+            glfwSetInputMode(window,GLFW_CURSOR,GLFW_CURSOR_NORMAL);
+        else
+            glfwSetInputMode(window,GLFW_CURSOR,GLFW_CURSOR_DISABLED);
     }
+
+    Camera::WASDMove(camera,keyboard,0.05f);
 
     return true;
 }
 
 bool LightingBasicScene::processMouse(Mouse& mouse)
 {
-    if(!Scene::processMouse(mouse))
-    {
-        //stuff...
-        if(mouse.getMouseButtonPressed(GLFW_MOUSE_BUTTON_LEFT))
-            Camera::WASDLook(camera,mouse,0.01f);
+    if(mouse.getMouseButtonPressed(GLFW_MOUSE_BUTTON_LEFT))
+        Camera::WASDLook(camera,mouse,0.03f);
 
-        Camera::FOVScroll(camera, mouse, 0.1f);
-    }
+    Camera::FOVScroll(camera, mouse, 0.1f);
 
     return true;
 }
