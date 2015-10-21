@@ -8,17 +8,17 @@
 #include <glm/detail/type_vec.hpp>
 #include <glm/detail/type_vec3.hpp>
 #include "shader.h"
+#include "shaderManager.h"
 
 class PhongMaterial
 {
 private:
 //3 material colors for blinn-phong
     glm::vec3 ambient, diffuse, specular;
-private:
     float specularExp;
     /*how much ambient,diffuse, and specular properties, respectively,
       contrbute to the material color*/
-    glm::vec3 contributions = glm::vec3(1.0f,1.0f,1.0f);
+    glm::vec3 intensities = glm::vec3(1.0f,1.0f,1.0f);
 
 public:
     PhongMaterial();
@@ -36,7 +36,9 @@ public:
      *   float specularExp
      * }
      */
-    void setMaterialUniform(Shader& shader, std::string structName = "Material");
+    //TODO: move to some utilites class to minimize coupling
+    void setMaterialUniform(Shader& shader, std::string structName = "material");
+    void setMaterialUniform(ShaderManager& shader, std::string structName = "material");
 
     //typical querying methods
     const glm::vec3 &getDiffuse() const
@@ -73,9 +75,12 @@ public:
         PhongMaterial::specularExp = specularExp;
     }
     //some preset materials
+};
+struct PhongMaterialFactory
+{
 public:
     const static PhongMaterial JADE;
     const static PhongMaterial SAPPHIRE;
+    const static PhongMaterial WHITE;
 };
-
 #endif //TESTPROJECT2_MATERIAL_H

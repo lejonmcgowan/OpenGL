@@ -6,8 +6,9 @@
 #define TESTPROJECT2_LIGHTINGBASICSCENE_H
 
 
-#include <src/graphics/drawables/Drawable.h>
-#include <src/math/Camera.h>
+#include "graphics/drawables/Drawable.h"
+#include "math/Camera.h"
+#include "graphics/PhongMaterial.h"
 #include "scene.h"
 
 class LightingBasicScene: public Scene

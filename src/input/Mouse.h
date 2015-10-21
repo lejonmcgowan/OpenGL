@@ -36,8 +36,7 @@ public:
 
     static void glfwScrollCallback(GLFWwindow* window, double xOffset, double yOffset)
     {
-        bool consumed = TwEventScrollGLFW3(window,xOffset,yOffset);
-        std::cout << "offsets: (" << xOffset << "," << yOffset << ")" << std::endl;
+        bool consumed = (bool)TwEventScrollGLFW3(window,xOffset,yOffset);
         if(!consumed)
             updateScroll(glm::vec2(xOffset,yOffset));
     }
