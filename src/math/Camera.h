@@ -171,10 +171,8 @@ public:
     static void WASDLook(Camera& camera, Mouse& mouse, float sensitivity)
     {
         glm::vec2 offsets = mouse.getMouseOffset();
-        std::cout << "returned offset: (" << offsets.x << "," << offsets.y << ")" <<std::endl;
         offsets *= sensitivity;
 
-        //std::cout << "(" << offsets.x << "," << offsets.y << "," << offsets.z << ")" << std::endl;
         camera.rotateBy(glm::vec3(offsets,0.0f));
     }
 

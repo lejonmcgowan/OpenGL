@@ -4,8 +4,8 @@ struct PhongMaterial
 {
     vec3 ambient;
     vec3 diffuse;
-    vec3 speculuar;
-    float speculuarExp;
+    vec3 specular;
+    float specularExp;
 };
 
 in vec3 surfaceNormal;
@@ -28,9 +28,9 @@ void main()
     vec3 diffuse = lightMaterial.diffuse * material.diffuse *
     max(dot(lightDir,normalDir),0.0f);
     //calculate specular
-    vec3 halfVector = normalize(lightPos + viewPos);
-    vec3 specular = lightMaterial.speculuar * material.speculuar *
-    pow(max(dot(viewDir,halfVector),0.0f),material.speculuarExp);
+    vec3 halfVector = normalize(lightDir + viewDir);
+    vec3 specular = lightMaterial.specular * material.specular *
+    pow(max(dot(normalDir,halfVector),0.0f),material.specularExp);
 
 
     //combine and send off

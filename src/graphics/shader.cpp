@@ -125,7 +125,11 @@ void Shader::initialize(std::string vertexPath, std::string fragmentPath, std::s
 GLint Shader::getUniformLocation(std::string name)
 {
     if(uniforms.count(name) == 0)
+    {
         uniforms[name] = glGetUniformLocation(program, name.c_str());
+        if(uniforms[name] < 0)
+            std::cout << "Warning: " << name << "is not declared in shader " << this->name << std::endl;
+    }
     return uniforms[name];
 }
 

@@ -26,7 +26,7 @@ public:
         {
             if (keyToggle[key] != GLFW_RELEASE && action == GLFW_RELEASE) {
                 action = GLFW_ONKEYUP;
-                std::cout << "key " << key << " is being released once" << std::endl;
+                //std::cout << "key " << key << " is being released once" << std::endl;
             }
         }
         keyToggle[key] = action;

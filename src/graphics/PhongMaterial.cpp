@@ -30,6 +30,7 @@ void PhongMaterial::setMaterialUniform(Shader &shader, std::string structName)
 
 void PhongMaterial::setMaterialUniform(ShaderManager &shader, std::string structName)
 {
+
     shader.setStructUniform(structName,"ambient",ambient * intensities[0]);
     shader.setStructUniform(structName,"diffuse",diffuse * intensities[1]);
     shader.setStructUniform(structName,"specular",specular * intensities[2]);
@@ -48,4 +49,5 @@ const PhongMaterial PhongMaterialFactory::SAPPHIRE(glm::vec3(0.1745f,0.01175f,0.
 
 const PhongMaterial PhongMaterialFactory::WHITE(glm::vec3(1.0f,1.0f,1.0f),
                                             glm::vec3(1.0f,1.0f,1.0f),
-                                            glm::vec3(1.0f,1.0f,1.0f));
+                                            glm::vec3(1.0f,1.0f,1.0f),
+                                            32);

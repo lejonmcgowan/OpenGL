@@ -15,7 +15,7 @@ PhongMaterial lightMaterial   = PhongMaterialFactory::WHITE;
 void addMaterialToTweakBar(TwBar* bar, PhongMaterial& material, std::string name = "")
 {
     static bool defined = false;
-    TwType TW_TYPE_MATERIAL;
+    static TwType TW_TYPE_MATERIAL;
     if(!defined)
     {
         //setup TwStruct for Material
@@ -24,8 +24,7 @@ void addMaterialToTweakBar(TwBar* bar, PhongMaterial& material, std::string name
                         {"Ambient",     TW_TYPE_COLOR3F, 0 * sizeof(glm::vec3), " "},
                         {"DIffuse",     TW_TYPE_COLOR3F, 1 * sizeof(glm::vec3), " "},
                         {"Specular",    TW_TYPE_COLOR3F, 2 * sizeof(glm::vec3), " "},
-                        {"specularExp", TW_TYPE_FLOAT,   3 *
-                                                         sizeof(glm::vec3),     " min=0 max=256 step= 2 help='shininess' "}
+                        {"specularExp", TW_TYPE_FLOAT,   3 * sizeof(glm::vec3),     " min=0 max=256 step= 2 help='shininess' "}
                 };
         // create a new TwType associated to the struct defined by the lightMembers array
         TW_TYPE_MATERIAL = TwDefineStruct("Material", materialMembers, 4, 3 * sizeof(glm::vec3) + sizeof(float),
