@@ -42,7 +42,7 @@ const PhongMaterial PhongMaterialFactory::JADE(glm::vec3(0.135f,0.225f,0.1575f),
                                                glm::vec3(0.54f,0.89f,0.63f),
                                                glm::vec3(0.3162f,0.3162f,0.3162f),
                                                 12.8f);
-const PhongMaterial PhongMaterialFactory::SAPPHIRE(glm::vec3(0.1745f,0.01175f,0.01175f),
+const PhongMaterial PhongMaterialFactory::RUBY(glm::vec3(0.1745f,0.01175f,0.01175f),
                                                    glm::vec3(0.6142f,0.4136f,0.4136f),
                                                    glm::vec3(0.7281f,0.6270f,0.6370f),
                                                    76.8);
@@ -51,3 +51,13 @@ const PhongMaterial PhongMaterialFactory::WHITE(glm::vec3(1.0f,1.0f,1.0f),
                                             glm::vec3(1.0f,1.0f,1.0f),
                                             glm::vec3(1.0f,1.0f,1.0f),
                                             32);
+
+const PhongMaterial PhongMaterialFactory::PEARL(glm::vec3(0.25,0.20725,0.20725),
+                                                glm::vec3(1.0f,0.829,0.829),
+                                                glm::vec3(0.296648,0.296648,0.296648),
+                                                11.264);
+
+//0.25	0.20725	0.20725
+// 1	0.829	0.829
+// 0.296648	0.296648	0.296648
+// 0.088

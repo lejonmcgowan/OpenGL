@@ -7,6 +7,7 @@
 #include <src/graphics/drawables/BufferSphere.h>
 #include <src/graphics/TextureManager.h>
 #include <src/utils/debugGL.h>
+#include <src/graphics/drawables/BufferCube.h>
 #include "LightingBasicScene.h"
 
 PhongMaterial surfaceMaterial = PhongMaterialFactory::JADE;
@@ -38,6 +39,33 @@ void addMaterialToTweakBar(TwBar* bar, PhongMaterial& material, std::string name
         name = "Material " + std::to_string(numMaterials);
     //plz work...
     TwAddVarRW(bar,name.c_str(),TW_TYPE_MATERIAL,&material," group='Materials' ");
+}
+
+void addTransformToTweakBar(TwBar* bar, Transform& transform, std::string name = "")
+{
+    static bool defined = false;
+    static TwType TW_TYPE_TRANSFORM;
+    if(!defined)
+    {
+        //setup TwStruct for Material
+        TwStructMember transformMembers[] = // array used to describe tweakable variables of the Light structure
+                {
+                        {"Translation",  TW_TYPE_DIR3F, 0 * sizeof(glm::vec3), " "},
+                        {"Rotation",     TW_TYPE_DIR3F, 1 * sizeof(glm::vec3), " "},
+                        {"Scale",        TW_TYPE_DIR3F, 2 * sizeof(glm::vec3), " "}
+                };
+        // create a new TwType associated to the struct defined by the lightMembers array
+        TW_TYPE_TRANSFORM = TwDefineStruct("Transform", transformMembers, 3, 3 * sizeof(glm::vec3),
+                                          NULL, NULL);
+        defined = true;
+    }
+
+    static int numTransforms = 0;
+    numTransforms++;
+    if(name.empty())
+        name = "Transform " + std::to_string(numTransforms);
+    //plz work...
+    TwAddVarRW(bar,name.c_str(),TW_TYPE_TRANSFORM,&transform," group='Transforms' ");
 }
 
 void LightingBasicScene::render()
@@ -101,7 +129,7 @@ void LightingBasicScene::init(GLFWwindow *window)
 
     Scene::init(window);
 
-    surfaceMaterial = PhongMaterialFactory::JADE;
+    surfaceMaterial = PhongMaterialFactory::PEARL;
     lightMaterial   = PhongMaterialFactory::WHITE;
     Shader basicLighting(findShader("basicLighting.vert"), findShader("basicLighting2.frag"));
     Shader texturedLighting(findShader("basicLighting.vert"), findShader("texturedLighting.frag"));
@@ -117,13 +145,15 @@ void LightingBasicScene::init(GLFWwindow *window)
 
     objects["plane"] = new PlaneBuffer(10,10,10,10,5,5);
     objects["plane"]->getTransform().translateBy(glm::vec3(0.0f,-0.5f,0.0f));
-    objects["sphere"] = new BufferSphere(1.0f,30,30);
+    objects["sphere"] = new BufferCube();
     objects["lightSphere"] = new BufferSphere(0.5f,20,20);
     objects["lightSphere"]->getTransform().translateTo(glm::vec3(5.0f,2.0f,2.0f));
 
     tweakBars.push_back(TwNewBar("Material Colors"));
     addMaterialToTweakBar(tweakBars[0],surfaceMaterial,"Shape Material");
     addMaterialToTweakBar(tweakBars[0],lightMaterial,"Light Material");
+    addTransformToTweakBar(tweakBars[0],objects["sphere"]->getTransform(),"Shape Transform");
+    addTransformToTweakBar(tweakBars[0],objects["lightSphere"]->getTransform(),"Light Transform");
     TwDefine(" GLOBAL fontsize=3 "); // use large font
 }
 bool cursorEnabled = true;

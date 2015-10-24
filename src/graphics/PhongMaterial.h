@@ -80,7 +80,8 @@ struct PhongMaterialFactory
 {
 public:
     const static PhongMaterial JADE;
-    const static PhongMaterial SAPPHIRE;
+    const static PhongMaterial RUBY;
     const static PhongMaterial WHITE;
+    const static PhongMaterial PEARL;
 };
 #endif //TESTPROJECT2_MATERIAL_H

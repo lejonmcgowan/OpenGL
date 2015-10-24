@@ -19,25 +19,25 @@
 class Transform
 {
 protected:
-    glm::mat4 transform;
-
-    glm::vec3 rotation;
+    //DO NOT CHANGE THE ORDER OF THESE 3 vars. for AntTweak
     glm::vec3 translation;
+    glm::vec3 rotation;
     glm::vec3 scale = glm::vec3(1.0f,1.0f,1.0f);
 
+    glm::mat4 transform;
     bool updateTransform;
 public:
     const glm::mat4& getTransformMatrix()
     {
-        if(updateTransform)
-        {
+        //if(updateTransform)
+        //{
             transform = glm::mat4();
             transform *= glm::translate(glm::mat4(),translation);
             transform *= glm::toMat4(glm::quat(rotation));
             transform *= glm::scale(glm::mat4(),scale);
 
             updateTransform = false;
-        }
+       // }
         return transform;
     };
 

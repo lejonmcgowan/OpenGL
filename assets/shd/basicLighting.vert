@@ -15,5 +15,5 @@ void main()
 	gl_Position = projection * view * model * vec4(position, 1.0f);
 	worldCoord = (model * vec4(position, 1.0f)).xyz;
 	textureCoords = vec2(texCoords.x, 1.0f - texCoords.y);
-	surfaceNormal = normal;
+	surfaceNormal = vec3(inverse(transpose(model)) * vec4(normal,1.0f));
 }
