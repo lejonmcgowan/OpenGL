@@ -5,3 +5,4 @@
 #include "WindowContexts.h"
 int WindowContexts::WINDOW_WIDTH = 0;
 int WindowContexts::WINDOW_HEIGHT = 0;
+bool WindowContexts::mouseShown = true;

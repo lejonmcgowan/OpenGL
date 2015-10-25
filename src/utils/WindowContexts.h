@@ -8,5 +8,6 @@ class WindowContexts
 {
 public:
     static int WINDOW_WIDTH, WINDOW_HEIGHT;
+    static bool mouseShown;
 };
 #endif //TESTPROJECT2_WINDOWCONTEXTS_H
