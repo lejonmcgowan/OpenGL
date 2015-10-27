@@ -19,6 +19,7 @@ enum LightType
 class Light
 {
 private:
+    LightType lightType;
 //color properties of light
     glm::vec3 ambient,diffuse,specular;
     float intensity;
