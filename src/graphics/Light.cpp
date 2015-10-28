@@ -29,3 +29,15 @@ Light::Light(LightType lightType, float range, glm::vec3 direction):
 {
     setLightRange(range);
 }
+
+void Light::makeLightStructUniform(Shader &shader, std::string structName, int index)
+{
+    shader.setStructUniform(structName,"ambient",ambient);
+    shader.setStructUniform(structName,"diffuse",diffuse);
+    shader.setStructUniform(structName,"specular",specular);
+}
+
+void Light::makeLightStructUniform(ShaderManager &shader, std::string structName, int index)
+{
+
+}
