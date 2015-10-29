@@ -32,12 +32,24 @@ Light::Light(LightType lightType, float range, glm::vec3 direction):
 
 void Light::makeLightStructUniform(Shader &shader, std::string structName, int index)
 {
-    shader.setStructUniform(structName,"ambient",ambient);
-    shader.setStructUniform(structName,"diffuse",diffuse);
-    shader.setStructUniform(structName,"specular",specular);
+    shader.setStructUniform(structName,"ambient",ambient,index);
+    shader.setStructUniform(structName,"diffuse",diffuse,index);
+    shader.setStructUniform(structName,"specular",specular,index);
+
+    shader.setStructUniform(structName,"attenuation",attenuation,index);
+
+    shader.setStructUniform(structName,"innerCutoff",innerCutoffAngle,index);
+    shader.setStructUniform(structName,"outerCutoff",outerCutoffAngle,index);
 }
 
 void Light::makeLightStructUniform(ShaderManager &shader, std::string structName, int index)
 {
+    shader.setStructUniform(structName,"ambient",ambient,index);
+    shader.setStructUniform(structName,"diffuse",diffuse,index);
+    shader.setStructUniform(structName,"specular",specular,index);
 
+    shader.setStructUniform(structName,"attenuation",attenuation,index);
+
+    shader.setStructUniform(structName,"innerCutoff",innerCutoffAngle,index);
+    shader.setStructUniform(structName,"outerCutoff",outerCutoffAngle,index);
 }

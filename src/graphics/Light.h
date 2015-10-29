@@ -81,21 +81,21 @@ public:
     {
         Light::direction = direction;
     }
-    float getHardCutoff() const
+    float getOuterCutoff() const
     {
-        return hardCutoff;
+        return outerCutoffAngle;
     }
-    void setHardCutoff(float hardCutoff)
+    void setHardCutoff(float outerCutoff)
     {
-        Light::hardCutoff = hardCutoff;
+        this->outerCutoffAngle = outerCutoff;
     }
-    float getSoftCutoff() const
+    float getInnerCutoff() const
     {
-        return softCutoff;
+        return innerCutoffAngle;
     }
-    void setSoftCutoff(float softCutoff)
+    void setInnerCutoff(float softCutoff)
     {
-        Light::softCutoff = softCutoff;
+        Light::innerCutoffAngle = softCutoff;
     }
     bool isSmoothEdges() const
     {
