@@ -43,7 +43,7 @@ add_library(src  graphics/shader.cpp  graphics/drawables/BufferObject.cpp graphi
                  graphics/drawables/BufferCube.cpp
                  graphics/drawables/BufferCube.h
                  graphics/TextureManager.cpp
-                 graphics/TextureManager.h graphics/PhongMaterial.cpp graphics/PhongMaterial.h graphics/Light.cpp graphics/Light.h)
+                 graphics/TextureManager.h graphics/PhongMaterial.cpp graphics/PhongMaterial.h graphics/Light.cpp graphics/Light.h graphics/drawables/BufferTeapot.cpp graphics/drawables/BufferTeapot.h graphics/drawables/teapotdata.h)
 
 add_library(utils utils/WindowContexts.cpp utils/WindowContexts.h)
 add_library(scenes  scenes/window.cpp scenes/window.h

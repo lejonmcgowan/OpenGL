@@ -8,6 +8,7 @@
 #include <src/graphics/TextureManager.h>
 #include <src/utils/debugGL.h>
 #include <src/graphics/drawables/BufferCube.h>
+#include <src/graphics/drawables/BufferTeapot.h>
 #include "LightingBasicScene.h"
 
 PhongMaterial surfaceMaterial = PhongMaterialFactory::JADE;
@@ -145,7 +146,7 @@ void LightingBasicScene::init(GLFWwindow *window)
 
     objects["plane"] = new PlaneBuffer(10,10,10,10,5,5);
     objects["plane"]->getTransform().translateBy(glm::vec3(0.0f,-0.5f,0.0f));
-    objects["sphere"] = new BufferCube();
+    objects["sphere"] = new BufferTeapot(5,glm::mat4()); // BufferSphere(1,50,50);
     objects["lightSphere"] = new BufferSphere(0.5f,20,20);
     objects["lightSphere"]->getTransform().translateTo(glm::vec3(5.0f,2.0f,2.0f));
 

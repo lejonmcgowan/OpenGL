@@ -30,17 +30,17 @@ stacks(stacks)
     // Generate the vertex data
     generateVerts(v, n, tex, el);
 
-    // Create and populate the buffer objects
-    bufferObject.getBuffer("vertexBuffer").addData(v,3 * nVerts * (int)sizeof(GLfloat));
+    // Create and populate the buffer objects TODO: make sure removing sizeof(GL_FLOAT) is legit
+    bufferObject.getBuffer("vertexBuffer").addData(v,3 * nVerts);
     bufferObject.addBufferVertexAttrib("vertexBuffer",3,0,0);
 
-    bufferObject.getBuffer("normalBuffer").addData(n,3 * nVerts * (int)sizeof(GLfloat));
+    bufferObject.getBuffer("normalBuffer").addData(n,3 * nVerts);
     bufferObject.addBufferVertexAttrib("normalBuffer",3,0,1);
 
-    bufferObject.getBuffer("texBuffer").addData(tex,2 * nVerts * (int)sizeof(GLfloat));
+    bufferObject.getBuffer("texBuffer").addData(tex,2 * nVerts);
     bufferObject.addBufferVertexAttrib("texBuffer",2,0,2);
 
-    bufferObject.getIndexBuffer().addData(el,elements * (int)sizeof(GLint));
+    bufferObject.getIndexBuffer().addData(el,elements);
 
     delete [] v;
     delete [] n;
