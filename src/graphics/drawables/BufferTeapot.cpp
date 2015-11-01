@@ -15,12 +15,6 @@ BufferTeapot::BufferTeapot(int grid, const glm::mat4 &lidTransform)
     float *tc = new float[ verts * 2 ];
     GLint* el = new GLint[faces * 6];
 
-//    glGenVertexArrays( 1, &VAOHandle );
-//    glBindVertexArray(VAOHandle);
-//
-//    unsigned int handle[4];
-//    glGenBuffers(4, handle);
-
     bufferObject.addBuffer("vertexBuffer",3);
     bufferObject.addBuffer("normalBuffer",3);
     bufferObject.addBuffer("texBuffer",2);
@@ -39,35 +33,18 @@ BufferTeapot::BufferTeapot(int grid, const glm::mat4 &lidTransform)
 
     bufferObject.getIndexBuffer().addData(el,6 * faces);
 
-
-//    glBindBuffer(GL_ARRAY_BUFFER, handle[0]);
-//    glBufferData(GL_ARRAY_BUFFER, (3 * verts) * sizeof(float), v, GL_STATIC_DRAW);
-//    glVertexAttribPointer( (GLuint)0, 3, GL_FLOAT, GL_FALSE, 0, ((GLubyte *)NULL + (0)) );
-//    glEnableVertexAttribArray(0);  // Vertex position
-//
-//    glBindBuffer(GL_ARRAY_BUFFER, handle[1]);
-//    glBufferData(GL_ARRAY_BUFFER, (3 * verts) * sizeof(float), n, GL_STATIC_DRAW);
-//    glVertexAttribPointer( (GLuint)1, 3, GL_FLOAT, GL_FALSE, 0, ((GLubyte *)NULL + (0)) );
-//    glEnableVertexAttribArray(1);  // Vertex normal
-//
-//    glBindBuffer(GL_ARRAY_BUFFER, handle[2]);
-//    glBufferData(GL_ARRAY_BUFFER, (2 * verts) * sizeof(float), tc, GL_STATIC_DRAW);
-//    glVertexAttribPointer( (GLuint)2, 2, GL_FLOAT, GL_FALSE, 0, ((GLubyte *)NULL + (0)) );
-//    glEnableVertexAttribArray(2);  // texture coords
-//
-//    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, handle[3]);
-//    glBufferData(GL_ELEMENT_ARRAY_BUFFER, 6 * faces * sizeof(unsigned int), el, GL_STATIC_DRAW);
-
     bufferObject.init();
 
     VAOHandle = bufferObject.getVAO();
+
+    transform.scaleBy(0.5);
+    transform.rotateBy(glm::vec3(glm::radians(-90.0f),0,0));
+    transform.translateBy(glm::vec3(0,-0.5f,0));
 
     delete [] v;
     delete [] n;
     delete [] el;
     delete [] tc;
-
-    //glBindVertexArray(0);
 }
 
 void BufferTeapot::generatePatches(float *vertices, float *normals, float *texCoords, GLint *elements, int grid)
@@ -106,7 +83,6 @@ void BufferTeapot::generatePatches(float *vertices, float *normals, float *texCo
 void BufferTeapot::render()
 {
     bufferObject.render(GL_TRIANGLES,6 * faces);
-    //glDrawElements(GL_TRIANGLES, 6 * faces, GL_UNSIGNED_INT, ((GLubyte *)NULL + (0)));
 }
 
 void BufferTeapot::buildPatchReflect(int patchNum, float *B, float *dB, float *vertices, float *normals,
