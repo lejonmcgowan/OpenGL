@@ -19,12 +19,14 @@ enum LightType
 class Light
 {
 private:
-    LightType lightType;
-//color properties of light
+    //color properties of light. shared by all types
     glm::vec3 ambient,diffuse,specular;
-    float intensity;
-    //for non-point lights
+    glm::vec3 contributions;
+    //direction light specific
     glm::vec3 direction;
+    //for point lights and spotlights
+    glm::vec3 position;
+    //for point lights
     /*inverse quadratic attenuation. will be calculated based on values from OGRE3D's Wiki
       values are stored as (quadric,linear,constant)*/
     glm::vec3 attenuation;
@@ -32,9 +34,16 @@ private:
     //for spotlights
     float innerCutoffAngle, outerCutoffAngle;
     bool smoothEdges;
+    //the type to bind
+    LightType lightType;
 public:
-    Light(LightType lightType, float range, float innerCutoffAngle = 60, float outerCUtoffAngle = 65);
-    Light(LightType lightType, float range, glm::vec3 direction);
+    //direction light constructor
+    Light(LightType lightType, glm::vec3 direction);
+    //point light constructor
+    Light(LightType lightType, float range = 10, glm::vec3 position = glm::vec3());
+    //spotlight constructor
+    Light(LightType lightType, float range, float innerCutoffAngle = 60, float outerCutoffAngle = 65);
+
     void makeLightStructUniform(Shader& shader, std::string structName = "light", int index = -1);
     void makeLightStructUniform(ShaderManager& shader, std::string structName = "light", int index = -1);
 
@@ -65,13 +74,13 @@ public:
     {
         Light::specular = specular;
     }
-    float getIntensity() const
+    glm::vec3 getContributions() const
     {
-        return intensity;
+        return contributions;
     }
-    void setIntensity(float intensity)
+    void setContributions(glm::vec3 intensity)
     {
-        Light::intensity = intensity;
+        Light::contributions = intensity;
     }
     const glm::vec3 &getDirection() const
     {
