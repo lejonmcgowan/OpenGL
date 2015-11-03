@@ -45,13 +45,13 @@ add_library(src  graphics/shader.cpp  graphics/drawables/BufferObject.cpp graphi
                  graphics/TextureManager.cpp
                  graphics/TextureManager.h graphics/PhongMaterial.cpp graphics/PhongMaterial.h graphics/Light.cpp graphics/Light.h graphics/drawables/BufferTeapot.cpp graphics/drawables/BufferTeapot.h graphics/drawables/teapotdata.h)
 
-add_library(utils utils/WindowContexts.cpp utils/WindowContexts.h)
+add_library(utils utils/WindowContexts.cpp utils/WindowContexts.h utils/LightHelper.cpp utils/LightHelper.h utils/TweakBarHelper.cpp utils/TweakBarHelper.h)
 add_library(scenes  scenes/window.cpp scenes/window.h
-                    scenes/BasicBillboardScene.cpp scenes/BasicBillboardScene.h
-                    scenes/LineScene.cpp scenes/LineScene.h
-                    scenes/LightingBasicScene.cpp scenes/LightingBasicScene.h
-                    scenes/BasicTriangleScene.cpp scenes/BasicTriangleScene.h
-                    scenes/SceneIncludes.h)
+        scenes/BasicBillboardScene.cpp scenes/BasicBillboardScene.h
+        scenes/LineScene.cpp scenes/LineScene.h
+        scenes/LightingBasicScene.cpp scenes/LightingBasicScene.h
+        scenes/BasicTriangleScene.cpp scenes/BasicTriangleScene.h
+        scenes/SceneIncludes.h scenes/MultipleLightsScene.cpp scenes/MultipleLightsScene.h)
 
 add_library(input input/Keyboard.cpp input/Keyboard.h input/Keyboard.h input/Mouse.cpp input/Mouse.h)
 

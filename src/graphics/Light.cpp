@@ -14,18 +14,24 @@ void Light::setLightRange(float range)
                             range / Linear_Attenuation,
                             Constant_Attenuation);
 }
+//direction light constructor
+Light::Light(LightType lightType, glm::vec3 direction):lightType(lightType),
+                                                       direction(direction)
+{
 
+}
+//point light constructor
+Light::Light(LightType lightType, float range, glm::vec3 position):
+        lightType(lightType),
+        position(position)
+{
+    setLightRange(range);
+}
+//spot light constructor
 Light::Light(LightType lightType, float range, float innerCutoffAngle, float outerCutoffAngle):
 lightType(lightType),
 innerCutoffAngle(innerCutoffAngle),
 outerCutoffAngle(outerCutoffAngle)
-{
-    setLightRange(range);
-}
-
-Light::Light(LightType lightType, float range, glm::vec3 direction):
-        lightType(lightType),
-        direction(direction)
 {
     setLightRange(range);
 }
