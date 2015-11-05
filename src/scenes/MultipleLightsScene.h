@@ -9,7 +9,6 @@
 
 class MultipleLightsScene: public Scene
 {
-
 public:
     virtual void update() override;
 
