@@ -1,6 +1,5 @@
 #include <assert.h>
 #include "window.h"
-#include "AntTweakBar.h"
 
 static void error_callback(int error, const char* description)
 {
@@ -51,6 +50,7 @@ void Window::init(Scene* scene)
     //TwDefine(" GLOBAL fontscaling=2 "); // use large font
     TwInit(TW_OPENGL_CORE, NULL);
     TwWindowSize(WINDOW_WIDTH, WINDOW_HEIGHT);
+    TwDefine(" mybar/Rotation axisx=x axisy=y axisz=-z ");  // Permute z axis to get a left-handed coordinate system
 
     //set all callbacks to direct towards static classes to be used in scenes
     glfwSetKeyCallback(window,&Keyboard::glfwKeyboardCallback);

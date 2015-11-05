@@ -13,7 +13,7 @@ enum LightType
 {
     Directional,
     Point,
-    Spotlight
+    Spot
 };
 
 class Light
@@ -33,8 +33,10 @@ private:
     float range;
     //for spotlights
     float innerCutoffAngle, outerCutoffAngle;
+    float intensity;
     bool smoothEdges;
-    //the type to bind
+private:
+//the type to bind
     LightType lightType;
 public:
     //direction light constructor
@@ -113,6 +115,11 @@ public:
     void setSmoothEdges(bool smoothEdges)
     {
         Light::smoothEdges = smoothEdges;
+    }
+
+    const LightType &getLightType() const
+    {
+        return lightType;
     }
 };
 

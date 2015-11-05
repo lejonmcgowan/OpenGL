@@ -34,16 +34,20 @@ endif(ANTTWEAKBAR_FOUND)
 
 
 add_library(src  graphics/shader.cpp  graphics/drawables/BufferObject.cpp graphics/Buffer.cpp
-                 graphics/Texture.cpp graphics/IndexBuffer.cpp
-                 graphics/drawables/PlaneBuffer.cpp
-                 graphics/drawables/PlaneBuffer.h
-                 graphics/drawables/Drawable.h
-                 graphics/drawables/BufferSphere.cpp
-                 graphics/drawables/BufferSphere.h
-                 graphics/drawables/BufferCube.cpp
-                 graphics/drawables/BufferCube.h
-                 graphics/TextureManager.cpp
-                 graphics/TextureManager.h graphics/PhongMaterial.cpp graphics/PhongMaterial.h graphics/Light.cpp graphics/Light.h graphics/drawables/BufferTeapot.cpp graphics/drawables/BufferTeapot.h graphics/drawables/teapotdata.h)
+        graphics/Texture.cpp graphics/IndexBuffer.cpp
+        graphics/drawables/PlaneBuffer.cpp
+        graphics/drawables/PlaneBuffer.h
+        graphics/drawables/Drawable.h
+        graphics/drawables/BufferSphere.cpp
+        graphics/drawables/BufferSphere.h
+        graphics/drawables/BufferCube.cpp
+        graphics/drawables/BufferCube.h
+        graphics/TextureManager.cpp
+        graphics/TextureManager.h
+        graphics/materials/PhongMaterial.cpp graphics/materials/PhongMaterial.h
+        graphics/Light.cpp graphics/Light.h
+        graphics/drawables/BufferTeapot.cpp graphics/drawables/BufferTeapot.h
+        graphics/drawables/teapotdata.h)
 
 add_library(utils utils/WindowContexts.cpp utils/WindowContexts.h utils/LightHelper.cpp utils/LightHelper.h utils/TweakBarHelper.cpp utils/TweakBarHelper.h)
 add_library(scenes  scenes/window.cpp scenes/window.h

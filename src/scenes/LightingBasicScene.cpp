@@ -7,8 +7,9 @@
 #include <src/graphics/drawables/BufferSphere.h>
 #include <src/graphics/TextureManager.h>
 #include <src/utils/debugGL.h>
-#include <src/graphics/drawables/BufferCube.h>
 #include <src/graphics/drawables/BufferTeapot.h>
+#include <src/graphics/materials/PhongMaterial.h>
+
 #include "LightingBasicScene.h"
 
 PhongMaterial surfaceMaterial = PhongMaterialFactory::JADE;
