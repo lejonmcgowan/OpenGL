@@ -66,7 +66,7 @@ All errors generated inside DevIL, along with illegal parameters passed to
 DevIL functions are caught and passed to ilSetError(), an internal library
 function.  The calling program can call ilGetError() to get the value of the
 error generated.  Error types are defined in il.h, using the 0x501 - 0x5FF
-range.  ilGetError() will return 0 (IL_NO_ERROR) if no error has occurred.
+intensity.  ilGetError() will return 0 (IL_NO_ERROR) if no error has occurred.
 
 
 Basic Usage:

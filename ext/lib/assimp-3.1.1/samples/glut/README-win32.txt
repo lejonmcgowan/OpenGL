@@ -525,7 +525,7 @@ CHANGES/FIXES:
        and the nt one which you should know about. It is not a new
        problem, and it concerns co-ords returned to the pointer
        callbacks. (glutMotionFunc, glutMouseFunc)
-       Under X, you get co-ords in the range 0 +/- 2^15, under NT
+       Under X, you get co-ords in the intensity 0 +/- 2^15, under NT
        you get 0..2^16. This is only really a problem when moving
        above or to the left of the window.
        eg dragging one pixel ABOVE the window will give :-

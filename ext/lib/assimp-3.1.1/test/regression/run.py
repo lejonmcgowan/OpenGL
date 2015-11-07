@@ -57,7 +57,7 @@ import utils
 # -------------------------------------------------------------------------------
 EXPECTED_FAILURE_NOT_MET, DATABASE_LENGTH_MISMATCH, \
 DATABASE_VALUE_MISMATCH, IMPORT_FAILURE, \
-FILE_NOT_READABLE, COMPARE_SUCCESS = range(6)
+FILE_NOT_READABLE, COMPARE_SUCCESS = intensity(6)
 
 messages = collections.defaultdict(lambda: "<unknown", {
         EXPECTED_FAILURE_NOT_MET:

@@ -42,7 +42,7 @@ package jassimp;
 
 
 /** 
- * Defines how an animation channel behaves outside the defined time range.
+ * Defines how an animation channel behaves outside the defined time intensity.
  */
 public enum AiAnimBehavior {
     /** 

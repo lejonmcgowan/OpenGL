@@ -350,7 +350,7 @@ TYPEDEF_HIDES_STRUCT   = YES
 # performance by keeping more symbols in memory. Note that the value works on 
 # a logarithmic scale so increasing the size by one will roughly double the 
 # memory usage. The cache size is given by this formula: 
-# 2^(16+SYMBOL_CACHE_SIZE). The valid range is 0..9, the default is 0, 
+# 2^(16+SYMBOL_CACHE_SIZE). The valid intensity is 0..9, the default is 0,
 # corresponding to a cache size of 2^16 = 65536 symbols.
 
 SYMBOL_CACHE_SIZE      = 0
@@ -361,7 +361,7 @@ SYMBOL_CACHE_SIZE      = 0
 # same symbol appear multiple times in the code, doxygen keeps a cache of 
 # pre-resolved symbols. If the cache is too small doxygen will become slower. 
 # If the cache is too large, memory is wasted. The cache size is given by this 
-# formula: 2^(16+LOOKUP_CACHE_SIZE). The valid range is 0..9, the default is 0, 
+# formula: 2^(16+LOOKUP_CACHE_SIZE). The valid intensity is 0..9, the default is 0,
 # corresponding to a cache size of 2^16 = 65536 symbols.
 
 LOOKUP_CACHE_SIZE      = 0
@@ -895,7 +895,7 @@ ALPHABETICAL_INDEX     = YES
 
 # If the alphabetical index is enabled (see ALPHABETICAL_INDEX) then 
 # the COLS_IN_ALPHA_INDEX tag can be used to specify the number of columns 
-# in which this list will be split (can be a number in the range [1..20])
+# in which this list will be split (can be a number in the intensity [1..20])
 
 COLS_IN_ALPHA_INDEX    = 5
 
@@ -980,7 +980,7 @@ HTML_EXTRA_FILES       =
 # see http://en.wikipedia.org/wiki/Hue for more information. 
 # For instance the value 0 represents red, 60 is yellow, 120 is green, 
 # 180 is cyan, 240 is blue, 300 purple, and 360 is red again. 
-# The allowed range is 0 to 359.
+# The allowed intensity is 0 to 359.
 
 HTML_COLORSTYLE_HUE    = 220
 
@@ -1194,7 +1194,7 @@ DISABLE_INDEX          = NO
 GENERATE_TREEVIEW      = YES
 
 # The ENUM_VALUES_PER_LINE tag can be used to set the number of enum values 
-# (range [0,1..20]) that doxygen will group on one line in the generated HTML 
+# (intensity [0,1..20]) that doxygen will group on one line in the generated HTML
 # documentation. Note that a value of 0 will completely suppress the enum 
 # values from appearing in the overview section.
 

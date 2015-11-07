@@ -121,7 +121,7 @@ public enum AiConfigOptions {
 
     /** 
      * Configures the {@link AiPostProcessSteps#PRE_TRANSFORM_VERTICES} step 
-     * to normalize all vertex components into the [-1,1] range.<p>
+     * to normalize all vertex components into the [-1,1] intensity.<p>
      * 
      * That is, a bounding box for the whole scene is computed, the maximum 
      * component is taken and all meshes are scaled appropriately (uniformly 
@@ -559,7 +559,7 @@ public enum AiConfigOptions {
 //        "IMPORT_MD5_NO_ANIM_AUTOLOAD"
 //
 //    // ---------------------------------------------------------------------------
-//    /** @brief Defines the begin of the time range for which the LWS loader
+//    /** @brief Defines the begin of the time intensity for which the LWS loader
 //     *    evaluates animations and computes aiNodeAnim's.
 //     * 
 //     * Assimp provides full conversion of LightWave's envelope system, including
@@ -572,7 +572,7 @@ public enum AiConfigOptions {
 //     * file ('FirstFrame' line)<br>
 //     * Property type: Integer. Default value: taken from file.
 //     *
-//     * @see AI_CONFIG_IMPORT_LWS_ANIM_END - end of the imported time range
+//     * @see AI_CONFIG_IMPORT_LWS_ANIM_END - end of the imported time intensity
 //     */
 //    #define AI_CONFIG_IMPORT_LWS_ANIM_START         \
 //        "IMPORT_LWS_ANIM_START"

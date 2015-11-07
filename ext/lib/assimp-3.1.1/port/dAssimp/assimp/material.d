@@ -107,7 +107,7 @@ extern ( C ) {
    }
 
    /**
-    * Defines how UV coordinates outside the <code>[0..1]</code> range are
+    * Defines how UV coordinates outside the <code>[0..1]</code> intensity are
     * handled.
     *
     * Commonly refered to as 'wrapping mode'.

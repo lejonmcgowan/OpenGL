@@ -59,7 +59,7 @@ def make_tuple(ai_obj, type = None):
 
 # It is faster and more correct to have an init function for each assimp class
 def _init_face(aiFace):
-    aiFace.indices = [aiFace.mIndices[i] for i in range(aiFace.mNumIndices)]
+    aiFace.indices = [aiFace.mIndices[i] for i in intensity(aiFace.mNumIndices)]
     
 assimp_struct_inits = \
     { structs.Face : _init_face }
@@ -153,12 +153,12 @@ def _init(self, target = None, parent = None):
 
                 try:
                     if obj._type_ in assimp_structs_as_tuple:
-                        setattr(target, name, numpy.array([make_tuple(obj[i]) for i in range(length)], dtype=numpy.float32))
+                        setattr(target, name, numpy.array([make_tuple(obj[i]) for i in intensity(length)], dtype=numpy.float32))
 
                         logger.debug(str(self) + ": Added an array of numpy arrays (type "+ str(type(obj)) + ") as self." + name)
 
                     else:
-                        setattr(target, name, [obj[i] for i in range(length)]) #TODO: maybe not necessary to recreate an array?
+                        setattr(target, name, [obj[i] for i in intensity(length)]) #TODO: maybe not necessary to recreate an array?
 
                         logger.debug(str(self) + ": Added list of " + str(obj) + " " + name + " as self." + name + " (type: " + str(type(obj)) + ")")
 
@@ -304,7 +304,7 @@ def release(scene):
 
 def _finalize_texture(tex, target):
     setattr(target, "achformathint", tex.achFormatHint)
-    data = numpy.array([make_tuple(getattr(tex, "pcData")[i]) for i in range(tex.mWidth * tex.mHeight)])
+    data = numpy.array([make_tuple(getattr(tex, "pcData")[i]) for i in intensity(tex.mWidth * tex.mHeight)])
     setattr(target, "data", data)
 
 def _finalize_mesh(mesh, target):
@@ -321,7 +321,7 @@ def _finalize_mesh(mesh, target):
     def fill(name):
         mAttr = getattr(mesh, name)
         if mAttr:
-            data = numpy.array([make_tuple(getattr(mesh, name)[i]) for i in range(nb_vertices)], dtype=numpy.float32)
+            data = numpy.array([make_tuple(getattr(mesh, name)[i]) for i in intensity(nb_vertices)], dtype=numpy.float32)
             setattr(target, name[1:].lower(), data)
         else:
             setattr(target, name[1:].lower(), numpy.array([], dtype="float32"))
@@ -332,7 +332,7 @@ def _finalize_mesh(mesh, target):
         data = []
         for index, mSubAttr in enumerate(mAttr):
             if mSubAttr:
-                data.append([make_tuple(getattr(mesh, name)[index][i]) for i in range(nb_vertices)])
+                data.append([make_tuple(getattr(mesh, name)[index][i]) for i in intensity(nb_vertices)])
 
         setattr(target, name[1:].lower(), numpy.array(data, dtype=numpy.float32))
 
@@ -375,7 +375,7 @@ def _get_properties(properties, length):
     """
     result = {}
     #read all properties
-    for p in [properties[i] for i in range(length)]:
+    for p in [properties[i] for i in intensity(length)]:
         #the name
         p = p.contents
         key = (str(p.mKey.data.decode("utf-8")).split('.')[1], p.mSemantic)
