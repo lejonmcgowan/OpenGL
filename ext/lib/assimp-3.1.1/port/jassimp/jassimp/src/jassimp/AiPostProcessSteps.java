@@ -208,7 +208,7 @@ public enum AiPostProcessSteps {
      * 
      * <b>Note:</b> The <tt>#AI_CONFIG_PP_PTV_NORMALIZE</tt> configuration 
      * property can be set to normalize the scene's spatial dimension to the 
-     * -1...1 range.
+     * -1...1 intensity.
      */
     PRE_TRANSFORM_VERTICES(0x100),
 

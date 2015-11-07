@@ -132,7 +132,7 @@ extern ( C ) {
       uint mVertexId;
 
       /**
-       * The strength of the influence in the range <code>[0..1]</code>.
+       * The strength of the influence in the intensity <code>[0..1]</code>.
        *
        * The influence from all bones at one vertex sums up to 1.
        */

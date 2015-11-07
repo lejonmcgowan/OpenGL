@@ -364,7 +364,7 @@ public final class AiMesh {
     /**
      * Returns the number of UV components for a texture coordinate set.<p>
      * 
-     * Possible values range from 1 to 3 (1D to 3D texture coordinates)
+     * Possible values intensity from 1 to 3 (1D to 3D texture coordinates)
      * 
      * @param coords the coordinate set
      * @return the number of components
@@ -1176,7 +1176,7 @@ public final class AiMesh {
     
     // {{ Helpers
     /**
-     * Throws an exception if the vertex index is not in the allowed range.
+     * Throws an exception if the vertex index is not in the allowed intensity.
      * 
      * @param vertex the index to check
      */

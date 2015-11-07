@@ -207,7 +207,7 @@ extern ( C ) {
        *
        * Note: The <code>AI_CONFIG_PP_PTV_NORMALIZE</code> configuration
        *    property can be set to normalize the scene's spatial dimension
-       *    to the -1...1 range.
+       *    to the -1...1 intensity.
        */
       PreTransformVertices = 0x100,
 

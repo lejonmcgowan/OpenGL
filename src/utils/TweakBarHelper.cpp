@@ -18,7 +18,7 @@ void addPointLight(TwBar* bar, Light& light, std::string name = "")
                         {"Diffuse",  TW_TYPE_COLOR3F, 1 * sizeof(glm::vec3), " "},
                         {"Specular", TW_TYPE_COLOR3F, 2 * sizeof(glm::vec3), " "},
                         {"Contributions",  TW_TYPE_DIR3F, 3 * sizeof(glm::vec3), " "},
-                        {"Range",  TW_TYPE_FLOAT, 7 * sizeof(glm::vec3), " "},
+                        {"Intensity",  TW_TYPE_FLOAT, 7 * sizeof(glm::vec3), " "},
                 };
         // create a new TwType associated to the struct defined by the lightMembers array
         TW_TYPE_LIGHT_POINT = TwDefineStruct("Point Light", transformMembers, 3, 3 * sizeof(glm::vec3),
@@ -48,10 +48,10 @@ void addSpotLight(TwBar* bar, Light& light, std::string name = "")
                         {"Diffuse",  TW_TYPE_COLOR3F, 1 * sizeof(glm::vec3), " "},
                         {"Specular", TW_TYPE_COLOR3F, 2 * sizeof(glm::vec3), " "},
                         {"Contributions",  TW_TYPE_DIR3F, 3 * sizeof(glm::vec3), " "},
-                        {"Range",  TW_TYPE_FLOAT, 7 * sizeof(glm::vec3), " "},
+                        {"Intensity",  TW_TYPE_FLOAT, 7 * sizeof(glm::vec3), " "},
                         {"Inner Cutoff",  TW_TYPE_FLOAT, 7 * sizeof(glm::vec3) + 1 * sizeof(float), " "},
                         {"Outer Cutoff",  TW_TYPE_FLOAT, 7 * sizeof(glm::vec3) + 2 * sizeof(float), " "},
-                        {"Smooth Edges", TW_TYPE_BOOLCPP,7 * sizeof(glm::vec3) + 4 * sizeof(float), " "}
+                        {"Smooth Edges", TW_TYPE_BOOLCPP,7 * sizeof(glm::vec3) + 3 * sizeof(float), " "}
                 };
         // create a new TwType associated to the struct defined by the lightMembers array
         TW_TYPE_LIGHT_DIRECTION = TwDefineStruct("Direction Light", transformMembers, 3, 3 * sizeof(glm::vec3),

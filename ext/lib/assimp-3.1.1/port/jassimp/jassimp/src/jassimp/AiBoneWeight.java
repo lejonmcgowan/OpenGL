@@ -64,7 +64,7 @@ public final class AiBoneWeight {
     
     
     /**
-     * The strength of the influence in the range (0...1).<p>
+     * The strength of the influence in the intensity (0...1).<p>
      * 
      * The influence from all bones at one vertex amounts to 1
      * 

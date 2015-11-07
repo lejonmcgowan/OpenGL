@@ -3,59 +3,70 @@
 //
 
 #include "Light.h"
+
 const static float Quadratic_Attenuation = 75.0f;
 const static float Linear_Attenuation = 4.5;
 const static float Constant_Attenuation = 1.0f;
+const static float range = 100.0f;
 
-void Light::setLightRange(float range)
+int spotID = 0,dirID = 0,pointID = 0;
+
+void Light::setLightRange()
 {
-    this->range = range;
     attenuation = glm::vec3(range * range / Quadratic_Attenuation,
                             range / Linear_Attenuation,
                             Constant_Attenuation);
 }
 //direction light constructor
 Light::Light(LightType lightType, glm::vec3 direction):lightType(lightType),
-                                                       direction(direction)
+                                                       intensity(1.0f),
+                                                       direction(direction),
+                                                       id(dirID++)
 {
+    ambient = glm::vec3(1.0f,1.0f,1.0f);
+    diffuse = glm::vec3(1.0f,1.0f,1.0f);
+    specular = glm::vec3(1.0f,1.0f,1.0f);
 
 }
 //point light constructor
-Light::Light(LightType lightType, float range, glm::vec3 position):
+Light::Light(LightType lightType, float intensity, glm::vec3 position):
         lightType(lightType),
-        position(position)
+        intensity(intensity),
+        position(position),
+        id(pointID++)
 {
-    setLightRange(range);
+    setLightRange();
+
+    ambient = glm::vec3(1.0f,1.0f,1.0f);
+    diffuse = glm::vec3(1.0f,1.0f,1.0f);
+    specular = glm::vec3(1.0f,1.0f,1.0f);
+
 }
 //spot light constructor
-Light::Light(LightType lightType, float range, float innerCutoffAngle, float outerCutoffAngle):
+Light::Light(LightType lightType, float intensity, float innerCutoffAngle, float outerCutoffAngle):
 lightType(lightType),
+intensity(intensity),
 innerCutoffAngle(innerCutoffAngle),
-outerCutoffAngle(outerCutoffAngle)
+outerCutoffAngle(outerCutoffAngle),
+id(spotID++)
 {
-    setLightRange(range);
+    setLightRange();
+
+    ambient = glm::vec3(1.0f,1.0f,1.0f);
+    diffuse = glm::vec3(1.0f,1.0f,1.0f);
+    specular = glm::vec3(1.0f,1.0f,1.0f);
+
 }
 
-void Light::makeLightStructUniform(Shader &shader, std::string structName, int index)
+Light::~Light()
 {
-    shader.setStructUniform(structName,"ambient",ambient,index);
-    shader.setStructUniform(structName,"diffuse",diffuse,index);
-    shader.setStructUniform(structName,"specular",specular,index);
-
-    shader.setStructUniform(structName,"attenuation",attenuation,index);
-
-    shader.setStructUniform(structName,"innerCutoff",innerCutoffAngle,index);
-    shader.setStructUniform(structName,"outerCutoff",outerCutoffAngle,index);
-}
-
-void Light::makeLightStructUniform(ShaderManager &shader, std::string structName, int index)
-{
-    shader.setStructUniform(structName,"ambient",ambient,index);
-    shader.setStructUniform(structName,"diffuse",diffuse,index);
-    shader.setStructUniform(structName,"specular",specular,index);
-
-    shader.setStructUniform(structName,"attenuation",attenuation,index);
-
-    shader.setStructUniform(structName,"innerCutoff",innerCutoffAngle,index);
-    shader.setStructUniform(structName,"outerCutoff",outerCutoffAngle,index);
+    switch(lightType)
+    {
+        case Directional: dirID--;
+            break;
+        case Point: pointID--;
+            break;
+        case Spot: spotID--;
+            break;
+    }
 }

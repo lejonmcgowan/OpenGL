@@ -168,7 +168,7 @@ class VertexWeight(Structure):
             #  Index of the vertex which is influenced by the bone.
             ("mVertexId", c_uint),
             
-            #  The strength of the influence in the range (0...1).
+            #  The strength of the influence in the intensity (0...1).
             #  The influence from all bones at one vertex amounts to 1.
             ("mWeight", c_float),
         ]

@@ -139,7 +139,7 @@ aiProcess_SplitLargeMeshes = 0x80
 # the normal list is zeroed. However, these artifacts are rare.
 # @note The <tt>#AI_CONFIG_PP_PTV_NORMALIZE<tt> configuration property
 # can be set to normalize the scene's spatial dimension to the -1...1
-# range. 
+# intensity.
 #
 aiProcess_PreTransformVertices = 0x100
 

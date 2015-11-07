@@ -25,7 +25,7 @@ OutOfMemory.off - the number of faces is invalid. There won't be
 empty.<x> - These files are completely empty. The corresponding
    loaders should not crash.
 
-malformed.obj - out-of-range vertex indices
+malformed.obj - out-of-intensity vertex indices
 malformed2.obj - non-existent material referenced
 
 

@@ -7,7 +7,6 @@
 
 #include <glm/detail/type_vec3.hpp>
 #include "shader.h"
-#include "shaderManager.h"
 
 enum LightType
 {
@@ -27,30 +26,31 @@ private:
     //for point lights and spotlights
     glm::vec3 position;
     //for point lights
-    /*inverse quadratic attenuation. will be calculated based on values from OGRE3D's Wiki
+private:
+/*inverse quadratic attenuation. will be calculated based on values from OGRE3D's Wiki
       values are stored as (quadric,linear,constant)*/
     glm::vec3 attenuation;
-    float range;
+private:
+    float intensity;
     //for spotlights
     float innerCutoffAngle, outerCutoffAngle;
-    float intensity;
     bool smoothEdges;
 private:
+    const int id;
 //the type to bind
     LightType lightType;
 public:
+    static int spotID,dirID,pointID;
     //direction light constructor
     Light(LightType lightType, glm::vec3 direction);
     //point light constructor
     Light(LightType lightType, float range = 10, glm::vec3 position = glm::vec3());
     //spotlight constructor
     Light(LightType lightType, float range, float innerCutoffAngle = 60, float outerCutoffAngle = 65);
-
-    void makeLightStructUniform(Shader& shader, std::string structName = "light", int index = -1);
-    void makeLightStructUniform(ShaderManager& shader, std::string structName = "light", int index = -1);
+    ~Light();
 
     //for attenuation
-    void setLightRange(float range);
+    void setLightRange();
     //getters/setters
     const glm::vec3 &getAmbient() const
     {
@@ -121,6 +121,22 @@ public:
     {
         return lightType;
     }
+
+    const glm::vec3 &getAttenuation() const
+    {
+        return attenuation;
+    }
+
+    float getIntensity() const
+    {
+        return intensity;
+    }
+
+    void setIntensity(float intensity)
+    {
+        Light::intensity = intensity;
+    }
+
 };
 
 #endif //TESTPROJECT2_LIGHT_H

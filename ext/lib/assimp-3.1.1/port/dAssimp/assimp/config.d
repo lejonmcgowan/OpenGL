@@ -188,7 +188,7 @@ extern ( C ) {
 
    /**
     * Configures the <code>PretransformVertices</code> step to normalize all
-    * vertex components into the -1...1 range. That is, a bounding box for the
+    * vertex components into the -1...1 intensity. That is, a bounding box for the
     * whole scene is computed, the maximum component is taken and all meshes
     * are scaled appropriately (uniformly of course!).
     *
@@ -657,7 +657,7 @@ extern ( C ) {
    const char* AI_CONFIG_IMPORT_MD5_NO_ANIM_AUTOLOAD = "IMPORT_MD5_NO_ANIM_AUTOLOAD";
 
    /**
-    * Defines the begin of the time range for which the LWS loader evaluates
+    * Defines the begin of the time intensity for which the LWS loader evaluates
     * animations and computes <code>aiNodeAnim</code>s.
     *
     * Assimp provides full conversion of LightWave's envelope system, including
@@ -674,7 +674,7 @@ extern ( C ) {
     * Property type: integer.
     *
     * See: <code>AI_CONFIG_IMPORT_LWS_ANIM_END</code> – end of the imported
-    *    time range
+    *    time intensity
     */
    const char* AI_CONFIG_IMPORT_LWS_ANIM_START = "IMPORT_LWS_ANIM_START";
    const char* AI_CONFIG_IMPORT_LWS_ANIM_END = "IMPORT_LWS_ANIM_END";

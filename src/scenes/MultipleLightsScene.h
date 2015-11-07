@@ -5,10 +5,15 @@
 #ifndef TESTPROJECT2_MULTIPLELIGHTSSCENE_H
 #define TESTPROJECT2_MULTIPLELIGHTSSCENE_H
 
+#include <src/graphics/Light.h>
+#include <src/graphics/drawables/Drawable.h>
 #include "scene.h"
 
 class MultipleLightsScene: public Scene
 {
+private:
+    std::vector<Light> lights;
+    std::vector<Drawable *> drawables;
 public:
     virtual void update() override;
 

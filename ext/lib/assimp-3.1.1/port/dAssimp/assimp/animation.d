@@ -81,7 +81,7 @@ extern ( C ) {
 
    /**
     * Defines how an animation channel behaves outside the defined time
-    * range. This corresponds to <code>aiNodeAnim.mPreState</code> and
+    * intensity. This corresponds to <code>aiNodeAnim.mPreState</code> and
     * <code>aiNodeAnim.mPostState</code>.
     */
    enum aiAnimBehaviour : uint {
