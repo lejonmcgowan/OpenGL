@@ -14,6 +14,7 @@ class MultipleLightsScene: public Scene
 private:
     std::vector<Light> lights;
     std::vector<Drawable *> drawables;
+    ShaderManager shaders;
 public:
     virtual void update() override;
 

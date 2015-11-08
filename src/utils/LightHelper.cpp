@@ -99,8 +99,9 @@ void makePointLightStruct(Light& light, ShaderManager& shader,std::string struct
 
 }
 
-void LightHelper::makeLightStructUniform(Light& light, Shader &shader, std::string structName, int index)
+void LightHelper::makeLightStructUniform(Light& light, Shader &shader,bool array,std::string structName)
 {
+    int index = array ? light.getID() : -1;
     switch(light.getLightType())
     {
         case Directional:
@@ -115,8 +116,9 @@ void LightHelper::makeLightStructUniform(Light& light, Shader &shader, std::stri
     }
 }
 
-void LightHelper::makeLightStructUniform(Light& light, ShaderManager &shader, std::string structName, int index)
+void LightHelper::makeLightStructUniform(Light& light, ShaderManager &shader,bool array,std::string structName)
 {
+    int index = array ? light.getID() : -1;
     switch(light.getLightType())
     {
         case Directional:

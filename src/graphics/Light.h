@@ -26,11 +26,9 @@ private:
     //for point lights and spotlights
     glm::vec3 position;
     //for point lights
-private:
-/*inverse quadratic attenuation. will be calculated based on values from OGRE3D's Wiki
+    /*inverse quadratic attenuation. will be calculated based on values from OGRE3D's Wiki
       values are stored as (quadric,linear,constant)*/
     glm::vec3 attenuation;
-private:
     float intensity;
     //for spotlights
     float innerCutoffAngle, outerCutoffAngle;
@@ -135,6 +133,11 @@ public:
     void setIntensity(float intensity)
     {
         Light::intensity = intensity;
+    }
+
+    const int getID() const
+    {
+        return id;
     }
 
 };
