@@ -16,9 +16,9 @@ struct LightHelper
 {
     static void setLightColorFromMaterial(Light& light, PhongMaterial& material);
 
-    static void makeLightStructUniform(Light& light, Shader& shader, std::string structName = "light", int index = -1);
+    static void makeLightStructUniform(Light& light, Shader& shader,bool array, std::string structName = "");
 
-    static void makeLightStructUniform(Light& light, ShaderManager& shader, std::string structName = "light", int index = -1);
+    static void makeLightStructUniform(Light& light, ShaderManager& shader, bool array,std::string structName = "");
 };
 
 #endif //TESTPROJECT2_LIGHTHELPER_H
