@@ -10,5 +10,6 @@
 #include "BasicTriangleScene.h"
 #include "LineScene.h"
 #include "LightingBasicScene.h"
+#include "MultipleLightsScene.h"
 
 #endif //TESTPROJECT2_SCENEINLCUDES_H
