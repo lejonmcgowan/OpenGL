@@ -86,4 +86,4 @@ include_directories(${CMAKE_SOURCE_DIR} ${CMAKE_SOURCE_DIR}/src ${CMAKE_SOURCE_D
 target_link_libraries(src ${LIBRARIES} ${GLFW_LIBRARY_FLAGS} ${GLEW_LIBRARIES})
 
 add_executable(${PROJECT_NAME} _main.cpp)
-target_link_libraries(${PROJECT_NAME}  utils scenes input src)
+target_link_libraries(${PROJECT_NAME} scenes input src utils)

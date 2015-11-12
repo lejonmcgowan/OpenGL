@@ -1,0 +1,14 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/lejonmcgowan/Dropbox/projects/QTWorkspace/TestProject2/src/utils/WindowContexts.cpp
+WindowContexts.h
+/home/lejonmcgowan/Dropbox/projects/QTWorkspace/TestProject2/src/utils/WindowContexts.h
+
+/home/lejonmcgowan/Dropbox/projects/QTWorkspace/TestProject2/src/utils/WindowContexts.h
+

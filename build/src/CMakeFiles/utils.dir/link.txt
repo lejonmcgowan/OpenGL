@@ -1,0 +1,2 @@
+/usr/bin/ar cq ../ext/libutils.a  CMakeFiles/utils.dir/utils/WindowContexts.cpp.o
+/usr/bin/ranlib ../ext/libutils.a
