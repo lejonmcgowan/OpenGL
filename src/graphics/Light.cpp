@@ -9,7 +9,7 @@ const static float Linear_Attenuation = 4.5;
 const static float Constant_Attenuation = 1.0f;
 const static float range = 100.0f;
 
-int spotID = 0,dirID = 0,pointID = 0;
+int Light::spotID = 0,Light::dirID = 0,Light::pointID = 0;
 
 void Light::setLightRange()
 {

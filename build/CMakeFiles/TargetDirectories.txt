@@ -1,0 +1,6 @@
+/home/lejonmcgowan/Dropbox/projects/QTWorkspace/TestProject2/build/src/CMakeFiles/utils.dir
+/home/lejonmcgowan/Dropbox/projects/QTWorkspace/TestProject2/build/src/CMakeFiles/TestProject2.dir
+/home/lejonmcgowan/Dropbox/projects/QTWorkspace/TestProject2/build/src/CMakeFiles/src.dir
+/home/lejonmcgowan/Dropbox/projects/QTWorkspace/TestProject2/build/src/CMakeFiles/input.dir
+/home/lejonmcgowan/Dropbox/projects/QTWorkspace/TestProject2/build/src/CMakeFiles/scenes.dir
+/home/lejonmcgowan/Dropbox/projects/QTWorkspace/TestProject2/build/src/CMakeFiles/math.dir

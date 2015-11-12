@@ -39,7 +39,7 @@ void MultipleLightsScene::init(GLFWwindow *window)
     //setup drawables
     drawables.push_back(new PlaneBuffer(10,10,10,10));
     drawables[0]->getTransform().translateBy(glm::vec3(0.0f,-0.02f,0.0f));
-    drawables.push_back(new BufferTeapot(20,glm::mat4()));
+    drawables.push_back(new BufferTeapot(2,glm::mat4()));
 
     lightMeshIter = (int)drawables.size();
 
@@ -59,9 +59,12 @@ void MultipleLightsScene::init(GLFWwindow *window)
 
     for(Light& light: lights)
     {
-        TweakBarHelper::addLight(tweakBars[0], light);
-        drawables.push_back(new BufferSphere(10,10,10));
-        materials.push_back(PhongMaterial(PhongMaterialFactory::WHITE));
+        if(light.getLightType() != Directional)
+        {
+            TweakBarHelper::addLight(tweakBars[0], light);
+            drawables.push_back(new BufferSphere(10, 10, 10));
+            materials.push_back(PhongMaterial(PhongMaterialFactory::WHITE));
+        }
     }
     int i = 0;
     for(auto drawable: drawables)

@@ -1,0 +1,2 @@
+/usr/bin/ar cq ../ext/libmath.a  CMakeFiles/math.dir/math/mathNothing.cpp.o
+/usr/bin/ranlib ../ext/libmath.a
