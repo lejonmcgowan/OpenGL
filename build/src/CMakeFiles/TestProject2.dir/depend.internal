@@ -6,10 +6,11 @@ src/CMakeFiles/TestProject2.dir/_main.cpp.o
  ../ext/include/SOIL.h
  ../src/graphics/Buffer.h
  ../src/graphics/IndexBuffer.h
- ../src/graphics/PhongMaterial.h
+ ../src/graphics/Light.h
  ../src/graphics/Texture.h
  ../src/graphics/drawables/BufferObject.h
  ../src/graphics/drawables/Drawable.h
+ ../src/graphics/materials/PhongMaterial.h
  ../src/graphics/shader.h
  ../src/graphics/shaderManager.h
  ../src/input/Keyboard.h
@@ -23,6 +24,7 @@ src/CMakeFiles/TestProject2.dir/_main.cpp.o
  /home/lejonmcgowan/Dropbox/projects/QTWorkspace/TestProject2/src/scenes/BasicTriangleScene.h
  /home/lejonmcgowan/Dropbox/projects/QTWorkspace/TestProject2/src/scenes/LightingBasicScene.h
  /home/lejonmcgowan/Dropbox/projects/QTWorkspace/TestProject2/src/scenes/LineScene.h
+ /home/lejonmcgowan/Dropbox/projects/QTWorkspace/TestProject2/src/scenes/MultipleLightsScene.h
  /home/lejonmcgowan/Dropbox/projects/QTWorkspace/TestProject2/src/scenes/SceneIncludes.h
  /home/lejonmcgowan/Dropbox/projects/QTWorkspace/TestProject2/src/scenes/scene.h
  /home/lejonmcgowan/Dropbox/projects/QTWorkspace/TestProject2/src/scenes/window.h

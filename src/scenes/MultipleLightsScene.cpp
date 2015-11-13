@@ -44,7 +44,7 @@ void MultipleLightsScene::init(GLFWwindow *window)
     lightMeshIter = (int)drawables.size();
 
     //setup shading and mesh materials
-    Shader multiLight(findShader("multiLight.vert"), findShader("multiLight.frag"));
+    Shader multiLight(findShader("multiLights.vert"), findShader("multiLights.frag"));
     Shader basic(findShader("basic.vert"), findShader("basic2.frag"));
     shaders.addShader("simpleColor",basic);
     shaders.addShader("multiLight",multiLight);

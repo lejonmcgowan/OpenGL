@@ -8,6 +8,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/lejonmcgowan/Dropbox/projects/QTWorkspace/TestProject2/src/scenes/BasicTriangleScene.cpp" "/home/lejonmcgowan/Dropbox/projects/QTWorkspace/TestProject2/build/src/CMakeFiles/scenes.dir/scenes/BasicTriangleScene.cpp.o"
   "/home/lejonmcgowan/Dropbox/projects/QTWorkspace/TestProject2/src/scenes/LightingBasicScene.cpp" "/home/lejonmcgowan/Dropbox/projects/QTWorkspace/TestProject2/build/src/CMakeFiles/scenes.dir/scenes/LightingBasicScene.cpp.o"
   "/home/lejonmcgowan/Dropbox/projects/QTWorkspace/TestProject2/src/scenes/LineScene.cpp" "/home/lejonmcgowan/Dropbox/projects/QTWorkspace/TestProject2/build/src/CMakeFiles/scenes.dir/scenes/LineScene.cpp.o"
+  "/home/lejonmcgowan/Dropbox/projects/QTWorkspace/TestProject2/src/scenes/MultipleLightsScene.cpp" "/home/lejonmcgowan/Dropbox/projects/QTWorkspace/TestProject2/build/src/CMakeFiles/scenes.dir/scenes/MultipleLightsScene.cpp.o"
   "/home/lejonmcgowan/Dropbox/projects/QTWorkspace/TestProject2/src/scenes/window.cpp" "/home/lejonmcgowan/Dropbox/projects/QTWorkspace/TestProject2/build/src/CMakeFiles/scenes.dir/scenes/window.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")

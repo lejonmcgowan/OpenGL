@@ -1,2 +1,2 @@
-/usr/bin/ar cq ../ext/libscenes.a  CMakeFiles/scenes.dir/scenes/window.cpp.o CMakeFiles/scenes.dir/scenes/BasicBillboardScene.cpp.o CMakeFiles/scenes.dir/scenes/LineScene.cpp.o CMakeFiles/scenes.dir/scenes/LightingBasicScene.cpp.o CMakeFiles/scenes.dir/scenes/BasicTriangleScene.cpp.o
+/usr/bin/ar cq ../ext/libscenes.a  CMakeFiles/scenes.dir/scenes/window.cpp.o CMakeFiles/scenes.dir/scenes/BasicBillboardScene.cpp.o CMakeFiles/scenes.dir/scenes/LineScene.cpp.o CMakeFiles/scenes.dir/scenes/LightingBasicScene.cpp.o CMakeFiles/scenes.dir/scenes/BasicTriangleScene.cpp.o CMakeFiles/scenes.dir/scenes/MultipleLightsScene.cpp.o
 /usr/bin/ranlib ../ext/libscenes.a

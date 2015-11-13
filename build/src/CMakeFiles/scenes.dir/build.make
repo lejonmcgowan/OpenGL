@@ -164,13 +164,37 @@ src/CMakeFiles/scenes.dir/scenes/BasicTriangleScene.cpp.o.provides: src/CMakeFil
 
 src/CMakeFiles/scenes.dir/scenes/BasicTriangleScene.cpp.o.provides.build: src/CMakeFiles/scenes.dir/scenes/BasicTriangleScene.cpp.o
 
+src/CMakeFiles/scenes.dir/scenes/MultipleLightsScene.cpp.o: src/CMakeFiles/scenes.dir/flags.make
+src/CMakeFiles/scenes.dir/scenes/MultipleLightsScene.cpp.o: ../src/scenes/MultipleLightsScene.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/lejonmcgowan/Dropbox/projects/QTWorkspace/TestProject2/build/CMakeFiles $(CMAKE_PROGRESS_6)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/CMakeFiles/scenes.dir/scenes/MultipleLightsScene.cpp.o"
+	cd /home/lejonmcgowan/Dropbox/projects/QTWorkspace/TestProject2/build/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/scenes.dir/scenes/MultipleLightsScene.cpp.o -c /home/lejonmcgowan/Dropbox/projects/QTWorkspace/TestProject2/src/scenes/MultipleLightsScene.cpp
+
+src/CMakeFiles/scenes.dir/scenes/MultipleLightsScene.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/scenes.dir/scenes/MultipleLightsScene.cpp.i"
+	cd /home/lejonmcgowan/Dropbox/projects/QTWorkspace/TestProject2/build/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/lejonmcgowan/Dropbox/projects/QTWorkspace/TestProject2/src/scenes/MultipleLightsScene.cpp > CMakeFiles/scenes.dir/scenes/MultipleLightsScene.cpp.i
+
+src/CMakeFiles/scenes.dir/scenes/MultipleLightsScene.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/scenes.dir/scenes/MultipleLightsScene.cpp.s"
+	cd /home/lejonmcgowan/Dropbox/projects/QTWorkspace/TestProject2/build/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/lejonmcgowan/Dropbox/projects/QTWorkspace/TestProject2/src/scenes/MultipleLightsScene.cpp -o CMakeFiles/scenes.dir/scenes/MultipleLightsScene.cpp.s
+
+src/CMakeFiles/scenes.dir/scenes/MultipleLightsScene.cpp.o.requires:
+.PHONY : src/CMakeFiles/scenes.dir/scenes/MultipleLightsScene.cpp.o.requires
+
+src/CMakeFiles/scenes.dir/scenes/MultipleLightsScene.cpp.o.provides: src/CMakeFiles/scenes.dir/scenes/MultipleLightsScene.cpp.o.requires
+	$(MAKE) -f src/CMakeFiles/scenes.dir/build.make src/CMakeFiles/scenes.dir/scenes/MultipleLightsScene.cpp.o.provides.build
+.PHONY : src/CMakeFiles/scenes.dir/scenes/MultipleLightsScene.cpp.o.provides
+
+src/CMakeFiles/scenes.dir/scenes/MultipleLightsScene.cpp.o.provides.build: src/CMakeFiles/scenes.dir/scenes/MultipleLightsScene.cpp.o
+
 # Object files for target scenes
 scenes_OBJECTS = \
 "CMakeFiles/scenes.dir/scenes/window.cpp.o" \
 "CMakeFiles/scenes.dir/scenes/BasicBillboardScene.cpp.o" \
 "CMakeFiles/scenes.dir/scenes/LineScene.cpp.o" \
 "CMakeFiles/scenes.dir/scenes/LightingBasicScene.cpp.o" \
-"CMakeFiles/scenes.dir/scenes/BasicTriangleScene.cpp.o"
+"CMakeFiles/scenes.dir/scenes/BasicTriangleScene.cpp.o" \
+"CMakeFiles/scenes.dir/scenes/MultipleLightsScene.cpp.o"
 
 # External object files for target scenes
 scenes_EXTERNAL_OBJECTS =
@@ -180,6 +204,7 @@ ext/libscenes.a: src/CMakeFiles/scenes.dir/scenes/BasicBillboardScene.cpp.o
 ext/libscenes.a: src/CMakeFiles/scenes.dir/scenes/LineScene.cpp.o
 ext/libscenes.a: src/CMakeFiles/scenes.dir/scenes/LightingBasicScene.cpp.o
 ext/libscenes.a: src/CMakeFiles/scenes.dir/scenes/BasicTriangleScene.cpp.o
+ext/libscenes.a: src/CMakeFiles/scenes.dir/scenes/MultipleLightsScene.cpp.o
 ext/libscenes.a: src/CMakeFiles/scenes.dir/build.make
 ext/libscenes.a: src/CMakeFiles/scenes.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking CXX static library ../ext/libscenes.a"
@@ -195,6 +220,7 @@ src/CMakeFiles/scenes.dir/requires: src/CMakeFiles/scenes.dir/scenes/BasicBillbo
 src/CMakeFiles/scenes.dir/requires: src/CMakeFiles/scenes.dir/scenes/LineScene.cpp.o.requires
 src/CMakeFiles/scenes.dir/requires: src/CMakeFiles/scenes.dir/scenes/LightingBasicScene.cpp.o.requires
 src/CMakeFiles/scenes.dir/requires: src/CMakeFiles/scenes.dir/scenes/BasicTriangleScene.cpp.o.requires
+src/CMakeFiles/scenes.dir/requires: src/CMakeFiles/scenes.dir/scenes/MultipleLightsScene.cpp.o.requires
 .PHONY : src/CMakeFiles/scenes.dir/requires
 
 src/CMakeFiles/scenes.dir/clean:

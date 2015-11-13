@@ -5,10 +5,11 @@ src/CMakeFiles/TestProject2.dir/_main.cpp.o: ../ext/include/AntTweakBar.h
 src/CMakeFiles/TestProject2.dir/_main.cpp.o: ../ext/include/SOIL.h
 src/CMakeFiles/TestProject2.dir/_main.cpp.o: ../src/graphics/Buffer.h
 src/CMakeFiles/TestProject2.dir/_main.cpp.o: ../src/graphics/IndexBuffer.h
-src/CMakeFiles/TestProject2.dir/_main.cpp.o: ../src/graphics/PhongMaterial.h
+src/CMakeFiles/TestProject2.dir/_main.cpp.o: ../src/graphics/Light.h
 src/CMakeFiles/TestProject2.dir/_main.cpp.o: ../src/graphics/Texture.h
 src/CMakeFiles/TestProject2.dir/_main.cpp.o: ../src/graphics/drawables/BufferObject.h
 src/CMakeFiles/TestProject2.dir/_main.cpp.o: ../src/graphics/drawables/Drawable.h
+src/CMakeFiles/TestProject2.dir/_main.cpp.o: ../src/graphics/materials/PhongMaterial.h
 src/CMakeFiles/TestProject2.dir/_main.cpp.o: ../src/graphics/shader.h
 src/CMakeFiles/TestProject2.dir/_main.cpp.o: ../src/graphics/shaderManager.h
 src/CMakeFiles/TestProject2.dir/_main.cpp.o: ../src/input/Keyboard.h
@@ -22,6 +23,7 @@ src/CMakeFiles/TestProject2.dir/_main.cpp.o: ../src/scenes/BasicBillboardScene.h
 src/CMakeFiles/TestProject2.dir/_main.cpp.o: ../src/scenes/BasicTriangleScene.h
 src/CMakeFiles/TestProject2.dir/_main.cpp.o: ../src/scenes/LightingBasicScene.h
 src/CMakeFiles/TestProject2.dir/_main.cpp.o: ../src/scenes/LineScene.h
+src/CMakeFiles/TestProject2.dir/_main.cpp.o: ../src/scenes/MultipleLightsScene.h
 src/CMakeFiles/TestProject2.dir/_main.cpp.o: ../src/scenes/SceneIncludes.h
 src/CMakeFiles/TestProject2.dir/_main.cpp.o: ../src/scenes/scene.h
 src/CMakeFiles/TestProject2.dir/_main.cpp.o: ../src/scenes/window.h

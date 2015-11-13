@@ -81,10 +81,10 @@ TestProject2_EXTERNAL_OBJECTS =
 
 bin/TestProject2: src/CMakeFiles/TestProject2.dir/_main.cpp.o
 bin/TestProject2: src/CMakeFiles/TestProject2.dir/build.make
-bin/TestProject2: ext/libutils.a
 bin/TestProject2: ext/libscenes.a
 bin/TestProject2: ext/libinput.a
 bin/TestProject2: ext/libsrc.a
+bin/TestProject2: ext/libutils.a
 bin/TestProject2: ../ext/lib/libAntTweakBar.a
 bin/TestProject2: /usr/lib/x86_64-linux-gnu/libGLU.so
 bin/TestProject2: /usr/lib/x86_64-linux-gnu/libGL.so

@@ -46,15 +46,11 @@ glm/detail/type_vec3.hpp
 glm/detail/type_vec4.hpp
 -
 
-../src/graphics/PhongMaterial.h
-glm/detail/type_vec.hpp
--
+../src/graphics/Light.h
 glm/detail/type_vec3.hpp
 -
 shader.h
 ../src/graphics/shader.h
-shaderManager.h
-../src/graphics/shaderManager.h
 
 ../src/graphics/Texture.h
 GL/glew.h
@@ -129,6 +125,16 @@ Drawable.h
 ../src/graphics/drawables/Drawable.h
 BufferObject.h
 ../src/graphics/drawables/BufferObject.h
+
+../src/graphics/materials/PhongMaterial.h
+glm/detail/type_vec.hpp
+-
+glm/detail/type_vec3.hpp
+-
+graphics/shader.h
+../src/graphics/materials/graphics/shader.h
+graphics/shaderManager.h
+../src/graphics/materials/graphics/shaderManager.h
 
 ../src/graphics/shader.h
 string
@@ -233,8 +239,8 @@ graphics/drawables/Drawable.h
 ../src/scenes/graphics/drawables/Drawable.h
 math/Camera.h
 ../src/scenes/math/Camera.h
-graphics/PhongMaterial.h
-../src/scenes/graphics/PhongMaterial.h
+graphics/materials/PhongMaterial.h
+../src/scenes/graphics/materials/PhongMaterial.h
 scene.h
 ../src/scenes/scene.h
 
@@ -245,6 +251,14 @@ graphics/Buffer.h
 ../src/scenes/graphics/Buffer.h
 math/Camera.h
 ../src/scenes/math/Camera.h
+
+../src/scenes/MultipleLightsScene.h
+src/graphics/Light.h
+-
+src/graphics/drawables/Drawable.h
+-
+scene.h
+../src/scenes/scene.h
 
 ../src/scenes/SceneIncludes.h
 scene.h
@@ -257,6 +271,8 @@ LineScene.h
 ../src/scenes/LineScene.h
 LightingBasicScene.h
 ../src/scenes/LightingBasicScene.h
+MultipleLightsScene.h
+../src/scenes/MultipleLightsScene.h
 
 ../src/scenes/scene.h
 GL/glew.h
@@ -274,9 +290,33 @@ input/Mouse.h
 vector
 -
 
+../src/utils/LightHelper.h
+src/graphics/Light.h
+-
+src/graphics/materials/PhongMaterial.h
+-
+glm/detail/type_vec3.hpp
+-
+graphics/shader.h
+../src/utils/graphics/shader.h
+graphics/shaderManager.h
+../src/utils/graphics/shaderManager.h
+graphics/Light.h
+../src/utils/graphics/Light.h
+
 ../src/utils/PathFind.h
 string
 -
+
+../src/utils/TweakBarHelper.h
+graphics/Light.h
+../src/utils/graphics/Light.h
+graphics/materials/PhongMaterial.h
+../src/utils/graphics/materials/PhongMaterial.h
+math/Transform.h
+../src/utils/math/Transform.h
+ext/include/AntTweakBar.h
+../src/utils/ext/include/AntTweakBar.h
 
 ../src/utils/WindowContexts.h
 
@@ -343,9 +383,9 @@ src/graphics/TextureManager.h
 -
 src/utils/debugGL.h
 -
-src/graphics/drawables/BufferCube.h
--
 src/graphics/drawables/BufferTeapot.h
+-
+src/graphics/materials/PhongMaterial.h
 -
 LightingBasicScene.h
 /home/lejonmcgowan/Dropbox/projects/QTWorkspace/TestProject2/src/scenes/LightingBasicScene.h
@@ -355,8 +395,8 @@ graphics/drawables/Drawable.h
 /home/lejonmcgowan/Dropbox/projects/QTWorkspace/TestProject2/src/scenes/graphics/drawables/Drawable.h
 math/Camera.h
 /home/lejonmcgowan/Dropbox/projects/QTWorkspace/TestProject2/src/scenes/math/Camera.h
-graphics/PhongMaterial.h
-/home/lejonmcgowan/Dropbox/projects/QTWorkspace/TestProject2/src/scenes/graphics/PhongMaterial.h
+graphics/materials/PhongMaterial.h
+/home/lejonmcgowan/Dropbox/projects/QTWorkspace/TestProject2/src/scenes/graphics/materials/PhongMaterial.h
 scene.h
 /home/lejonmcgowan/Dropbox/projects/QTWorkspace/TestProject2/src/scenes/scene.h
 
@@ -375,6 +415,30 @@ graphics/Buffer.h
 /home/lejonmcgowan/Dropbox/projects/QTWorkspace/TestProject2/src/scenes/graphics/Buffer.h
 math/Camera.h
 /home/lejonmcgowan/Dropbox/projects/QTWorkspace/TestProject2/src/scenes/math/Camera.h
+
+/home/lejonmcgowan/Dropbox/projects/QTWorkspace/TestProject2/src/scenes/MultipleLightsScene.cpp
+src/graphics/drawables/PlaneBuffer.h
+-
+src/graphics/drawables/BufferTeapot.h
+-
+src/utils/TweakBarHelper.h
+-
+src/graphics/drawables/BufferSphere.h
+-
+src/utils/LightHelper.h
+-
+src/utils/PathFind.h
+-
+MultipleLightsScene.h
+/home/lejonmcgowan/Dropbox/projects/QTWorkspace/TestProject2/src/scenes/MultipleLightsScene.h
+
+/home/lejonmcgowan/Dropbox/projects/QTWorkspace/TestProject2/src/scenes/MultipleLightsScene.h
+src/graphics/Light.h
+-
+src/graphics/drawables/Drawable.h
+-
+scene.h
+/home/lejonmcgowan/Dropbox/projects/QTWorkspace/TestProject2/src/scenes/scene.h
 
 /home/lejonmcgowan/Dropbox/projects/QTWorkspace/TestProject2/src/scenes/scene.h
 GL/glew.h
@@ -397,8 +461,6 @@ assert.h
 -
 window.h
 /home/lejonmcgowan/Dropbox/projects/QTWorkspace/TestProject2/src/scenes/window.h
-AntTweakBar.h
-/home/lejonmcgowan/Dropbox/projects/QTWorkspace/TestProject2/src/scenes/AntTweakBar.h
 
 /home/lejonmcgowan/Dropbox/projects/QTWorkspace/TestProject2/src/scenes/window.h
 GL/glew.h
