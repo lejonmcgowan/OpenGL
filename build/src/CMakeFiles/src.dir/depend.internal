@@ -13,12 +13,6 @@ src/CMakeFiles/src.dir/graphics/Light.cpp.o
  /home/lejonmcgowan/Dropbox/projects/QTWorkspace/TestProject2/src/graphics/Light.cpp
  /home/lejonmcgowan/Dropbox/projects/QTWorkspace/TestProject2/src/graphics/Light.h
  /home/lejonmcgowan/Dropbox/projects/QTWorkspace/TestProject2/src/graphics/shader.h
- /home/lejonmcgowan/Dropbox/projects/QTWorkspace/TestProject2/src/graphics/shaderManager.h
-src/CMakeFiles/src.dir/graphics/PhongMaterial.cpp.o
- /home/lejonmcgowan/Dropbox/projects/QTWorkspace/TestProject2/src/graphics/PhongMaterial.cpp
- /home/lejonmcgowan/Dropbox/projects/QTWorkspace/TestProject2/src/graphics/PhongMaterial.h
- /home/lejonmcgowan/Dropbox/projects/QTWorkspace/TestProject2/src/graphics/shader.h
- /home/lejonmcgowan/Dropbox/projects/QTWorkspace/TestProject2/src/graphics/shaderManager.h
 src/CMakeFiles/src.dir/graphics/Texture.cpp.o
  ../ext/include/SOIL.h
  ../src/utils/debugGL.h
@@ -80,6 +74,11 @@ src/CMakeFiles/src.dir/graphics/drawables/PlaneBuffer.cpp.o
  /home/lejonmcgowan/Dropbox/projects/QTWorkspace/TestProject2/src/graphics/drawables/Drawable.h
  /home/lejonmcgowan/Dropbox/projects/QTWorkspace/TestProject2/src/graphics/drawables/PlaneBuffer.cpp
  /home/lejonmcgowan/Dropbox/projects/QTWorkspace/TestProject2/src/graphics/drawables/PlaneBuffer.h
+src/CMakeFiles/src.dir/graphics/materials/PhongMaterial.cpp.o
+ ../src/graphics/shader.h
+ ../src/graphics/shaderManager.h
+ /home/lejonmcgowan/Dropbox/projects/QTWorkspace/TestProject2/src/graphics/materials/PhongMaterial.cpp
+ /home/lejonmcgowan/Dropbox/projects/QTWorkspace/TestProject2/src/graphics/materials/PhongMaterial.h
 src/CMakeFiles/src.dir/graphics/shader.cpp.o
  ../src/utils/debugGL.h
  /home/lejonmcgowan/Dropbox/projects/QTWorkspace/TestProject2/src/graphics/shader.cpp

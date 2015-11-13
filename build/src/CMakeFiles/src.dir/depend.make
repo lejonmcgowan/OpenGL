@@ -12,12 +12,6 @@ src/CMakeFiles/src.dir/graphics/IndexBuffer.cpp.o: ../src/graphics/IndexBuffer.h
 src/CMakeFiles/src.dir/graphics/Light.cpp.o: ../src/graphics/Light.cpp
 src/CMakeFiles/src.dir/graphics/Light.cpp.o: ../src/graphics/Light.h
 src/CMakeFiles/src.dir/graphics/Light.cpp.o: ../src/graphics/shader.h
-src/CMakeFiles/src.dir/graphics/Light.cpp.o: ../src/graphics/shaderManager.h
-
-src/CMakeFiles/src.dir/graphics/PhongMaterial.cpp.o: ../src/graphics/PhongMaterial.cpp
-src/CMakeFiles/src.dir/graphics/PhongMaterial.cpp.o: ../src/graphics/PhongMaterial.h
-src/CMakeFiles/src.dir/graphics/PhongMaterial.cpp.o: ../src/graphics/shader.h
-src/CMakeFiles/src.dir/graphics/PhongMaterial.cpp.o: ../src/graphics/shaderManager.h
 
 src/CMakeFiles/src.dir/graphics/Texture.cpp.o: ../ext/include/SOIL.h
 src/CMakeFiles/src.dir/graphics/Texture.cpp.o: ../src/utils/debugGL.h
@@ -79,6 +73,11 @@ src/CMakeFiles/src.dir/graphics/drawables/PlaneBuffer.cpp.o: ../src/graphics/dra
 src/CMakeFiles/src.dir/graphics/drawables/PlaneBuffer.cpp.o: ../src/graphics/drawables/Drawable.h
 src/CMakeFiles/src.dir/graphics/drawables/PlaneBuffer.cpp.o: ../src/graphics/drawables/PlaneBuffer.cpp
 src/CMakeFiles/src.dir/graphics/drawables/PlaneBuffer.cpp.o: ../src/graphics/drawables/PlaneBuffer.h
+
+src/CMakeFiles/src.dir/graphics/materials/PhongMaterial.cpp.o: ../src/graphics/shader.h
+src/CMakeFiles/src.dir/graphics/materials/PhongMaterial.cpp.o: ../src/graphics/shaderManager.h
+src/CMakeFiles/src.dir/graphics/materials/PhongMaterial.cpp.o: ../src/graphics/materials/PhongMaterial.cpp
+src/CMakeFiles/src.dir/graphics/materials/PhongMaterial.cpp.o: ../src/graphics/materials/PhongMaterial.h
 
 src/CMakeFiles/src.dir/graphics/shader.cpp.o: ../src/utils/debugGL.h
 src/CMakeFiles/src.dir/graphics/shader.cpp.o: ../src/graphics/shader.cpp

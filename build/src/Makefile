@@ -281,30 +281,6 @@ graphics/Light.cpp.s:
 	cd /home/lejonmcgowan/Dropbox/projects/QTWorkspace/TestProject2/build && $(MAKE) -f src/CMakeFiles/src.dir/build.make src/CMakeFiles/src.dir/graphics/Light.cpp.s
 .PHONY : graphics/Light.cpp.s
 
-graphics/PhongMaterial.o: graphics/PhongMaterial.cpp.o
-.PHONY : graphics/PhongMaterial.o
-
-# target to build an object file
-graphics/PhongMaterial.cpp.o:
-	cd /home/lejonmcgowan/Dropbox/projects/QTWorkspace/TestProject2/build && $(MAKE) -f src/CMakeFiles/src.dir/build.make src/CMakeFiles/src.dir/graphics/PhongMaterial.cpp.o
-.PHONY : graphics/PhongMaterial.cpp.o
-
-graphics/PhongMaterial.i: graphics/PhongMaterial.cpp.i
-.PHONY : graphics/PhongMaterial.i
-
-# target to preprocess a source file
-graphics/PhongMaterial.cpp.i:
-	cd /home/lejonmcgowan/Dropbox/projects/QTWorkspace/TestProject2/build && $(MAKE) -f src/CMakeFiles/src.dir/build.make src/CMakeFiles/src.dir/graphics/PhongMaterial.cpp.i
-.PHONY : graphics/PhongMaterial.cpp.i
-
-graphics/PhongMaterial.s: graphics/PhongMaterial.cpp.s
-.PHONY : graphics/PhongMaterial.s
-
-# target to generate assembly for a file
-graphics/PhongMaterial.cpp.s:
-	cd /home/lejonmcgowan/Dropbox/projects/QTWorkspace/TestProject2/build && $(MAKE) -f src/CMakeFiles/src.dir/build.make src/CMakeFiles/src.dir/graphics/PhongMaterial.cpp.s
-.PHONY : graphics/PhongMaterial.cpp.s
-
 graphics/Texture.o: graphics/Texture.cpp.o
 .PHONY : graphics/Texture.o
 
@@ -472,6 +448,30 @@ graphics/drawables/PlaneBuffer.s: graphics/drawables/PlaneBuffer.cpp.s
 graphics/drawables/PlaneBuffer.cpp.s:
 	cd /home/lejonmcgowan/Dropbox/projects/QTWorkspace/TestProject2/build && $(MAKE) -f src/CMakeFiles/src.dir/build.make src/CMakeFiles/src.dir/graphics/drawables/PlaneBuffer.cpp.s
 .PHONY : graphics/drawables/PlaneBuffer.cpp.s
+
+graphics/materials/PhongMaterial.o: graphics/materials/PhongMaterial.cpp.o
+.PHONY : graphics/materials/PhongMaterial.o
+
+# target to build an object file
+graphics/materials/PhongMaterial.cpp.o:
+	cd /home/lejonmcgowan/Dropbox/projects/QTWorkspace/TestProject2/build && $(MAKE) -f src/CMakeFiles/src.dir/build.make src/CMakeFiles/src.dir/graphics/materials/PhongMaterial.cpp.o
+.PHONY : graphics/materials/PhongMaterial.cpp.o
+
+graphics/materials/PhongMaterial.i: graphics/materials/PhongMaterial.cpp.i
+.PHONY : graphics/materials/PhongMaterial.i
+
+# target to preprocess a source file
+graphics/materials/PhongMaterial.cpp.i:
+	cd /home/lejonmcgowan/Dropbox/projects/QTWorkspace/TestProject2/build && $(MAKE) -f src/CMakeFiles/src.dir/build.make src/CMakeFiles/src.dir/graphics/materials/PhongMaterial.cpp.i
+.PHONY : graphics/materials/PhongMaterial.cpp.i
+
+graphics/materials/PhongMaterial.s: graphics/materials/PhongMaterial.cpp.s
+.PHONY : graphics/materials/PhongMaterial.s
+
+# target to generate assembly for a file
+graphics/materials/PhongMaterial.cpp.s:
+	cd /home/lejonmcgowan/Dropbox/projects/QTWorkspace/TestProject2/build && $(MAKE) -f src/CMakeFiles/src.dir/build.make src/CMakeFiles/src.dir/graphics/materials/PhongMaterial.cpp.s
+.PHONY : graphics/materials/PhongMaterial.cpp.s
 
 graphics/shader.o: graphics/shader.cpp.o
 .PHONY : graphics/shader.o
@@ -665,6 +665,30 @@ scenes/LineScene.cpp.s:
 	cd /home/lejonmcgowan/Dropbox/projects/QTWorkspace/TestProject2/build && $(MAKE) -f src/CMakeFiles/scenes.dir/build.make src/CMakeFiles/scenes.dir/scenes/LineScene.cpp.s
 .PHONY : scenes/LineScene.cpp.s
 
+scenes/MultipleLightsScene.o: scenes/MultipleLightsScene.cpp.o
+.PHONY : scenes/MultipleLightsScene.o
+
+# target to build an object file
+scenes/MultipleLightsScene.cpp.o:
+	cd /home/lejonmcgowan/Dropbox/projects/QTWorkspace/TestProject2/build && $(MAKE) -f src/CMakeFiles/scenes.dir/build.make src/CMakeFiles/scenes.dir/scenes/MultipleLightsScene.cpp.o
+.PHONY : scenes/MultipleLightsScene.cpp.o
+
+scenes/MultipleLightsScene.i: scenes/MultipleLightsScene.cpp.i
+.PHONY : scenes/MultipleLightsScene.i
+
+# target to preprocess a source file
+scenes/MultipleLightsScene.cpp.i:
+	cd /home/lejonmcgowan/Dropbox/projects/QTWorkspace/TestProject2/build && $(MAKE) -f src/CMakeFiles/scenes.dir/build.make src/CMakeFiles/scenes.dir/scenes/MultipleLightsScene.cpp.i
+.PHONY : scenes/MultipleLightsScene.cpp.i
+
+scenes/MultipleLightsScene.s: scenes/MultipleLightsScene.cpp.s
+.PHONY : scenes/MultipleLightsScene.s
+
+# target to generate assembly for a file
+scenes/MultipleLightsScene.cpp.s:
+	cd /home/lejonmcgowan/Dropbox/projects/QTWorkspace/TestProject2/build && $(MAKE) -f src/CMakeFiles/scenes.dir/build.make src/CMakeFiles/scenes.dir/scenes/MultipleLightsScene.cpp.s
+.PHONY : scenes/MultipleLightsScene.cpp.s
+
 scenes/window.o: scenes/window.cpp.o
 .PHONY : scenes/window.o
 
@@ -688,6 +712,54 @@ scenes/window.s: scenes/window.cpp.s
 scenes/window.cpp.s:
 	cd /home/lejonmcgowan/Dropbox/projects/QTWorkspace/TestProject2/build && $(MAKE) -f src/CMakeFiles/scenes.dir/build.make src/CMakeFiles/scenes.dir/scenes/window.cpp.s
 .PHONY : scenes/window.cpp.s
+
+utils/LightHelper.o: utils/LightHelper.cpp.o
+.PHONY : utils/LightHelper.o
+
+# target to build an object file
+utils/LightHelper.cpp.o:
+	cd /home/lejonmcgowan/Dropbox/projects/QTWorkspace/TestProject2/build && $(MAKE) -f src/CMakeFiles/utils.dir/build.make src/CMakeFiles/utils.dir/utils/LightHelper.cpp.o
+.PHONY : utils/LightHelper.cpp.o
+
+utils/LightHelper.i: utils/LightHelper.cpp.i
+.PHONY : utils/LightHelper.i
+
+# target to preprocess a source file
+utils/LightHelper.cpp.i:
+	cd /home/lejonmcgowan/Dropbox/projects/QTWorkspace/TestProject2/build && $(MAKE) -f src/CMakeFiles/utils.dir/build.make src/CMakeFiles/utils.dir/utils/LightHelper.cpp.i
+.PHONY : utils/LightHelper.cpp.i
+
+utils/LightHelper.s: utils/LightHelper.cpp.s
+.PHONY : utils/LightHelper.s
+
+# target to generate assembly for a file
+utils/LightHelper.cpp.s:
+	cd /home/lejonmcgowan/Dropbox/projects/QTWorkspace/TestProject2/build && $(MAKE) -f src/CMakeFiles/utils.dir/build.make src/CMakeFiles/utils.dir/utils/LightHelper.cpp.s
+.PHONY : utils/LightHelper.cpp.s
+
+utils/TweakBarHelper.o: utils/TweakBarHelper.cpp.o
+.PHONY : utils/TweakBarHelper.o
+
+# target to build an object file
+utils/TweakBarHelper.cpp.o:
+	cd /home/lejonmcgowan/Dropbox/projects/QTWorkspace/TestProject2/build && $(MAKE) -f src/CMakeFiles/utils.dir/build.make src/CMakeFiles/utils.dir/utils/TweakBarHelper.cpp.o
+.PHONY : utils/TweakBarHelper.cpp.o
+
+utils/TweakBarHelper.i: utils/TweakBarHelper.cpp.i
+.PHONY : utils/TweakBarHelper.i
+
+# target to preprocess a source file
+utils/TweakBarHelper.cpp.i:
+	cd /home/lejonmcgowan/Dropbox/projects/QTWorkspace/TestProject2/build && $(MAKE) -f src/CMakeFiles/utils.dir/build.make src/CMakeFiles/utils.dir/utils/TweakBarHelper.cpp.i
+.PHONY : utils/TweakBarHelper.cpp.i
+
+utils/TweakBarHelper.s: utils/TweakBarHelper.cpp.s
+.PHONY : utils/TweakBarHelper.s
+
+# target to generate assembly for a file
+utils/TweakBarHelper.cpp.s:
+	cd /home/lejonmcgowan/Dropbox/projects/QTWorkspace/TestProject2/build && $(MAKE) -f src/CMakeFiles/utils.dir/build.make src/CMakeFiles/utils.dir/utils/TweakBarHelper.cpp.s
+.PHONY : utils/TweakBarHelper.cpp.s
 
 utils/WindowContexts.o: utils/WindowContexts.cpp.o
 .PHONY : utils/WindowContexts.o
@@ -739,9 +811,6 @@ help:
 	@echo "... graphics/Light.o"
 	@echo "... graphics/Light.i"
 	@echo "... graphics/Light.s"
-	@echo "... graphics/PhongMaterial.o"
-	@echo "... graphics/PhongMaterial.i"
-	@echo "... graphics/PhongMaterial.s"
 	@echo "... graphics/Texture.o"
 	@echo "... graphics/Texture.i"
 	@echo "... graphics/Texture.s"
@@ -763,6 +832,9 @@ help:
 	@echo "... graphics/drawables/PlaneBuffer.o"
 	@echo "... graphics/drawables/PlaneBuffer.i"
 	@echo "... graphics/drawables/PlaneBuffer.s"
+	@echo "... graphics/materials/PhongMaterial.o"
+	@echo "... graphics/materials/PhongMaterial.i"
+	@echo "... graphics/materials/PhongMaterial.s"
 	@echo "... graphics/shader.o"
 	@echo "... graphics/shader.i"
 	@echo "... graphics/shader.s"
@@ -787,9 +859,18 @@ help:
 	@echo "... scenes/LineScene.o"
 	@echo "... scenes/LineScene.i"
 	@echo "... scenes/LineScene.s"
+	@echo "... scenes/MultipleLightsScene.o"
+	@echo "... scenes/MultipleLightsScene.i"
+	@echo "... scenes/MultipleLightsScene.s"
 	@echo "... scenes/window.o"
 	@echo "... scenes/window.i"
 	@echo "... scenes/window.s"
+	@echo "... utils/LightHelper.o"
+	@echo "... utils/LightHelper.i"
+	@echo "... utils/LightHelper.s"
+	@echo "... utils/TweakBarHelper.o"
+	@echo "... utils/TweakBarHelper.i"
+	@echo "... utils/TweakBarHelper.s"
 	@echo "... utils/WindowContexts.o"
 	@echo "... utils/WindowContexts.i"
 	@echo "... utils/WindowContexts.s"

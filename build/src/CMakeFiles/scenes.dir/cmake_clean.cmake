@@ -4,6 +4,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/scenes.dir/scenes/LineScene.cpp.o"
   "CMakeFiles/scenes.dir/scenes/LightingBasicScene.cpp.o"
   "CMakeFiles/scenes.dir/scenes/BasicTriangleScene.cpp.o"
+  "CMakeFiles/scenes.dir/scenes/MultipleLightsScene.cpp.o"
   "../ext/libscenes.pdb"
   "../ext/libscenes.a"
 )

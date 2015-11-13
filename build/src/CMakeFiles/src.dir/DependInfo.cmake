@@ -7,7 +7,6 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/lejonmcgowan/Dropbox/projects/QTWorkspace/TestProject2/src/graphics/Buffer.cpp" "/home/lejonmcgowan/Dropbox/projects/QTWorkspace/TestProject2/build/src/CMakeFiles/src.dir/graphics/Buffer.cpp.o"
   "/home/lejonmcgowan/Dropbox/projects/QTWorkspace/TestProject2/src/graphics/IndexBuffer.cpp" "/home/lejonmcgowan/Dropbox/projects/QTWorkspace/TestProject2/build/src/CMakeFiles/src.dir/graphics/IndexBuffer.cpp.o"
   "/home/lejonmcgowan/Dropbox/projects/QTWorkspace/TestProject2/src/graphics/Light.cpp" "/home/lejonmcgowan/Dropbox/projects/QTWorkspace/TestProject2/build/src/CMakeFiles/src.dir/graphics/Light.cpp.o"
-  "/home/lejonmcgowan/Dropbox/projects/QTWorkspace/TestProject2/src/graphics/PhongMaterial.cpp" "/home/lejonmcgowan/Dropbox/projects/QTWorkspace/TestProject2/build/src/CMakeFiles/src.dir/graphics/PhongMaterial.cpp.o"
   "/home/lejonmcgowan/Dropbox/projects/QTWorkspace/TestProject2/src/graphics/Texture.cpp" "/home/lejonmcgowan/Dropbox/projects/QTWorkspace/TestProject2/build/src/CMakeFiles/src.dir/graphics/Texture.cpp.o"
   "/home/lejonmcgowan/Dropbox/projects/QTWorkspace/TestProject2/src/graphics/TextureManager.cpp" "/home/lejonmcgowan/Dropbox/projects/QTWorkspace/TestProject2/build/src/CMakeFiles/src.dir/graphics/TextureManager.cpp.o"
   "/home/lejonmcgowan/Dropbox/projects/QTWorkspace/TestProject2/src/graphics/drawables/BufferCube.cpp" "/home/lejonmcgowan/Dropbox/projects/QTWorkspace/TestProject2/build/src/CMakeFiles/src.dir/graphics/drawables/BufferCube.cpp.o"
@@ -15,6 +14,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/lejonmcgowan/Dropbox/projects/QTWorkspace/TestProject2/src/graphics/drawables/BufferSphere.cpp" "/home/lejonmcgowan/Dropbox/projects/QTWorkspace/TestProject2/build/src/CMakeFiles/src.dir/graphics/drawables/BufferSphere.cpp.o"
   "/home/lejonmcgowan/Dropbox/projects/QTWorkspace/TestProject2/src/graphics/drawables/BufferTeapot.cpp" "/home/lejonmcgowan/Dropbox/projects/QTWorkspace/TestProject2/build/src/CMakeFiles/src.dir/graphics/drawables/BufferTeapot.cpp.o"
   "/home/lejonmcgowan/Dropbox/projects/QTWorkspace/TestProject2/src/graphics/drawables/PlaneBuffer.cpp" "/home/lejonmcgowan/Dropbox/projects/QTWorkspace/TestProject2/build/src/CMakeFiles/src.dir/graphics/drawables/PlaneBuffer.cpp.o"
+  "/home/lejonmcgowan/Dropbox/projects/QTWorkspace/TestProject2/src/graphics/materials/PhongMaterial.cpp" "/home/lejonmcgowan/Dropbox/projects/QTWorkspace/TestProject2/build/src/CMakeFiles/src.dir/graphics/materials/PhongMaterial.cpp.o"
   "/home/lejonmcgowan/Dropbox/projects/QTWorkspace/TestProject2/src/graphics/shader.cpp" "/home/lejonmcgowan/Dropbox/projects/QTWorkspace/TestProject2/build/src/CMakeFiles/src.dir/graphics/shader.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")

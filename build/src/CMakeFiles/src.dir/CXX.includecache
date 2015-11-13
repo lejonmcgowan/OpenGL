@@ -46,6 +46,32 @@ string
 include/SOIL.h
 ../src/graphics/include/SOIL.h
 
+../src/graphics/shader.h
+string
+-
+algorithm
+-
+GL/glew.h
+-
+iostream
+-
+assert.h
+-
+glm/glm.hpp
+-
+glm/gtc/type_ptr.hpp
+-
+map
+-
+
+../src/graphics/shaderManager.h
+map
+-
+algorithm
+-
+shader.h
+../src/graphics/shader.h
+
 ../src/math/Transform.h
 glm/detail/type_vec.hpp
 -
@@ -123,22 +149,6 @@ glm/detail/type_vec3.hpp
 -
 shader.h
 /home/lejonmcgowan/Dropbox/projects/QTWorkspace/TestProject2/src/graphics/shader.h
-shaderManager.h
-/home/lejonmcgowan/Dropbox/projects/QTWorkspace/TestProject2/src/graphics/shaderManager.h
-
-/home/lejonmcgowan/Dropbox/projects/QTWorkspace/TestProject2/src/graphics/PhongMaterial.cpp
-PhongMaterial.h
-/home/lejonmcgowan/Dropbox/projects/QTWorkspace/TestProject2/src/graphics/PhongMaterial.h
-
-/home/lejonmcgowan/Dropbox/projects/QTWorkspace/TestProject2/src/graphics/PhongMaterial.h
-glm/detail/type_vec.hpp
--
-glm/detail/type_vec3.hpp
--
-shader.h
-/home/lejonmcgowan/Dropbox/projects/QTWorkspace/TestProject2/src/graphics/shader.h
-shaderManager.h
-/home/lejonmcgowan/Dropbox/projects/QTWorkspace/TestProject2/src/graphics/shaderManager.h
 
 /home/lejonmcgowan/Dropbox/projects/QTWorkspace/TestProject2/src/graphics/Texture.cpp
 assert.h
@@ -264,6 +274,20 @@ BufferObject.h
 
 /home/lejonmcgowan/Dropbox/projects/QTWorkspace/TestProject2/src/graphics/drawables/teapotdata.h
 
+/home/lejonmcgowan/Dropbox/projects/QTWorkspace/TestProject2/src/graphics/materials/PhongMaterial.cpp
+PhongMaterial.h
+/home/lejonmcgowan/Dropbox/projects/QTWorkspace/TestProject2/src/graphics/materials/PhongMaterial.h
+
+/home/lejonmcgowan/Dropbox/projects/QTWorkspace/TestProject2/src/graphics/materials/PhongMaterial.h
+glm/detail/type_vec.hpp
+-
+glm/detail/type_vec3.hpp
+-
+graphics/shader.h
+/home/lejonmcgowan/Dropbox/projects/QTWorkspace/TestProject2/src/graphics/materials/graphics/shader.h
+graphics/shaderManager.h
+/home/lejonmcgowan/Dropbox/projects/QTWorkspace/TestProject2/src/graphics/materials/graphics/shaderManager.h
+
 /home/lejonmcgowan/Dropbox/projects/QTWorkspace/TestProject2/src/graphics/shader.cpp
 shader.h
 /home/lejonmcgowan/Dropbox/projects/QTWorkspace/TestProject2/src/graphics/shader.h
@@ -297,12 +321,4 @@ glm/gtc/type_ptr.hpp
 -
 map
 -
-
-/home/lejonmcgowan/Dropbox/projects/QTWorkspace/TestProject2/src/graphics/shaderManager.h
-map
--
-algorithm
--
-shader.h
-/home/lejonmcgowan/Dropbox/projects/QTWorkspace/TestProject2/src/graphics/shader.h
 

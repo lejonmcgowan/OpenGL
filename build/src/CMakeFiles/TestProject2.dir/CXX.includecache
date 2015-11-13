@@ -46,15 +46,11 @@ glm/detail/type_vec3.hpp
 glm/detail/type_vec4.hpp
 -
 
-../src/graphics/PhongMaterial.h
-glm/detail/type_vec.hpp
--
+../src/graphics/Light.h
 glm/detail/type_vec3.hpp
 -
 shader.h
 ../src/graphics/shader.h
-shaderManager.h
-../src/graphics/shaderManager.h
 
 ../src/graphics/Texture.h
 GL/glew.h
@@ -83,6 +79,16 @@ math/Transform.h
 ../src/graphics/drawables/Drawable.h
 math/Transform.h
 ../src/graphics/drawables/math/Transform.h
+
+../src/graphics/materials/PhongMaterial.h
+glm/detail/type_vec.hpp
+-
+glm/detail/type_vec3.hpp
+-
+graphics/shader.h
+../src/graphics/materials/graphics/shader.h
+graphics/shaderManager.h
+../src/graphics/materials/graphics/shaderManager.h
 
 ../src/graphics/shader.h
 string
@@ -201,8 +207,8 @@ graphics/drawables/Drawable.h
 /home/lejonmcgowan/Dropbox/projects/QTWorkspace/TestProject2/src/scenes/graphics/drawables/Drawable.h
 math/Camera.h
 /home/lejonmcgowan/Dropbox/projects/QTWorkspace/TestProject2/src/scenes/math/Camera.h
-graphics/PhongMaterial.h
-/home/lejonmcgowan/Dropbox/projects/QTWorkspace/TestProject2/src/scenes/graphics/PhongMaterial.h
+graphics/materials/PhongMaterial.h
+/home/lejonmcgowan/Dropbox/projects/QTWorkspace/TestProject2/src/scenes/graphics/materials/PhongMaterial.h
 scene.h
 /home/lejonmcgowan/Dropbox/projects/QTWorkspace/TestProject2/src/scenes/scene.h
 
@@ -213,6 +219,14 @@ graphics/Buffer.h
 /home/lejonmcgowan/Dropbox/projects/QTWorkspace/TestProject2/src/scenes/graphics/Buffer.h
 math/Camera.h
 /home/lejonmcgowan/Dropbox/projects/QTWorkspace/TestProject2/src/scenes/math/Camera.h
+
+/home/lejonmcgowan/Dropbox/projects/QTWorkspace/TestProject2/src/scenes/MultipleLightsScene.h
+src/graphics/Light.h
+-
+src/graphics/drawables/Drawable.h
+-
+scene.h
+/home/lejonmcgowan/Dropbox/projects/QTWorkspace/TestProject2/src/scenes/scene.h
 
 /home/lejonmcgowan/Dropbox/projects/QTWorkspace/TestProject2/src/scenes/SceneIncludes.h
 scene.h
@@ -225,6 +239,8 @@ LineScene.h
 /home/lejonmcgowan/Dropbox/projects/QTWorkspace/TestProject2/src/scenes/LineScene.h
 LightingBasicScene.h
 /home/lejonmcgowan/Dropbox/projects/QTWorkspace/TestProject2/src/scenes/LightingBasicScene.h
+MultipleLightsScene.h
+/home/lejonmcgowan/Dropbox/projects/QTWorkspace/TestProject2/src/scenes/MultipleLightsScene.h
 
 /home/lejonmcgowan/Dropbox/projects/QTWorkspace/TestProject2/src/scenes/scene.h
 GL/glew.h

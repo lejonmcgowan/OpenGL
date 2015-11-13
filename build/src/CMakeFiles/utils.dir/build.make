@@ -72,14 +72,64 @@ src/CMakeFiles/utils.dir/utils/WindowContexts.cpp.o.provides: src/CMakeFiles/uti
 
 src/CMakeFiles/utils.dir/utils/WindowContexts.cpp.o.provides.build: src/CMakeFiles/utils.dir/utils/WindowContexts.cpp.o
 
+src/CMakeFiles/utils.dir/utils/LightHelper.cpp.o: src/CMakeFiles/utils.dir/flags.make
+src/CMakeFiles/utils.dir/utils/LightHelper.cpp.o: ../src/utils/LightHelper.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/lejonmcgowan/Dropbox/projects/QTWorkspace/TestProject2/build/CMakeFiles $(CMAKE_PROGRESS_2)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/CMakeFiles/utils.dir/utils/LightHelper.cpp.o"
+	cd /home/lejonmcgowan/Dropbox/projects/QTWorkspace/TestProject2/build/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/utils.dir/utils/LightHelper.cpp.o -c /home/lejonmcgowan/Dropbox/projects/QTWorkspace/TestProject2/src/utils/LightHelper.cpp
+
+src/CMakeFiles/utils.dir/utils/LightHelper.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/utils.dir/utils/LightHelper.cpp.i"
+	cd /home/lejonmcgowan/Dropbox/projects/QTWorkspace/TestProject2/build/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/lejonmcgowan/Dropbox/projects/QTWorkspace/TestProject2/src/utils/LightHelper.cpp > CMakeFiles/utils.dir/utils/LightHelper.cpp.i
+
+src/CMakeFiles/utils.dir/utils/LightHelper.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/utils.dir/utils/LightHelper.cpp.s"
+	cd /home/lejonmcgowan/Dropbox/projects/QTWorkspace/TestProject2/build/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/lejonmcgowan/Dropbox/projects/QTWorkspace/TestProject2/src/utils/LightHelper.cpp -o CMakeFiles/utils.dir/utils/LightHelper.cpp.s
+
+src/CMakeFiles/utils.dir/utils/LightHelper.cpp.o.requires:
+.PHONY : src/CMakeFiles/utils.dir/utils/LightHelper.cpp.o.requires
+
+src/CMakeFiles/utils.dir/utils/LightHelper.cpp.o.provides: src/CMakeFiles/utils.dir/utils/LightHelper.cpp.o.requires
+	$(MAKE) -f src/CMakeFiles/utils.dir/build.make src/CMakeFiles/utils.dir/utils/LightHelper.cpp.o.provides.build
+.PHONY : src/CMakeFiles/utils.dir/utils/LightHelper.cpp.o.provides
+
+src/CMakeFiles/utils.dir/utils/LightHelper.cpp.o.provides.build: src/CMakeFiles/utils.dir/utils/LightHelper.cpp.o
+
+src/CMakeFiles/utils.dir/utils/TweakBarHelper.cpp.o: src/CMakeFiles/utils.dir/flags.make
+src/CMakeFiles/utils.dir/utils/TweakBarHelper.cpp.o: ../src/utils/TweakBarHelper.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/lejonmcgowan/Dropbox/projects/QTWorkspace/TestProject2/build/CMakeFiles $(CMAKE_PROGRESS_3)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/CMakeFiles/utils.dir/utils/TweakBarHelper.cpp.o"
+	cd /home/lejonmcgowan/Dropbox/projects/QTWorkspace/TestProject2/build/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/utils.dir/utils/TweakBarHelper.cpp.o -c /home/lejonmcgowan/Dropbox/projects/QTWorkspace/TestProject2/src/utils/TweakBarHelper.cpp
+
+src/CMakeFiles/utils.dir/utils/TweakBarHelper.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/utils.dir/utils/TweakBarHelper.cpp.i"
+	cd /home/lejonmcgowan/Dropbox/projects/QTWorkspace/TestProject2/build/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/lejonmcgowan/Dropbox/projects/QTWorkspace/TestProject2/src/utils/TweakBarHelper.cpp > CMakeFiles/utils.dir/utils/TweakBarHelper.cpp.i
+
+src/CMakeFiles/utils.dir/utils/TweakBarHelper.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/utils.dir/utils/TweakBarHelper.cpp.s"
+	cd /home/lejonmcgowan/Dropbox/projects/QTWorkspace/TestProject2/build/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/lejonmcgowan/Dropbox/projects/QTWorkspace/TestProject2/src/utils/TweakBarHelper.cpp -o CMakeFiles/utils.dir/utils/TweakBarHelper.cpp.s
+
+src/CMakeFiles/utils.dir/utils/TweakBarHelper.cpp.o.requires:
+.PHONY : src/CMakeFiles/utils.dir/utils/TweakBarHelper.cpp.o.requires
+
+src/CMakeFiles/utils.dir/utils/TweakBarHelper.cpp.o.provides: src/CMakeFiles/utils.dir/utils/TweakBarHelper.cpp.o.requires
+	$(MAKE) -f src/CMakeFiles/utils.dir/build.make src/CMakeFiles/utils.dir/utils/TweakBarHelper.cpp.o.provides.build
+.PHONY : src/CMakeFiles/utils.dir/utils/TweakBarHelper.cpp.o.provides
+
+src/CMakeFiles/utils.dir/utils/TweakBarHelper.cpp.o.provides.build: src/CMakeFiles/utils.dir/utils/TweakBarHelper.cpp.o
+
 # Object files for target utils
 utils_OBJECTS = \
-"CMakeFiles/utils.dir/utils/WindowContexts.cpp.o"
+"CMakeFiles/utils.dir/utils/WindowContexts.cpp.o" \
+"CMakeFiles/utils.dir/utils/LightHelper.cpp.o" \
+"CMakeFiles/utils.dir/utils/TweakBarHelper.cpp.o"
 
 # External object files for target utils
 utils_EXTERNAL_OBJECTS =
 
 ext/libutils.a: src/CMakeFiles/utils.dir/utils/WindowContexts.cpp.o
+ext/libutils.a: src/CMakeFiles/utils.dir/utils/LightHelper.cpp.o
+ext/libutils.a: src/CMakeFiles/utils.dir/utils/TweakBarHelper.cpp.o
 ext/libutils.a: src/CMakeFiles/utils.dir/build.make
 ext/libutils.a: src/CMakeFiles/utils.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking CXX static library ../ext/libutils.a"
@@ -91,6 +141,8 @@ src/CMakeFiles/utils.dir/build: ext/libutils.a
 .PHONY : src/CMakeFiles/utils.dir/build
 
 src/CMakeFiles/utils.dir/requires: src/CMakeFiles/utils.dir/utils/WindowContexts.cpp.o.requires
+src/CMakeFiles/utils.dir/requires: src/CMakeFiles/utils.dir/utils/LightHelper.cpp.o.requires
+src/CMakeFiles/utils.dir/requires: src/CMakeFiles/utils.dir/utils/TweakBarHelper.cpp.o.requires
 .PHONY : src/CMakeFiles/utils.dir/requires
 
 src/CMakeFiles/utils.dir/clean:

@@ -4,6 +4,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
+  "/home/lejonmcgowan/Dropbox/projects/QTWorkspace/TestProject2/src/utils/LightHelper.cpp" "/home/lejonmcgowan/Dropbox/projects/QTWorkspace/TestProject2/build/src/CMakeFiles/utils.dir/utils/LightHelper.cpp.o"
+  "/home/lejonmcgowan/Dropbox/projects/QTWorkspace/TestProject2/src/utils/TweakBarHelper.cpp" "/home/lejonmcgowan/Dropbox/projects/QTWorkspace/TestProject2/build/src/CMakeFiles/utils.dir/utils/TweakBarHelper.cpp.o"
   "/home/lejonmcgowan/Dropbox/projects/QTWorkspace/TestProject2/src/utils/WindowContexts.cpp" "/home/lejonmcgowan/Dropbox/projects/QTWorkspace/TestProject2/build/src/CMakeFiles/utils.dir/utils/WindowContexts.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")

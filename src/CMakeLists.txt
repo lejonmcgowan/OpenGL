@@ -47,19 +47,18 @@ add_library(src  graphics/shader.cpp  graphics/drawables/BufferObject.cpp graphi
         graphics/materials/PhongMaterial.cpp graphics/materials/PhongMaterial.h
         graphics/Light.cpp graphics/Light.h
         graphics/drawables/BufferTeapot.cpp graphics/drawables/BufferTeapot.h
-        graphics/drawables/teapotdata.h)
-
-add_library(utils utils/WindowContexts.cpp utils/WindowContexts.h utils/LightHelper.cpp utils/LightHelper.h utils/TweakBarHelper.cpp utils/TweakBarHelper.h)
-add_library(scenes  scenes/window.cpp scenes/window.h
+        graphics/drawables/teapotdata.h
+        utils/LightHelper.cpp utils/LightHelper.h utils/TweakBarHelper.cpp utils/TweakBarHelper.h
+        utils/WindowContexts.cpp utils/WindowContexts.h
+        scenes/window.cpp scenes/window.h
         scenes/BasicBillboardScene.cpp scenes/BasicBillboardScene.h
         scenes/LineScene.cpp scenes/LineScene.h
         scenes/LightingBasicScene.cpp scenes/LightingBasicScene.h
         scenes/BasicTriangleScene.cpp scenes/BasicTriangleScene.h
-        scenes/SceneIncludes.h scenes/MultipleLightsScene.cpp scenes/MultipleLightsScene.h)
-
-add_library(input input/Keyboard.cpp input/Keyboard.h input/Keyboard.h input/Mouse.cpp input/Mouse.h)
-
-add_library(math math/Transform.h math/Camera.h math/mathNothing.cpp math/mathNothing.cpp)
+        scenes/SceneIncludes.h scenes/MultipleLightsScene.cpp scenes/MultipleLightsScene.h
+        input/Keyboard.cpp input/Keyboard.h input/Keyboard.h input/Mouse.cpp input/Mouse.h
+        math/Transform.h math/Camera.h math/mathNothing.cpp math/mathNothing.cpp
+        )
 
 #set(GRAHICS_SRC "graphics/shader.cpp" "graphics/Buffer.cpp" "graphics/Texture.cpp" "graphics/IndexBuffer.cpp")
 #set(GRAPHICS_HEADERS "graphics/shader.h" "graphics/Buffer.h"  "graphics/Texture.h" "graphics/IndexBuffer.h")
@@ -86,4 +85,4 @@ include_directories(${CMAKE_SOURCE_DIR} ${CMAKE_SOURCE_DIR}/src ${CMAKE_SOURCE_D
 target_link_libraries(src ${LIBRARIES} ${GLFW_LIBRARY_FLAGS} ${GLEW_LIBRARIES})
 
 add_executable(${PROJECT_NAME} _main.cpp)
-target_link_libraries(${PROJECT_NAME} scenes input src utils)
+target_link_libraries(${PROJECT_NAME} src)

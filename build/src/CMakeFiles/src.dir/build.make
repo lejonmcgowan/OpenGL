@@ -256,28 +256,28 @@ src/CMakeFiles/src.dir/graphics/TextureManager.cpp.o.provides: src/CMakeFiles/sr
 
 src/CMakeFiles/src.dir/graphics/TextureManager.cpp.o.provides.build: src/CMakeFiles/src.dir/graphics/TextureManager.cpp.o
 
-src/CMakeFiles/src.dir/graphics/PhongMaterial.cpp.o: src/CMakeFiles/src.dir/flags.make
-src/CMakeFiles/src.dir/graphics/PhongMaterial.cpp.o: ../src/graphics/PhongMaterial.cpp
+src/CMakeFiles/src.dir/graphics/materials/PhongMaterial.cpp.o: src/CMakeFiles/src.dir/flags.make
+src/CMakeFiles/src.dir/graphics/materials/PhongMaterial.cpp.o: ../src/graphics/materials/PhongMaterial.cpp
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/lejonmcgowan/Dropbox/projects/QTWorkspace/TestProject2/build/CMakeFiles $(CMAKE_PROGRESS_10)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/CMakeFiles/src.dir/graphics/PhongMaterial.cpp.o"
-	cd /home/lejonmcgowan/Dropbox/projects/QTWorkspace/TestProject2/build/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/src.dir/graphics/PhongMaterial.cpp.o -c /home/lejonmcgowan/Dropbox/projects/QTWorkspace/TestProject2/src/graphics/PhongMaterial.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/CMakeFiles/src.dir/graphics/materials/PhongMaterial.cpp.o"
+	cd /home/lejonmcgowan/Dropbox/projects/QTWorkspace/TestProject2/build/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/src.dir/graphics/materials/PhongMaterial.cpp.o -c /home/lejonmcgowan/Dropbox/projects/QTWorkspace/TestProject2/src/graphics/materials/PhongMaterial.cpp
 
-src/CMakeFiles/src.dir/graphics/PhongMaterial.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/src.dir/graphics/PhongMaterial.cpp.i"
-	cd /home/lejonmcgowan/Dropbox/projects/QTWorkspace/TestProject2/build/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/lejonmcgowan/Dropbox/projects/QTWorkspace/TestProject2/src/graphics/PhongMaterial.cpp > CMakeFiles/src.dir/graphics/PhongMaterial.cpp.i
+src/CMakeFiles/src.dir/graphics/materials/PhongMaterial.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/src.dir/graphics/materials/PhongMaterial.cpp.i"
+	cd /home/lejonmcgowan/Dropbox/projects/QTWorkspace/TestProject2/build/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/lejonmcgowan/Dropbox/projects/QTWorkspace/TestProject2/src/graphics/materials/PhongMaterial.cpp > CMakeFiles/src.dir/graphics/materials/PhongMaterial.cpp.i
 
-src/CMakeFiles/src.dir/graphics/PhongMaterial.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/src.dir/graphics/PhongMaterial.cpp.s"
-	cd /home/lejonmcgowan/Dropbox/projects/QTWorkspace/TestProject2/build/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/lejonmcgowan/Dropbox/projects/QTWorkspace/TestProject2/src/graphics/PhongMaterial.cpp -o CMakeFiles/src.dir/graphics/PhongMaterial.cpp.s
+src/CMakeFiles/src.dir/graphics/materials/PhongMaterial.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/src.dir/graphics/materials/PhongMaterial.cpp.s"
+	cd /home/lejonmcgowan/Dropbox/projects/QTWorkspace/TestProject2/build/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/lejonmcgowan/Dropbox/projects/QTWorkspace/TestProject2/src/graphics/materials/PhongMaterial.cpp -o CMakeFiles/src.dir/graphics/materials/PhongMaterial.cpp.s
 
-src/CMakeFiles/src.dir/graphics/PhongMaterial.cpp.o.requires:
-.PHONY : src/CMakeFiles/src.dir/graphics/PhongMaterial.cpp.o.requires
+src/CMakeFiles/src.dir/graphics/materials/PhongMaterial.cpp.o.requires:
+.PHONY : src/CMakeFiles/src.dir/graphics/materials/PhongMaterial.cpp.o.requires
 
-src/CMakeFiles/src.dir/graphics/PhongMaterial.cpp.o.provides: src/CMakeFiles/src.dir/graphics/PhongMaterial.cpp.o.requires
-	$(MAKE) -f src/CMakeFiles/src.dir/build.make src/CMakeFiles/src.dir/graphics/PhongMaterial.cpp.o.provides.build
-.PHONY : src/CMakeFiles/src.dir/graphics/PhongMaterial.cpp.o.provides
+src/CMakeFiles/src.dir/graphics/materials/PhongMaterial.cpp.o.provides: src/CMakeFiles/src.dir/graphics/materials/PhongMaterial.cpp.o.requires
+	$(MAKE) -f src/CMakeFiles/src.dir/build.make src/CMakeFiles/src.dir/graphics/materials/PhongMaterial.cpp.o.provides.build
+.PHONY : src/CMakeFiles/src.dir/graphics/materials/PhongMaterial.cpp.o.provides
 
-src/CMakeFiles/src.dir/graphics/PhongMaterial.cpp.o.provides.build: src/CMakeFiles/src.dir/graphics/PhongMaterial.cpp.o
+src/CMakeFiles/src.dir/graphics/materials/PhongMaterial.cpp.o.provides.build: src/CMakeFiles/src.dir/graphics/materials/PhongMaterial.cpp.o
 
 src/CMakeFiles/src.dir/graphics/Light.cpp.o: src/CMakeFiles/src.dir/flags.make
 src/CMakeFiles/src.dir/graphics/Light.cpp.o: ../src/graphics/Light.cpp
@@ -336,7 +336,7 @@ src_OBJECTS = \
 "CMakeFiles/src.dir/graphics/drawables/BufferSphere.cpp.o" \
 "CMakeFiles/src.dir/graphics/drawables/BufferCube.cpp.o" \
 "CMakeFiles/src.dir/graphics/TextureManager.cpp.o" \
-"CMakeFiles/src.dir/graphics/PhongMaterial.cpp.o" \
+"CMakeFiles/src.dir/graphics/materials/PhongMaterial.cpp.o" \
 "CMakeFiles/src.dir/graphics/Light.cpp.o" \
 "CMakeFiles/src.dir/graphics/drawables/BufferTeapot.cpp.o"
 
@@ -352,7 +352,7 @@ ext/libsrc.a: src/CMakeFiles/src.dir/graphics/drawables/PlaneBuffer.cpp.o
 ext/libsrc.a: src/CMakeFiles/src.dir/graphics/drawables/BufferSphere.cpp.o
 ext/libsrc.a: src/CMakeFiles/src.dir/graphics/drawables/BufferCube.cpp.o
 ext/libsrc.a: src/CMakeFiles/src.dir/graphics/TextureManager.cpp.o
-ext/libsrc.a: src/CMakeFiles/src.dir/graphics/PhongMaterial.cpp.o
+ext/libsrc.a: src/CMakeFiles/src.dir/graphics/materials/PhongMaterial.cpp.o
 ext/libsrc.a: src/CMakeFiles/src.dir/graphics/Light.cpp.o
 ext/libsrc.a: src/CMakeFiles/src.dir/graphics/drawables/BufferTeapot.cpp.o
 ext/libsrc.a: src/CMakeFiles/src.dir/build.make
@@ -374,7 +374,7 @@ src/CMakeFiles/src.dir/requires: src/CMakeFiles/src.dir/graphics/drawables/Plane
 src/CMakeFiles/src.dir/requires: src/CMakeFiles/src.dir/graphics/drawables/BufferSphere.cpp.o.requires
 src/CMakeFiles/src.dir/requires: src/CMakeFiles/src.dir/graphics/drawables/BufferCube.cpp.o.requires
 src/CMakeFiles/src.dir/requires: src/CMakeFiles/src.dir/graphics/TextureManager.cpp.o.requires
-src/CMakeFiles/src.dir/requires: src/CMakeFiles/src.dir/graphics/PhongMaterial.cpp.o.requires
+src/CMakeFiles/src.dir/requires: src/CMakeFiles/src.dir/graphics/materials/PhongMaterial.cpp.o.requires
 src/CMakeFiles/src.dir/requires: src/CMakeFiles/src.dir/graphics/Light.cpp.o.requires
 src/CMakeFiles/src.dir/requires: src/CMakeFiles/src.dir/graphics/drawables/BufferTeapot.cpp.o.requires
 .PHONY : src/CMakeFiles/src.dir/requires
