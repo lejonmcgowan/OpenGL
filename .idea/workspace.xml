@@ -41,54 +41,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bfabd4f7-8380-4717-877e-efe098a6c0c1" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/src/CMakeFiles/src.dir/graphics/PhongMaterial.cpp.o" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/bin/TestProject2" afterPath="$PROJECT_DIR$/build/bin/TestProject2" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/ext/libscenes.a" afterPath="$PROJECT_DIR$/build/ext/libscenes.a" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/ext/libsrc.a" afterPath="$PROJECT_DIR$/build/ext/libsrc.a" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/ext/libutils.a" afterPath="$PROJECT_DIR$/build/ext/libutils.a" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/src/CMakeFiles/TestProject2.dir/_main.cpp.o" afterPath="$PROJECT_DIR$/build/src/CMakeFiles/TestProject2.dir/_main.cpp.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/src/CMakeFiles/scenes.dir/scenes/LightingBasicScene.cpp.o" afterPath="$PROJECT_DIR$/build/src/CMakeFiles/scenes.dir/scenes/LightingBasicScene.cpp.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/src/CMakeFiles/scenes.dir/scenes/window.cpp.o" afterPath="$PROJECT_DIR$/build/src/CMakeFiles/scenes.dir/scenes/window.cpp.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/src/CMakeFiles/src.dir/graphics/Light.cpp.o" afterPath="$PROJECT_DIR$/build/src/CMakeFiles/src.dir/graphics/Light.cpp.o" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/CMakeFiles/Makefile.cmake" afterPath="$PROJECT_DIR$/build/CMakeFiles/Makefile.cmake" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/CMakeFiles/Makefile2" afterPath="$PROJECT_DIR$/build/CMakeFiles/Makefile2" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/CMakeFiles/progress.marks" afterPath="$PROJECT_DIR$/build/CMakeFiles/progress.marks" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/src/CMakeFiles/TestProject2.dir/CXX.includecache" afterPath="$PROJECT_DIR$/build/src/CMakeFiles/TestProject2.dir/CXX.includecache" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/src/CMakeFiles/TestProject2.dir/DependInfo.cmake" afterPath="$PROJECT_DIR$/build/src/CMakeFiles/TestProject2.dir/DependInfo.cmake" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/src/CMakeFiles/TestProject2.dir/build.make" afterPath="$PROJECT_DIR$/build/src/CMakeFiles/TestProject2.dir/build.make" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/src/CMakeFiles/TestProject2.dir/depend.internal" afterPath="$PROJECT_DIR$/build/src/CMakeFiles/TestProject2.dir/depend.internal" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/src/CMakeFiles/TestProject2.dir/depend.make" afterPath="$PROJECT_DIR$/build/src/CMakeFiles/TestProject2.dir/depend.make" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/src/CMakeFiles/TestProject2.dir/link.txt" afterPath="$PROJECT_DIR$/build/src/CMakeFiles/TestProject2.dir/link.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/src/CMakeFiles/progress.marks" afterPath="$PROJECT_DIR$/build/src/CMakeFiles/progress.marks" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/src/CMakeFiles/scenes.dir/CXX.includecache" afterPath="$PROJECT_DIR$/build/src/CMakeFiles/scenes.dir/CXX.includecache" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/src/CMakeFiles/scenes.dir/DependInfo.cmake" afterPath="$PROJECT_DIR$/build/src/CMakeFiles/scenes.dir/DependInfo.cmake" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/src/CMakeFiles/scenes.dir/build.make" afterPath="$PROJECT_DIR$/build/src/CMakeFiles/scenes.dir/build.make" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/src/CMakeFiles/scenes.dir/cmake_clean.cmake" afterPath="$PROJECT_DIR$/build/src/CMakeFiles/scenes.dir/cmake_clean.cmake" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/src/CMakeFiles/scenes.dir/depend.internal" afterPath="$PROJECT_DIR$/build/src/CMakeFiles/scenes.dir/depend.internal" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/src/CMakeFiles/scenes.dir/depend.make" afterPath="$PROJECT_DIR$/build/src/CMakeFiles/scenes.dir/depend.make" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/src/CMakeFiles/scenes.dir/link.txt" afterPath="$PROJECT_DIR$/build/src/CMakeFiles/scenes.dir/link.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/src/CMakeFiles/scenes.dir/progress.make" afterPath="$PROJECT_DIR$/build/src/CMakeFiles/scenes.dir/progress.make" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/src/CMakeFiles/src.dir/CXX.includecache" afterPath="$PROJECT_DIR$/build/src/CMakeFiles/src.dir/CXX.includecache" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/src/CMakeFiles/src.dir/DependInfo.cmake" afterPath="$PROJECT_DIR$/build/src/CMakeFiles/src.dir/DependInfo.cmake" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/src/CMakeFiles/src.dir/build.make" afterPath="$PROJECT_DIR$/build/src/CMakeFiles/src.dir/build.make" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/src/CMakeFiles/src.dir/cmake_clean.cmake" afterPath="$PROJECT_DIR$/build/src/CMakeFiles/src.dir/cmake_clean.cmake" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/src/CMakeFiles/src.dir/depend.internal" afterPath="$PROJECT_DIR$/build/src/CMakeFiles/src.dir/depend.internal" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/src/CMakeFiles/src.dir/depend.make" afterPath="$PROJECT_DIR$/build/src/CMakeFiles/src.dir/depend.make" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/src/CMakeFiles/src.dir/link.txt" afterPath="$PROJECT_DIR$/build/src/CMakeFiles/src.dir/link.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/src/CMakeFiles/src.dir/progress.make" afterPath="$PROJECT_DIR$/build/src/CMakeFiles/src.dir/progress.make" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/src/CMakeFiles/utils.dir/CXX.includecache" afterPath="$PROJECT_DIR$/build/src/CMakeFiles/utils.dir/CXX.includecache" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/src/CMakeFiles/utils.dir/DependInfo.cmake" afterPath="$PROJECT_DIR$/build/src/CMakeFiles/utils.dir/DependInfo.cmake" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/src/CMakeFiles/utils.dir/build.make" afterPath="$PROJECT_DIR$/build/src/CMakeFiles/utils.dir/build.make" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/src/CMakeFiles/utils.dir/cmake_clean.cmake" afterPath="$PROJECT_DIR$/build/src/CMakeFiles/utils.dir/cmake_clean.cmake" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/src/CMakeFiles/utils.dir/depend.internal" afterPath="$PROJECT_DIR$/build/src/CMakeFiles/utils.dir/depend.internal" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/src/CMakeFiles/utils.dir/depend.make" afterPath="$PROJECT_DIR$/build/src/CMakeFiles/utils.dir/depend.make" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/src/CMakeFiles/utils.dir/link.txt" afterPath="$PROJECT_DIR$/build/src/CMakeFiles/utils.dir/link.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/src/CMakeFiles/utils.dir/progress.make" afterPath="$PROJECT_DIR$/build/src/CMakeFiles/utils.dir/progress.make" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/src/Makefile" afterPath="$PROJECT_DIR$/build/src/Makefile" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CMakeLists.txt" afterPath="$PROJECT_DIR$/src/CMakeLists.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/_main.cpp" afterPath="$PROJECT_DIR$/src/_main.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/scenes/MultipleLightsScene.cpp" afterPath="$PROJECT_DIR$/src/scenes/MultipleLightsScene.cpp" />
     </list>
     <ignored path="TestProject2.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -108,12 +62,12 @@
     <favorites_list name="TestProject2" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="_main.cpp" pinned="false" current-in-tab="false">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="450">
+      <file leaf-file-name="_main.cpp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/_main.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="11" column="39" selection-start-line="11" selection-start-column="39" selection-end-line="11" selection-end-column="39" />
+            <state vertical-scroll-proportion="0.101265825">
+              <caret line="4" column="14" selection-start-line="4" selection-start-column="14" selection-end-line="4" selection-end-column="14" />
               <folding>
                 <element signature="e#0#33#0" expanded="true" />
               </folding>
@@ -141,10 +95,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CMakeLists.txt" pinned="false" current-in-tab="true">
+      <file leaf-file-name="CMakeLists.txt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/CMakeLists.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.45857987">
+            <state vertical-scroll-proportion="0.0">
               <caret line="39" column="27" selection-start-line="39" selection-start-column="27" selection-end-line="39" selection-end-column="27" />
               <folding />
             </state>
@@ -170,8 +124,8 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/scenes/MultipleLightsScene.cpp" />
-        <option value="$PROJECT_DIR$/src/_main.cpp" />
         <option value="$PROJECT_DIR$/src/CMakeLists.txt" />
+        <option value="$PROJECT_DIR$/src/_main.cpp" />
       </list>
     </option>
   </component>
@@ -182,9 +136,9 @@
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="91" />
-    <option name="y" value="-5" />
+    <option name="y" value="27" />
     <option name="width" value="1509" />
-    <option name="height" value="1029" />
+    <option name="height" value="997" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -352,35 +306,46 @@
       <option name="number" value="Default" />
       <updated>1447397324846</updated>
     </task>
+    <task id="LOCAL-00001" summary="debug v2: why does cmake hate me :(">
+      <created>1447399389443</created>
+      <option name="number" value="00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1447399389443</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="91" y="-5" width="1509" height="1029" extended-state="6" />
+    <frame x="91" y="27" width="1509" height="997" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2496617" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13801453" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="CMake" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3292978" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="TeamCity" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3292978" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="CMake" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3292978" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="TeamCity" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39951575" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Messages" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13801453" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3292978" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39951575" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="debug v2: why does cmake hate me :(" />
+    <option name="LAST_COMMIT_MESSAGE" value="debug v2: why does cmake hate me :(" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -389,6 +354,48 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/_main.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="11" column="39" selection-start-line="11" selection-start-column="39" selection-end-line="11" selection-end-column="39" />
+          <folding>
+            <element signature="e#0#33#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/scenes/MultipleLightsScene.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="52" column="0" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/scenes/MultipleLightsScene.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CMakeLists.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -413,21 +420,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/_main.cpp">
+    <entry file="file://$PROJECT_DIR$/src/CMakeLists.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="11" column="39" selection-start-line="11" selection-start-column="39" selection-end-line="11" selection-end-column="39" />
-          <folding>
-            <element signature="e#0#33#0" expanded="true" />
-          </folding>
+          <caret line="39" column="27" selection-start-line="39" selection-start-column="27" selection-end-line="39" selection-end-column="27" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/CMakeLists.txt">
+    <entry file="file://$PROJECT_DIR$/src/_main.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.45857987">
-          <caret line="39" column="27" selection-start-line="39" selection-start-column="27" selection-end-line="39" selection-end-column="27" />
-          <folding />
+        <state vertical-scroll-proportion="0.101265825">
+          <caret line="4" column="14" selection-start-line="4" selection-start-column="14" selection-end-line="4" selection-end-column="14" />
+          <folding>
+            <element signature="e#0#33#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
