@@ -39,7 +39,7 @@ void MultipleLightsScene::init(GLFWwindow *window)
     //setup drawables
     drawables.push_back(new PlaneBuffer(10,10,10,10));
     drawables[0]->getTransform().translateBy(glm::vec3(0.0f,-0.02f,0.0f));
-    drawables.push_back(new BufferTeapot(2,glm::mat4()));
+    drawables.push_back(new BufferSphere(1,20,20));
 
     lightMeshIter = (int)drawables.size();
 
