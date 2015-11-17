@@ -1,13 +1,6 @@
 //
 // Created by lejonmcgowan on 11/2/15.
 //
-
-#include <src/graphics/drawables/PlaneBuffer.h>
-#include <src/graphics/drawables/BufferTeapot.h>
-#include <src/utils/TweakBarHelper.h>
-#include <src/graphics/drawables/BufferSphere.h>
-#include <src/utils/LightHelper.h>
-#include <src/utils/PathFind.h>
 #include "MultipleLightsScene.h"
 
 std::vector<PhongMaterial> materials;
