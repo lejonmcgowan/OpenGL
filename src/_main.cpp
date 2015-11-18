@@ -9,7 +9,7 @@ int main(void)
 
     Window *window = new Window(WindowContexts::WINDOW_WIDTH,WindowContexts::WINDOW_HEIGHT,"Test Window");
 
-    window->init(new MultipleLightsScene());
+    window->init(new LightingBasicScene());
     window->run();
     window->stop();
 

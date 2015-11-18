@@ -5,7 +5,6 @@
 #ifndef TESTPROJECT2_LIGHTHELPER_H
 #define TESTPROJECT2_LIGHTHELPER_H
 
-#include <src/graphics/Light.h>
 #include <src/graphics/materials/PhongMaterial.h>
 #include <glm/detail/type_vec3.hpp>
 #include "graphics/shader.h"

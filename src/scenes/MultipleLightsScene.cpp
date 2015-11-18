@@ -2,6 +2,9 @@
 // Created by lejonmcgowan on 11/2/15.
 //
 #include "MultipleLightsScene.h"
+#include "src/graphics/drawables/PlaneBuffer.h"
+#include "src/graphics/drawables/BufferTeapot.h"
+#include "src/graphics/drawables/BufferSphere.h"
 
 std::vector<PhongMaterial> materials;
 void MultipleLightsScene::update()
