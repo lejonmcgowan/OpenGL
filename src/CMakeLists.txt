@@ -60,26 +60,6 @@ add_library(src  graphics/shader.cpp  graphics/drawables/BufferObject.cpp graphi
         scenes/SceneIncludes.h scenes/MultipleLightsScene.cpp scenes/MultipleLightsScene.h
         )
 
-#set(GRAHICS_SRC "graphics/shader.cpp" "graphics/Buffer.cpp" "graphics/Texture.cpp" "graphics/IndexBuffer.cpp")
-#set(GRAPHICS_HEADERS "graphics/shader.h" "graphics/Buffer.h"  "graphics/Texture.h" "graphics/IndexBuffer.h")
-#
-#set(INPUT_SRC "input/Keyboard.cpp" "input/Mouse.cpp")
-#set(INPUT_HEADERS "input/Keyboard.hpp" "input/Mouse.h")
-#
-#set(MATH_HEADERS "math/Camera.h" "math/Transform.h")
-#
-#set(SCENE_SRC "scenes/BasicBillboardScene.cpp" "scenes/BasicTriangleScene.cpp" "scenes/LineScene.cpp" "scenes/window.cpp")
-#set(SCENE_HEADERS "scenes/BasicBillboardScene.h" "scenes/BasicTriangleScene.h" "scenes/LineScene.h" "scenes/window.h")
-#
-#set(UTILS_SRC "utils/WindowContexts.cpp")
-#set(UTILS_HEADERS "utils/debugGL.h" "utils/PathFind.h" "utils/WindowContexts.h")
-#
-#add_library(graphics ${GRAPHICS_SRC} ${GRAPHICS_HEADERS})
-#add_library(input ${INPUT_SRC} ${INPUT_HEADERS})
-#add_library(math ${MATH_HEADERS})
-#add_library(scenes ${SCENE_SRC} ${SCENE_HEADERS})
-#add_library(utils ${UTILS_SRC} ${UTILS_HEADERS})
-
 include_directories(${CMAKE_SOURCE_DIR} ${CMAKE_SOURCE_DIR}/src ${CMAKE_SOURCE_DIR}/ext ${CMAKE_SOURCE_DIR}/ext/include)
 
 target_link_libraries(src ${LIBRARIES} ${GLFW_LIBRARY_FLAGS} ${GLEW_LIBRARIES})
