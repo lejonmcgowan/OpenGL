@@ -1,4 +1,6 @@
 #include <assert.h>
+#include <src/utils/WindowContexts.h>
+#include <src/utils/debugGL.h>
 #include "window.h"
 
 static void error_callback(int error, const char* description)

@@ -2,7 +2,7 @@
 #include "scenes/window.h"
 
 
-int main(void)
+int main()
 {
     WindowContexts::WINDOW_WIDTH = 640 * 2;
     WindowContexts::WINDOW_HEIGHT = 480 * 2;

@@ -6,7 +6,6 @@
 #define TESTPROJECT2_KEYBOARD_HPP
 
 #include <GLFW/glfw3.h>
-#include <valarray>
 #include <ext/include/AntTweakBar.h>
 #include <iostream>
 #define GLFW_ONKEYUP 3

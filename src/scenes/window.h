@@ -9,7 +9,7 @@
 #include <string>
 #include <iostream>
 
-#include "scenes/SceneIncludes.h"
+#include "scenes/scene.h"
 #include "input/Keyboard.h"
 #include "input/Mouse.h"
 
