@@ -1,2 +1,0 @@
-/usr/bin/ar cq ../ext/libinput.a  CMakeFiles/input.dir/input/Keyboard.cpp.o CMakeFiles/input.dir/input/Mouse.cpp.o
-/usr/bin/ranlib ../ext/libinput.a

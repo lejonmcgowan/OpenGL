@@ -1,1 +1,0 @@
-/usr/bin/c++    -g -std=c++11   CMakeFiles/TestProject2.dir/_main.cpp.o  -o ../bin/TestProject2 -rdynamic ../ext/libscenes.a ../ext/libinput.a ../ext/libsrc.a ../ext/libutils.a ../../ext/lib/libAntTweakBar.a -lGLU -lGL -lglfw3 -lSOIL -lX11 -lXrandr -lXinerama -lXi -lXxf86vm -lXcursor -lGL -lpthread -lGLEW 
