@@ -3,13 +3,79 @@
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$">
       <sourceFolder url="file://$MODULE_DIR$/CMakeLists.txt" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/ext/CMakeModules/FindANTTWEAKBAR.cmake" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/ext/CMakeModules/FindSOIL.cmake" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/CMakeLists.txt" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/_main.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/graphics/Buffer.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/graphics/Buffer.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/graphics/IndexBuffer.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/graphics/IndexBuffer.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/graphics/Light.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/graphics/Light.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/graphics/Texture.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/graphics/Texture.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/graphics/TextureManager.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/graphics/TextureManager.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/graphics/drawables/BufferCube.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/graphics/drawables/BufferCube.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/graphics/drawables/BufferObject.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/graphics/drawables/BufferObject.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/graphics/drawables/BufferSphere.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/graphics/drawables/BufferSphere.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/graphics/drawables/BufferTeapot.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/graphics/drawables/BufferTeapot.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/graphics/drawables/Drawable.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/graphics/drawables/PlaneBuffer.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/graphics/drawables/PlaneBuffer.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/graphics/drawables/teapotdata.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/graphics/materials/PhongMaterial.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/graphics/materials/PhongMaterial.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/graphics/shader.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/graphics/shader.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/input/Keyboard.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/input/Keyboard.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/input/Mouse.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/input/Mouse.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/math/Camera.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/math/Transform.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/math/mathNothing.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/scenes/BasicBillboardScene.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/scenes/BasicBillboardScene.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/scenes/BasicTriangleScene.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/scenes/BasicTriangleScene.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/scenes/LightingBasicScene.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/scenes/LightingBasicScene.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/scenes/LineScene.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/scenes/LineScene.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/scenes/MultipleLightsScene.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/scenes/MultipleLightsScene.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/scenes/SceneIncludes.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/scenes/window.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/scenes/window.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/utils/LightHelper.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/utils/LightHelper.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/utils/TweakBarHelper.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/utils/TweakBarHelper.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/utils/WindowContexts.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/utils/WindowContexts.h" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module-library">
       <library name="Header Search Paths">
-        <CLASSES />
-        <SOURCES />
+        <CLASSES>
+          <root url="file:///usr/include" />
+          <root url="file:///usr/lib/gcc/x86_64-linux-gnu/4.8/include" />
+          <root url="file:///usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed" />
+          <root url="file:///usr/local/include" />
+        </CLASSES>
+        <SOURCES>
+          <root url="file:///usr/include" />
+          <root url="file:///usr/lib/gcc/x86_64-linux-gnu/4.8/include" />
+          <root url="file:///usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed" />
+          <root url="file:///usr/local/include" />
+        </SOURCES>
       </library>
     </orderEntry>
   </component>
