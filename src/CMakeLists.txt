@@ -52,14 +52,14 @@ add_library(src  graphics/shader.cpp  graphics/drawables/BufferObject.cpp graphi
         graphics/drawables/teapotdata.h
         utils/LightHelper.cpp utils/LightHelper.h utils/TweakBarHelper.cpp utils/TweakBarHelper.h
         utils/WindowContexts.cpp utils/WindowContexts.h
+        input/Keyboard.cpp input/Keyboard.h input/Keyboard.h input/Mouse.cpp input/Mouse.h
+        math/Transform.h math/Camera.h math/mathNothing.cpp math/mathNothing.cpp
         scenes/window.cpp scenes/window.h
         scenes/BasicBillboardScene.cpp scenes/BasicBillboardScene.h
         scenes/LineScene.cpp scenes/LineScene.h
         scenes/LightingBasicScene.cpp scenes/LightingBasicScene.h
         scenes/BasicTriangleScene.cpp scenes/BasicTriangleScene.h
         scenes/SceneIncludes.h scenes/MultipleLightsScene.cpp scenes/MultipleLightsScene.h
-        input/Keyboard.cpp input/Keyboard.h input/Keyboard.h input/Mouse.cpp input/Mouse.h
-        math/Transform.h math/Camera.h math/mathNothing.cpp math/mathNothing.cpp
         )
 
 target_link_libraries(src ${LIBRARIES} ${GLFW_LIBRARY_FLAGS} ${GLEW_LIBRARIES})

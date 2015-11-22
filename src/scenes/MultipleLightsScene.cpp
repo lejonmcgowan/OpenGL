@@ -1,14 +1,10 @@
 //
 // Created by lejonmcgowan on 11/2/15.
 //
-
-#include <src/graphics/drawables/PlaneBuffer.h>
-#include <src/graphics/drawables/BufferTeapot.h>
-#include <src/utils/TweakBarHelper.h>
-#include <src/graphics/drawables/BufferSphere.h>
-#include <src/utils/LightHelper.h>
-#include <src/utils/PathFind.h>
 #include "MultipleLightsScene.h"
+#include "src/graphics/drawables/PlaneBuffer.h"
+#include "src/graphics/drawables/BufferTeapot.h"
+#include "src/graphics/drawables/BufferSphere.h"
 
 std::vector<PhongMaterial> materials;
 void MultipleLightsScene::update()
@@ -39,7 +35,7 @@ void MultipleLightsScene::init(GLFWwindow *window)
     //setup drawables
     drawables.push_back(new PlaneBuffer(10,10,10,10));
     drawables[0]->getTransform().translateBy(glm::vec3(0.0f,-0.02f,0.0f));
-    drawables.push_back(new BufferTeapot(2,glm::mat4()));
+    drawables.push_back(new BufferSphere(1,20,20));
 
     lightMeshIter = (int)drawables.size();
 

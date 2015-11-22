@@ -5,8 +5,10 @@
 #ifndef TESTPROJECT2_MULTIPLELIGHTSSCENE_H
 #define TESTPROJECT2_MULTIPLELIGHTSSCENE_H
 
-#include <src/graphics/Light.h>
-#include <src/graphics/drawables/Drawable.h>
+#include "graphics/drawables/Drawable.h"
+#include "utils/TweakBarHelper.h"
+#include "utils/LightHelper.h"
+#include "utils/PathFind.h"
 #include "scene.h"
 
 class MultipleLightsScene: public Scene
