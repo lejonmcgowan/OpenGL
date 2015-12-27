@@ -3,7 +3,7 @@
 //
 
 #include "BasicTriangleScene.h"
-#include "utils/debugGL.h"
+#include "utils/DebugGL.h"
 #include "utils/PathFind.h"
 
 GLfloat vertices[] = {

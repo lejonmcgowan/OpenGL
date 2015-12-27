@@ -3,7 +3,7 @@
 //
 
 #include <glm/gtc/constants.hpp>
-#include "BufferSphere.h"
+#include "SphereBuffer.h"
 #include <cmath>
 
 BufferSphere::BufferSphere(float radius, GLuint slices, GLuint stacks):

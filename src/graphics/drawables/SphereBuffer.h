@@ -8,7 +8,7 @@
 
 #include <GL/glew.h>
 #include "Drawable.h"
-#include "BufferObject.h"
+#include "ObjectBuffer.h"
 
 class BufferSphere: public Drawable
 {

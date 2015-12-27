@@ -7,8 +7,8 @@
 
 #include <glm/detail/type_vec.hpp>
 #include <glm/detail/type_vec3.hpp>
-#include "graphics/shader.h"
-#include "graphics/shaderManager.h"
+#include "graphics/Shader.h"
+#include "graphics/ShaderManager.h"
 
 class PhongMaterial
 {

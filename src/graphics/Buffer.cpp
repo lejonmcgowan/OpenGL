@@ -3,7 +3,7 @@
 //
 
 #include "Buffer.h"
-#include "utils/debugGL.h"
+#include "utils/DebugGL.h"
 
 void Buffer::addVertexAttribPointer(int attribPointerIndex, int elementSize, int offset)
 {

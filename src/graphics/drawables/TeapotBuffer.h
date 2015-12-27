@@ -9,7 +9,7 @@
 #include <glm/detail/type_vec.hpp>
 
 #include "Drawable.h"
-#include "BufferObject.h"
+#include "ObjectBuffer.h"
 #include <glm/glm.hpp>
 
 class BufferTeapot: public Drawable

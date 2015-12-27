@@ -6,7 +6,7 @@
 #define TESTPROJECT2_LIGHT_H
 
 #include <glm/detail/type_vec3.hpp>
-#include "shader.h"
+#include "Shader.h"
 
 enum LightType
 {

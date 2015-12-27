@@ -6,9 +6,9 @@
 #define TESTPROJECT2_BASICTRIANGLESCENE_H
 
 #include "AntTweakBar.h"
-#include "scene.h"
+#include "Scene.h"
 #include "graphics/Buffer.h"
-#include "graphics/shader.h"
+#include "graphics/Shader.h"
 
 class BasicTriangleScene : public Scene
 {

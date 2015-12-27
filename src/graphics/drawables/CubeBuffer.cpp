@@ -3,7 +3,7 @@
 //
 
 #include <src/utils/PathFind.h>
-#include "BufferCube.h"
+#include "CubeBuffer.h"
 
 
 

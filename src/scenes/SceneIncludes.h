@@ -5,7 +5,7 @@
 #ifndef TESTPROJECT2_SCENEINLCUDES_H
 #define TESTPROJECT2_SCENEINLCUDES_H
 
-#include "scene.h"
+#include "Scene.h"
 #include "BasicBillboardScene.h"
 #include "BasicTriangleScene.h"
 #include "LineScene.h"

@@ -7,7 +7,7 @@
 
 
 #include "Drawable.h"
-#include "BufferObject.h"
+#include "ObjectBuffer.h"
 
 class PlaneBuffer: public Drawable
 {

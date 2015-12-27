@@ -1,5 +1,5 @@
 #include "scenes/SceneIncludes.h"
-#include "scenes/window.h"
+#include "scenes/Window.h"
 
 
 int main()

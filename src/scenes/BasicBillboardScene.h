@@ -5,9 +5,9 @@
 #ifndef BASICTRIANGLESCENE_H
 #define BASICTRIANGLESCENE_H
 
-#include "scene.h"
-#include "graphics/drawables/BufferObject.h"
-#include "utils/debugGL.h"
+#include "Scene.h"
+#include "graphics/drawables/ObjectBuffer.h"
+#include "utils/DebugGL.h"
 #include "math/Camera.h"
 
 class BasicBillboardScene : public Scene

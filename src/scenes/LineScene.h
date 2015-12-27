@@ -5,7 +5,7 @@
 #ifndef TESTPROJECT2_LINESCENE_H
 #define TESTPROJECT2_LINESCENE_H
 
-#include "scene.h"
+#include "Scene.h"
 #include "graphics/Buffer.h"
 #include "math/Camera.h"
 

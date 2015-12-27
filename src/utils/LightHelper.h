@@ -7,8 +7,8 @@
 
 #include <src/graphics/materials/PhongMaterial.h>
 #include <glm/detail/type_vec3.hpp>
-#include "graphics/shader.h"
-#include "graphics/shaderManager.h"
+#include "graphics/Shader.h"
+#include "graphics/ShaderManager.h"
 #include "graphics/Light.h"
 
 struct LightHelper

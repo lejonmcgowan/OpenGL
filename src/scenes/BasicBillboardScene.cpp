@@ -8,8 +8,8 @@
 #include <iostream>
 #include <assert.h>
 #include <src/graphics/drawables/PlaneBuffer.h>
-#include <src/graphics/drawables/BufferSphere.h>
-#include <src/graphics/drawables/BufferCube.h>
+#include <src/graphics/drawables/SphereBuffer.h>
+#include <src/graphics/drawables/CubeBuffer.h>
 #include <src/graphics/TextureManager.h>
 
 GLuint texture;

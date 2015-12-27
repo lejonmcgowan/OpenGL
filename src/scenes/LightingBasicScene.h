@@ -9,7 +9,7 @@
 #include "graphics/drawables/Drawable.h"
 #include "math/Camera.h"
 #include "graphics/materials/PhongMaterial.h"
-#include "scene.h"
+#include "Scene.h"
 
 class LightingBasicScene: public Scene
 {

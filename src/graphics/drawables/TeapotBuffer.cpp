@@ -3,7 +3,7 @@
 //
 
 #include <GL/glew.h>
-#include "BufferTeapot.h"
+#include "TeapotBuffer.h"
 #include "teapotdata.h"
 
 BufferTeapot::BufferTeapot(int grid, const glm::mat4 &lidTransform)

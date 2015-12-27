@@ -5,7 +5,7 @@
 #include <assert.h>
 #include <iostream>
 #include "Texture.h"
-#include "utils/debugGL.h"
+#include "utils/DebugGL.h"
 
 void Texture::init()
 {

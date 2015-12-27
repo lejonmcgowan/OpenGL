@@ -3,8 +3,8 @@
 //
 #include "MultipleLightsScene.h"
 #include "src/graphics/drawables/PlaneBuffer.h"
-#include "src/graphics/drawables/BufferTeapot.h"
-#include "src/graphics/drawables/BufferSphere.h"
+#include "src/graphics/drawables/TeapotBuffer.h"
+#include "src/graphics/drawables/SphereBuffer.h"
 
 std::vector<PhongMaterial> materials;
 void MultipleLightsScene::update()

@@ -4,10 +4,10 @@
 
 #include <src/utils/PathFind.h>
 #include <src/graphics/drawables/PlaneBuffer.h>
-#include <src/graphics/drawables/BufferSphere.h>
+#include <src/graphics/drawables/SphereBuffer.h>
 #include <src/graphics/TextureManager.h>
-#include <src/utils/debugGL.h>
-#include <src/graphics/drawables/BufferTeapot.h>
+#include <src/utils/DebugGL.h>
+#include <src/graphics/drawables/TeapotBuffer.h>
 #include <src/graphics/materials/PhongMaterial.h>
 
 #include "LightingBasicScene.h"

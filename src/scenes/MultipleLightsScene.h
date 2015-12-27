@@ -9,7 +9,7 @@
 #include "utils/TweakBarHelper.h"
 #include "utils/LightHelper.h"
 #include "utils/PathFind.h"
-#include "scene.h"
+#include "Scene.h"
 
 class MultipleLightsScene: public Scene
 {

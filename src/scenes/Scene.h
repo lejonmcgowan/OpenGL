@@ -5,7 +5,7 @@
 #include <GLFW/glfw3.h>
 #include "AntTweakBar.h"
 
-#include "graphics/shaderManager.h"
+#include "graphics/ShaderManager.h"
 #include "input/Keyboard.h"
 #include "input/Mouse.h"
 #include <vector>

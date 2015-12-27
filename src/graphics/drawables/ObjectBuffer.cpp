@@ -3,8 +3,8 @@
 //
 
 #include <iostream>
-#include "BufferObject.h"
-#include "utils/debugGL.h"
+#include "ObjectBuffer.h"
+#include "utils/DebugGL.h"
 
 void BufferObject::addBuffer(std::string name, int blockSize)
 {
